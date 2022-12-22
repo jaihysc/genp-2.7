@@ -6,9 +6,13 @@ I did this because I was cursious how it works, I thought someone else might be 
 
 ## Overview
 
-The executables `RunMe.exe`, `Adobe-GenP-2.7.exe`, `GenPPP-2.7.exe`, and `HotkeySet.exe` are actually AutoIt scripts.
+The executables `RunMe.exe`, `Adobe-GenP-2.7.exe`, `GenPPP-2.7.exe`, and `HotkeySet.exe` are actually AutoIt scripts. `NSudo.exe` appears to be an unmodified version of [NSudo](https://github.com/m2team/NSudo).
 
-`Adobe-GenP-2.7.exe` displays the GUI and starts `HotkeySet.exe`, which closes the programs upon pressing Escape. `Adobe-GenP-2.7.exe` invokes `GenPPP-2.7.exe` for patching when the patch (cure) button is pressed. `GenPPP-2.7.exe` (patcher) searches for x86 instruction patterns within Adobe files and replaces them with appropriate counterparts.
+`RunMe.exe` calls `NSudo.exe` to start `Adobe-GenP-2.7.exe` as TrustedInstaller.
+
+`Adobe-GenP-2.7.exe` displays the GUI and starts `HotkeySet.exe`, which closes the programs (`Adobe-GenP-2.7.exe` and `GenPPP-2.7.exe`) upon pressing Escape.
+
+When the patch (cure) button is pressed, `Adobe-GenP-2.7.exe` calls `GenPPP-2.7.exe` for patching . `GenPPP-2.7.exe` searches for x86 instruction patterns within Adobe files and replaces them with appropriate counterparts.
 
 ## Signatures
 
