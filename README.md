@@ -8,7 +8,7 @@ I did this because I was cursious how it works, I thought someone else might be 
 
 The executables `RunMe.exe`, `Adobe-GenP-2.7.exe`, `GenPPP-2.7.exe`, and `HotkeySet.exe` are actually AutoIt scripts.
 
-`Adobe-GenP-2.7.exe` displays the GUI, it invokes `GenPPP-2.7.exe` for patching when the patch (cure) button is pressed. `GenPPP-2.7.exe` (patcher) searches for x86 instruction patterns within Adobe files and replaces them with appropriate counterparts.
+`Adobe-GenP-2.7.exe` displays the GUI and starts `HotkeySet.exe`, which closes the programs upon pressing Escape. `Adobe-GenP-2.7.exe` invokes `GenPPP-2.7.exe` for patching when the patch (cure) button is pressed. `GenPPP-2.7.exe` (patcher) searches for x86 instruction patterns within Adobe files and replaces them with appropriate counterparts.
 
 ## Signatures
 

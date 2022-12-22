@@ -43,12 +43,17 @@ Opt ( "TrayIconHide" , 1 )
 If _SINGLETON ( "HotKeySet" , 1 ) = 0 Then
 	Exit
 EndIf
-Global $G_BPAUSED = False
+
+; Calls ShowMessage when ESC key pressed
+; Does not actually show any message, it just terminates Adobe-GenP-2.7.exe and GenPPP-2.7.exe
 HotKeySet ( "{ESC}" , "ShowMessage" )
+
 While 1
 	Sleep ( 100 )
 WEnd
-Func SHOWMESSAGE ( )
+
+; Terminates Adobe-GenP-2.7.exe and GenPPP-2.7.exe
+Func ShowMessage ( )
 	If WinActive ( "Adobe-GenP-2.7" ) Then
 		Local $SPIDHANDLE = ProcessExists ( "Adobe-GenP-2.7.exe" )
 		ProcessClose ( $SPIDHANDLE )
@@ -58,6 +63,7 @@ Func SHOWMESSAGE ( )
 		_PROCESSCLOSEEX ( $SPIDHANDLE )
 		$SPIDHANDLE = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE )
 		DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE , "int" , 1 )
+
 		Local $SPIDHANDLE1 = ProcessExists ( "GenPPP-2.7.exe" )
 		ProcessClose ( $SPIDHANDLE1 )
 		_PROCESSCLOSEEX ( $SPIDHANDLE1 )
@@ -70,6 +76,8 @@ Func SHOWMESSAGE ( )
 	Else
 	EndIf
 EndFunc
+
+; Close process with taskkill
 Func _PROCESSCLOSEEX ( $SPIDHANDLE )
 	If IsString ( $SPIDHANDLE ) Then $SPIDHANDLE = ProcessExists ( $SPIDHANDLE )
 	If Not $SPIDHANDLE Then Return SetError ( 1 , 0 , 0 )
