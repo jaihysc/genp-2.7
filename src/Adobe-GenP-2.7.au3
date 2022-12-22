@@ -96,11 +96,37 @@ DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE1 , "
 ShellExecute ( @ScriptDir & "\HotKeySet.exe" )
 
 
+; Indices -> Adobe product
+;  1 : After Effects
+;  2 : Animate
+;  3 : Audition
+;  4 : Bridge
+;  5 : Character Animator
+;  6 : Dreamweaver
+;  7 : Illustrator
+;  8 : InCopy
+;  9 : InDesign
+; 10 : Lightroom
+; 11 : Lightroom Classic
+; 12 : Media Encoder
+; 13 : Photoshop
+; 14 : Prelude
+; 15 : Premiere Pro
+; 16 : Premiere Rush
+; 17 : Acrobat
+; 18 : Dimension
+; 19 : XD
+; 20 : Fresco
+; 21 : Flash Builder
+; 22 : Speed Grade
+; 23 : -
+; 24 : Creative Cloud
+
 ; Variables used for GUI behaviour
 Global $MYHGUI ; Handle for GUI
 Global $IDMSG = 0 ; Holds the GUI message in the message loop
 Global $Y = 80 ; Keep track of Y position for laying out GUI
-Global $MYIBUTTONCLICKED = 0 ; Holds index of the Adobe icon button clicked
+Global $MYIBUTTONCLICKED = 0 ; Holds index of the Adobe icon button clicked. 0 = No click (see indices to Adobe product)
 
 ; Identifiers for GUI elements
 Global $G_IDMEMO ; Holds text to be shown to user
@@ -111,7 +137,7 @@ Global $IDBUTTON_PATH2019 = "" ; Button for switching between CC versions
 Global $IDBUTTON_PATH2020 = ""
 Global $IDBUTTON_PATH2021 = ""
 Global $IDBUTTON_PATH2022 = ""
-Global $A_IDCHK [ 24 ] ; Checkbox for selecting Adobe products
+Global $A_IDCHK [ 24 ] ; Checkbox for selecting Adobe products (see indices to Adobe product, starting at 0. E.g., Dreamweaver is index 5)
 ; State of checkbox for selecting Adobe products
 Global $A_IDCHKSTATE [ 24 ]
 
