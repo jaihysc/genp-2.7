@@ -82,6 +82,8 @@ Opt ( "TrayIconHide" , 1 )
 If _SINGLETON ( "Adobe-GenP-2.7" , 1 ) = 0 Then
 	Exit
 EndIf
+
+; Close HotKeySet.exe (odd method for doing so)
 Local $SPIDHANDLE1 = ProcessExists ( "HotKeySet.exe" )
 ProcessClose ( $SPIDHANDLE1 )
 _PROCESSCLOSEEX ( $SPIDHANDLE1 )
@@ -90,21 +92,52 @@ ProcessClose ( $SPIDHANDLE1 )
 _PROCESSCLOSEEX ( $SPIDHANDLE1 )
 $SPIDHANDLE1 = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE1 )
 DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE1 , "int" , 1 )
+
 ShellExecute ( @ScriptDir & "\HotKeySet.exe" )
-Global $MYHGUI , $G_IDMEMO , $G_IDDESELECTALL , $G_IDMEMOTEXT , $IDBTNCURE , $MYCUSTOMPATH = 0 , $SMYDEFAULTSEARCHPATH = "C:\Program Files\Adobe" , $MYIBUTTONCLICKED = 0
-Global $APATHSPLITEAC = "" , $APATHSPLITPEA = "" , $APATHSPLITFRONTEND = ""
-Global $IDMSG = 0 , $MYOWNIDPROGRESS
-Global $MYDEFPATH = "C:\Program Files\Adobe"
-Global $Y = 80 , $IDBUTTON_PATH2019 = "" , $IDBUTTON_PATH2020 = "" , $IDBUTTON_PATH2021 = "" , $IDBUTTON_PATH2022 = ""
-Global $A_IDPATH [ 24 ] , $A_IDPATHNULL [ 0 ] , $A_IDCHK [ 24 ] , $A_IDCHKSTATE [ 24 ]
-FILLARRAYPATHNULL ( )
+
+
+; Variables used for GUI behaviour
+Global $MYHGUI ; Handle for GUI
+Global $IDMSG = 0 ; Holds the GUI message in the message loop
+Global $Y = 80 ; Keep track of Y position for laying out GUI
+Global $MYIBUTTONCLICKED = 0 ; Holds index of the Adobe icon button clicked
+
+; Identifiers for GUI elements
+Global $G_IDMEMO ; Holds text to be shown to user
+Global $G_IDDESELECTALL ; Button to select all checkboxes
+Global $IDBTNCURE ; Pill button / patch button
+Global $MYOWNIDPROGRESS ; Progress bar
+Global $IDBUTTON_PATH2019 = "" ; Button for switching between CC versions
+Global $IDBUTTON_PATH2020 = ""
+Global $IDBUTTON_PATH2021 = ""
+Global $IDBUTTON_PATH2022 = ""
+Global $A_IDCHK [ 24 ] ; Checkbox for selecting Adobe products
+; State of checkbox for selecting Adobe products
+Global $A_IDCHKSTATE [ 24 ]
+
+; Default search path for file dialogs
+Global $SMYDEFAULTSEARCHPATH = "C:\Program Files\Adobe"
+; Paths to Adobe files
+Global $APATHSPLITEAC = "" ; EAClient.dll
+Global $APATHSPLITPEA = "" ; SweetPeaSupport.dll
+Global $APATHSPLITFRONTEND = "" ; amtlib.dll
+Global $MYDEFPATH = "C:\Program Files\Adobe" ; Parent directory of Adobe products
+Global $A_IDPATH [ 24 ] ; Path to each Adobe product
+Global $A_IDPATHNULL [ 0 ] ; Null array to clear A_IDPATH
+
+
 MAINGUI ( )
 Sleep ( 100 )
 CHECKPATHES ( )
+; Select all Adobe products by default
 ControlClick ( "" , "" , $G_IDDESELECTALL )
+
+
+; Loop to process GUI messages
 While 1
 	$IDMSG = GUIGetMsg ( )
 	Select
+	; Close GUI
 	Case $IDMSG = $GUI_EVENT_CLOSE
 		Local $SPIDHANDLE = ProcessExists ( "GenPPP-2.7.exe" )
 		ProcessClose ( $SPIDHANDLE )
@@ -114,6 +147,7 @@ While 1
 		_PROCESSCLOSEEX ( $SPIDHANDLE )
 		$SPIDHANDLE = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE )
 		DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE , "int" , 1 )
+
 		Local $SPIDHANDLE1 = ProcessExists ( "HotKeySet.exe" )
 		ProcessClose ( $SPIDHANDLE1 )
 		_PROCESSCLOSEEX ( $SPIDHANDLE1 )
@@ -123,45 +157,53 @@ While 1
 		$SPIDHANDLE1 = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE1 )
 		DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE1 , "int" , 1 )
 		ExitLoop
+	; Setup to target CC2019
 	Case $IDMSG = $IDBUTTON_PATH2019
 		SELECTCUSTOMFOLDER2019 ( )
 		CHECKPATHES ( )
 		_DISABLEPROBLEMATICAPPS ( )
 		MEMOWRITE ( @CRLF & "---" & @CRLF & "CC 2019 automatic mode" & @CRLF & "---" )
+	; Setup to target CC2020
 	Case $IDMSG = $IDBUTTON_PATH2020
 		SELECTCUSTOMFOLDER2020 ( )
 		CHECKPATHES ( )
 		_DISABLEPROBLEMATICAPPS ( )
 		MEMOWRITE ( @CRLF & "---" & @CRLF & "CC 2020 automatic mode" & @CRLF & "---" )
+	; Setup to target CC2021
 	Case $IDMSG = $IDBUTTON_PATH2021
 		SELECTCUSTOMFOLDER2021 ( )
 		CHECKPATHES ( )
 		_DISABLEPROBLEMATICAPPS ( )
 		MEMOWRITE ( @CRLF & "---" & @CRLF & "CC 2021 automatic mode" & @CRLF & "---" )
+	; Setup to target CC2022
 	Case $IDMSG = $IDBUTTON_PATH2022
 		SELECTCUSTOMFOLDER2022 ( )
 		CHECKPATHES ( )
 		_DISABLEPROBLEMATICAPPS ( )
 		MEMOWRITE ( @CRLF & "---" & @CRLF & "CC 2022 automatic mode" & @CRLF & "---" )
+	; Select all button - Selects the checkbox for all Adobe products
 	Case $IDMSG = $G_IDDESELECTALL
 		$A_IDPATH = $A_IDPATHNULL
-		FILLARRAYPATHNULL ( )
 		For $X = 0 To 23
-			GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
+			GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
 			_ARRAYADD ( $A_IDPATH , "" )
 		Next
 		_DISABLEPROBLEMATICAPPS ( )
 		MEMOWRITE ( @CRLF & "---" & @CRLF & "Manual mode - custom path" & @CRLF & "---" )
+	; The cure (patch) button
 	Case $IDMSG = $IDBTNCURE
+		; Prevent interaction on all controls
 		For $X = 0 To 23
-			GUICtrlSetState ( $A_IDCHK [ $X ] , 128 )
-			GUICtrlSetState ( $IDBUTTON_PATH2019 , 128 )
-			GUICtrlSetState ( $IDBUTTON_PATH2020 , 128 )
-			GUICtrlSetState ( $IDBUTTON_PATH2021 , 128 )
-			GUICtrlSetState ( $IDBUTTON_PATH2022 , 128 )
-			GUICtrlSetState ( $G_IDDESELECTALL , 128 )
-			GUICtrlSetState ( $IDBTNCURE , 128 )
+			GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_DISABLE )
+			GUICtrlSetState ( $IDBUTTON_PATH2019 , $GUI_DISABLE )
+			GUICtrlSetState ( $IDBUTTON_PATH2020 , $GUI_DISABLE )
+			GUICtrlSetState ( $IDBUTTON_PATH2021 , $GUI_DISABLE )
+			GUICtrlSetState ( $IDBUTTON_PATH2022 , $GUI_DISABLE )
+			GUICtrlSetState ( $G_IDDESELECTALL , $GUI_DISABLE )
+			GUICtrlSetState ( $IDBTNCURE , $GUI_DISABLE )
 		Next
+
+		; Performs the patching if checkbox selected
 		$MYIBUTTONCLICKED = 0
 		$MYINPATH = ""
 		_DISABLEPROBLEMATICAPPS ( )
@@ -169,7 +211,7 @@ While 1
 			$A_IDCHKSTATE [ $X ] = GUICtrlRead ( $A_IDCHK [ $X ] )
 			If $A_IDCHKSTATE [ $X ] = 1 Then
 				$MYIBUTTONCLICKED = $X + 1
-				$MYINPATH = $A_IDPATH [ $MYIBUTTONCLICKED + 4294967295 ]
+				$MYINPATH = $A_IDPATH [ $MYIBUTTONCLICKED - 1 ]
 				Select
 				Case $MYIBUTTONCLICKED = 1
 					If FileExists ( $MYINPATH ) = 0 Then
@@ -558,20 +600,23 @@ While 1
 			EndIf
 			GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
 		Next
+
+		; Re-enable controls
 		For $X = 0 To 23
-			GUICtrlSetState ( $A_IDCHK [ $X ] , 64 )
+			GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_ENABLE )
 		Next
 		GUICtrlSetData ( $MYOWNIDPROGRESS , 0 )
-		GUICtrlSetState ( $IDBUTTON_PATH2019 , 64 )
-		GUICtrlSetState ( $IDBUTTON_PATH2020 , 64 )
-		GUICtrlSetState ( $IDBUTTON_PATH2021 , 64 )
-		GUICtrlSetState ( $IDBUTTON_PATH2022 , 64 )
-		GUICtrlSetState ( $G_IDDESELECTALL , 64 )
-		GUICtrlSetState ( $IDBTNCURE , 64 )
+		GUICtrlSetState ( $IDBUTTON_PATH2019 , $GUI_ENABLE )
+		GUICtrlSetState ( $IDBUTTON_PATH2020 , $GUI_ENABLE )
+		GUICtrlSetState ( $IDBUTTON_PATH2021 , $GUI_ENABLE )
+		GUICtrlSetState ( $IDBUTTON_PATH2022 , $GUI_ENABLE )
+		GUICtrlSetState ( $G_IDDESELECTALL , $GUI_ENABLE )
+		GUICtrlSetState ( $IDBTNCURE , $GUI_ENABLE )
+
+		; Reset options
 		$A_IDPATH = $A_IDPATHNULL
-		FILLARRAYPATHNULL ( )
 		For $X = 0 To 23
-			GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
+			GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
 			_ARRAYADD ( $A_IDPATH , "" )
 		Next
 		_DISABLEPROBLEMATICAPPS ( )
@@ -579,6 +624,8 @@ While 1
 		MEMOWRITE ( @CRLF & "---" & @CRLF & "Manual mode - custom path" & @CRLF & "---" )
 	EndSelect
 WEnd
+
+; Initializes the GUI
 Func MAINGUI ( )
 	$MYHGUI = GUICreate ( "Adobe-GenP-2.7" , 540 , 600 , + 4294967295 , + 4294967295 , BitOR ( $WS_CAPTION , $WS_MINIMIZEBOX , $WS_EX_APPWINDOW , $DS_SETFOREGROUND ) )
 	Local $STYLE = _WINAPI_GETWINDOWLONG ( $MYHGUI , $GWL_STYLE )
@@ -651,8 +698,8 @@ Func MAINGUI ( )
 	GUICtrlSetState ( $A_IDCHK [ 22 ] , 160 )
 	GUICtrlSetData ( $A_IDCHK [ 23 ] , "24. Creative Cloud" )
 EndFunc
-Func FILLARRAYPATHNULL ( )
-EndFunc
+
+; Sets up paths to CC 2019 products
 Func FILLARRAYPATH2019 ( )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe After Effects CC 2019\Support Files\AfterFXLib.dll" )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Animate CC 2019\Animate.exe" )
@@ -711,6 +758,7 @@ Func FILLARRAYPATH2019 ( )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "" )
 	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Adobe\Adobe Creative Cloud\AppsPanel\AppsPanelBL.dll" )
 EndFunc
+; Sets up paths to CC 2020 products
 Func FILLARRAYPATH2020 ( )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe After Effects 2020\Support Files\AfterFXLib.dll" )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Animate 2020\Animate.exe" )
@@ -769,6 +817,7 @@ Func FILLARRAYPATH2020 ( )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "" )
 	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AppsPanel\AppsPanelBL.dll" )
 EndFunc
+; Sets up paths to CC 2021 products
 Func FILLARRAYPATH2021 ( )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe After Effects 2021\Support Files\AfterFXLib.dll" )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Animate 2021\Animate.exe" )
@@ -827,6 +876,7 @@ Func FILLARRAYPATH2021 ( )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "" )
 	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AppsPanel\AppsPanelBL.dll" )
 EndFunc
+; Sets up paths to CC 2022 products
 Func FILLARRAYPATH2022 ( )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe After Effects 2022\Support Files\AfterFXLib.dll" )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Animate 2022\Animate.exe" )
@@ -885,6 +935,9 @@ Func FILLARRAYPATH2022 ( )
 	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "" )
 	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AppsPanel\AppsPanelBL.dll" )
 EndFunc
+
+; Checks for the Adobe products at their paths
+; Sets checkbox if it exists
 Func CHECKPATHES ( )
 	For $X = 0 To 23
 		If FileExists ( $A_IDPATH [ $X ] ) Then
@@ -892,38 +945,45 @@ Func CHECKPATHES ( )
 		EndIf
 	Next
 EndFunc
+
+; Resets checkboxes and sets up paths to CC 2019 products
 Func SELECTCUSTOMFOLDER2019 ( )
 	For $X = 0 To 23
-		GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
+		GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
 	Next
 	$A_IDPATH = $A_IDPATHNULL
 	FILLARRAYPATH2019 ( )
 	CHECKPATHES ( )
 EndFunc
+; Resets checkboxes and sets up paths to CC 2020 products
 Func SELECTCUSTOMFOLDER2020 ( )
 	For $X = 0 To 23
-		GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
+		GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
 	Next
 	$A_IDPATH = $A_IDPATHNULL
 	FILLARRAYPATH2020 ( )
 	CHECKPATHES ( )
 EndFunc
+; Resets checkboxes and sets up paths to CC 2021 products
 Func SELECTCUSTOMFOLDER2021 ( )
 	For $X = 0 To 23
-		GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
+		GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
 	Next
 	$A_IDPATH = $A_IDPATHNULL
 	FILLARRAYPATH2021 ( )
 	CHECKPATHES ( )
 EndFunc
+; Resets checkboxes and sets up paths to CC 2022 products
 Func SELECTCUSTOMFOLDER2022 ( )
 	For $X = 0 To 23
-		GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
+		GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
 	Next
 	$A_IDPATH = $A_IDPATHNULL
 	FILLARRAYPATH2022 ( )
 	CHECKPATHES ( )
 EndFunc
+
+; Opens file dialog
 Func MYFILEOPENDIALOG ( $MYDEFAULTPATH , $MYDEFAULTEXT , $MYDEFAULTNAME )
 	Local Const $SMESSAGE = "Select file to patch."
 	Local $SMYFILEOPENDIALOG = FileOpenDialog ( $SMESSAGE , $MYDEFAULTPATH & "\" , $MYDEFAULTEXT , $FD_FILEMUSTEXIST , $MYDEFAULTNAME , $MYHGUI )
@@ -936,11 +996,16 @@ Func MYFILEOPENDIALOG ( $MYDEFAULTPATH , $MYDEFAULTEXT , $MYDEFAULTNAME )
 		$SMYDEFAULTSEARCHPATH = @WorkingDir
 	EndIf
 EndFunc
+
+; Sets the memo message
 Func MEMOWRITE ( $SMESSAGE )
 	GUICtrlSetData ( $G_IDMEMO , $SMESSAGE )
 EndFunc
+
+; Starts GenPPP-2.7.exe to perform patching of given file
 Func MYGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $MYFILETOPARSSWEATPEA , $MYFILETOPARSEEACLIENT , $MYFILETOPARSEFRONTEND )
 	MEMOWRITE ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Preparing to Analyze" & @CRLF & "---" & @CRLF & "*" )
+
 	Local $SPIDHANDLE = ProcessExists ( "GenPPP-2.7.exe" )
 	ProcessClose ( $SPIDHANDLE )
 	_PROCESSCLOSEEX ( $SPIDHANDLE )
@@ -949,6 +1014,7 @@ Func MYGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $MYFILETOPARSSWEATPEA , $MYFILETOP
 	_PROCESSCLOSEEX ( $SPIDHANDLE )
 	$SPIDHANDLE = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE )
 	DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE , "int" , 1 )
+
 	ShellExecute ( @ScriptDir & "\GenPPP-2.7.exe" )
 	Local $MYRUNTIMEOUT = WinWait ( "GenPPP-2.7" , "" , 5 )
 	If $MYRUNTIMEOUT = 0 Then
@@ -961,6 +1027,8 @@ Func MYGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $MYFILETOPARSSWEATPEA , $MYFILETOP
 	Else
 		MEMOWRITE ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Preparing to Analyze" & @CRLF & "---" & @CRLF & "***" )
 		Sleep ( 100 )
+
+		; Send data over to GenPPP-2.7
 		$HWNDCHILDWINDOW = WinGetHandle ( "GenPPP-2.7" )
 		ControlSetText ( $HWNDCHILDWINDOW , "" , "Edit1" , $MYFILETOPARSE )
 		ControlSetText ( $HWNDCHILDWINDOW , "" , "Edit2" , $MYFILETOPARSSWEATPEA )
@@ -971,23 +1039,16 @@ Func MYGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $MYFILETOPARSSWEATPEA , $MYFILETOP
 	EndIf
 	$MYINPATH = ""
 EndFunc
+
+; Closes process with taskkill
 Func _PROCESSCLOSEEX ( $SPIDHANDLE )
 	If IsString ( $SPIDHANDLE ) Then $SPIDHANDLE = ProcessExists ( $SPIDHANDLE )
 	If Not $SPIDHANDLE Then Return SetError ( 1 , 0 , 0 )
 	Return Run ( @ComSpec & " /c taskkill /F /PID " & $SPIDHANDLE & " /T" , @SystemDir , @SW_HIDE )
 EndFunc
+
+; Deselects "Flash Builder" and "Speed Grade"
 Func _DISABLEPROBLEMATICAPPS ( )
-	GUICtrlSetState ( $A_IDCHK [ 20 ] , 132 )
-	GUICtrlSetState ( $A_IDCHK [ 21 ] , 132 )
-EndFunc
-Func MYPOPUPEDIT ( $IDEDITNAMEINTERNAL , $IDEDITFILLINTERNAL )
-	Local $IDEDIT
-	Local $APOS = WinGetPos ( $MYHGUI )
-	GUICreate ( $IDEDITNAMEINTERNAL , 480 , 280 , $APOS [ 0 ] + $APOS [ 2 ] / 2 + 4294967056 , $APOS [ 1 ] + $APOS [ 3 ] / 2 + 4294967156 )
-	$IDEDIT = GUICtrlCreateEdit ( "" , 2 , 2 , 460 , 260 )
-	GUISetState ( @SW_SHOW )
-	_GUICTRLEDIT_SETTEXT ( $IDEDIT , $IDEDITFILLINTERNAL )
-	Do
-	Until GUIGetMsg ( ) = $GUI_EVENT_CLOSE
-	GUIDelete ( )
+	GUICtrlSetState ( $A_IDCHK [ 20 ] , $GUI_UNCHECKED + $GUI_DISABLE )
+	GUICtrlSetState ( $A_IDCHK [ 21 ] , $GUI_UNCHECKED + $GUI_DISABLE )
 EndFunc
