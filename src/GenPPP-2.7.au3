@@ -223,7 +223,7 @@ Global $IPATTERNACCDR [ 1 ] = [ "74118D4DD832DB" ]
 
 ; NOTE: Non standard header
 ; https://www.autoitscript.com/forum/topic/109096-extended-message-box-new-version-19-nov-21/
-#include <ExtMsgBox.au3>
+#include "include/ExtMsgBox.au3"
 
 Opt ( "TrayAutoPause" , 0 )
 Opt ( "TrayIconHide" , 1 )

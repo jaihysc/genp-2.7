@@ -14,6 +14,25 @@ The executables `RunMe.exe`, `Adobe-GenP-2.7.exe`, `GenPPP-2.7.exe`, and `Hotkey
 
 When the patch (cure) button is pressed, `Adobe-GenP-2.7.exe` calls `GenPPP-2.7.exe` for patching . `GenPPP-2.7.exe` searches for x86 instruction patterns within Adobe files and replaces them with appropriate counterparts.
 
+## Building
+
+1. Use Aut2exe to convert each of the AutoIt scripts to an executable
+2. Use Visual Studio to build NSudo
+3. Place the resulting executables in the following hierarchy
+4. Run `RunMe.exe`
+
+```
+│   RunMe.exe
+│
+└───Resources
+    │   Adobe-GenP-2.7.exe
+    │   GenPPP-2.7.exe
+    │   HotkeySet.exe
+    │   NSudo.exe
+    │
+    └───ICONS
+```
+
 ## Signatures
 
 |File|SHA256|
