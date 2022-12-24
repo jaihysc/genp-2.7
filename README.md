@@ -2,17 +2,17 @@
 
 Reversed source code for GenP v2.7. 
 
-I did this because I was cursious how it works, I thought someone else might be interested too so I am making it public. Be sure to use responsibly.
+I wanted to practice my reverse engineering skills, so I picked some software I found online as I would not violate any agreements. I am making my findings public here, be sure to use responsibly.
 
 ## Overview
 
-The executables `RunMe.exe`, `Adobe-GenP-2.7.exe`, `GenPPP-2.7.exe`, and `HotkeySet.exe` are actually AutoIt scripts. `NSudo.exe` appears to be an unmodified version of [NSudo](https://github.com/m2team/NSudo).
+The executables `RunMe.exe`, `Adobe-GenP-2.7.exe`, `GenPPP-2.7.exe`, and `HotkeySet.exe` are AutoIt scripts. `NSudo.exe` appears to be an unmodified version of [NSudo](https://github.com/m2team/NSudo).
 
 `RunMe.exe` calls `NSudo.exe` to start `Adobe-GenP-2.7.exe` as TrustedInstaller.
 
 `Adobe-GenP-2.7.exe` displays the GUI and starts `HotkeySet.exe`, which closes the programs (`Adobe-GenP-2.7.exe` and `GenPPP-2.7.exe`) upon pressing Escape.
 
-When the patch (cure) button is pressed, `Adobe-GenP-2.7.exe` calls `GenPPP-2.7.exe` for patching . `GenPPP-2.7.exe` searches for x86 instruction patterns within Adobe files and replaces them with appropriate counterparts.
+When the patch (cure) button is pressed, `Adobe-GenP-2.7.exe` calls `GenPPP-2.7.exe` for patching. `GenPPP-2.7.exe` searches for x86 instruction patterns within Adobe files and replaces them with appropriate counterparts.
 
 ## Building
 
