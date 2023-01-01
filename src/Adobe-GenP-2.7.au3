@@ -79,19 +79,19 @@ Opt ( "TrayIconHide" , 1 )
 #include <WinAPISys.au3>
 #include <File.au3>
 
-If _SINGLETON ( "Adobe-GenP-2.7" , 1 ) = 0 Then
+If _Singleton ( "Adobe-GenP-2.7" , 1 ) = 0 Then
 	Exit
 EndIf
 
 ; Close HotKeySet.exe (odd method for doing so)
-Local $SPIDHANDLE1 = ProcessExists ( "HotKeySet.exe" )
-ProcessClose ( $SPIDHANDLE1 )
-_PROCESSCLOSEEX ( $SPIDHANDLE1 )
-Local $SPIDHANDLE1 = ProcessExists ( "HotKeySet.exe" )
-ProcessClose ( $SPIDHANDLE1 )
-_PROCESSCLOSEEX ( $SPIDHANDLE1 )
-$SPIDHANDLE1 = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE1 )
-DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE1 , "int" , 1 )
+Local $sPidHandle1 = ProcessExists ( "HotKeySet.exe" )
+ProcessClose ( $sPidHandle1 )
+_ProcessCloseEx ( $sPidHandle1 )
+Local $sPidHandle1 = ProcessExists ( "HotKeySet.exe" )
+ProcessClose ( $sPidHandle1 )
+_ProcessCloseEx ( $sPidHandle1 )
+$sPidHandle1 = _WinAPI_OpenProcess ( 1 , 0 , $sPidHandle1 )
+DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $sPidHandle1 , "int" , 1 )
 
 ShellExecute ( @ScriptDir & "\HotKeySet.exe" )
 
@@ -123,958 +123,958 @@ ShellExecute ( @ScriptDir & "\HotKeySet.exe" )
 ; 24 : Creative Cloud
 
 ; Variables used for GUI behaviour
-Global $MYHGUI ; Handle for GUI
-Global $IDMSG = 0 ; Holds the GUI message in the message loop
-Global $Y = 80 ; Keep track of Y position for laying out GUI
-Global $MYIBUTTONCLICKED = 0 ; Holds index of the Adobe icon button clicked. 0 = No click (see indices to Adobe product)
+Global $myHGui ; Handle for GUI
+Global $idMsg = 0 ; Holds the GUI message in the message loop
+Global $y = 80 ; Keep track of Y position for laying out GUI
+Global $myIButtonClicked = 0 ; Holds index of the Adobe icon button clicked. 0 = No click (see indices to Adobe product)
 
 ; Identifiers for GUI elements
-Global $G_IDMEMO ; Holds text to be shown to user
-Global $G_IDDESELECTALL ; Button to select all checkboxes
-Global $IDBTNCURE ; Pill button / patch button
-Global $MYOWNIDPROGRESS ; Progress bar
-Global $IDBUTTON_PATH2019 = "" ; Button for switching between CC versions
-Global $IDBUTTON_PATH2020 = ""
-Global $IDBUTTON_PATH2021 = ""
-Global $IDBUTTON_PATH2022 = ""
-Global $A_IDCHK [ 24 ] ; Checkbox for selecting Adobe products (see indices to Adobe product, starting at 0. E.g., Dreamweaver is index 5)
+Global $g_idMemo ; Holds text to be shown to user
+Global $g_idDeselectAll ; Button to select all checkboxes
+Global $idBtnCure ; Pill button / patch button
+Global $myOwnIdProgress ; Progress bar
+Global $idButton_path2019 = "" ; Button for switching between CC versions
+Global $idButton_path2020 = ""
+Global $idButton_path2021 = ""
+Global $idButton_path2022 = ""
+Global $a_idChk [ 24 ] ; Checkbox for selecting Adobe products (see indices to Adobe product, starting at 0. E.g., Dreamweaver is index 5)
 ; State of checkbox for selecting Adobe products
-Global $A_IDCHKSTATE [ 24 ]
+Global $a_idChkState [ 24 ]
 
 ; Default search path for file dialogs
-Global $SMYDEFAULTSEARCHPATH = "C:\Program Files\Adobe"
+Global $sMyDefaultSearchPath = "C:\Program Files\Adobe"
 ; Paths to Adobe files
-Global $APATHSPLITEAC = "" ; EAClient.dll
-Global $APATHSPLITPEA = "" ; SweetPeaSupport.dll
-Global $APATHSPLITFRONTEND = "" ; amtlib.dll
-Global $MYDEFPATH = "C:\Program Files\Adobe" ; Parent directory of Adobe products
-Global $A_IDPATH [ 24 ] ; Path to each Adobe product
-Global $A_IDPATHNULL [ 0 ] ; Null array to clear A_IDPATH
+Global $aPathSplitEAC = "" ; EAClient.dll
+Global $aPathSplitPea = "" ; SweetPeaSupport.dll
+Global $aPathSplitFrontend = "" ; amtlib.dll
+Global $myDefPath = "C:\Program Files\Adobe" ; Parent directory of Adobe products
+Global $a_idPath [ 24 ] ; Path to each Adobe product
+Global $a_idPathNull [ 0 ] ; Null array to clear a_idPath
 
 
-MAINGUI ( )
+MainGui ( )
 Sleep ( 100 )
-CHECKPATHES ( )
+CheckPathes ( )
 ; Select all Adobe products by default
-ControlClick ( "" , "" , $G_IDDESELECTALL )
+ControlClick ( "" , "" , $g_idDeselectAll )
 
 
 ; Loop to process GUI messages
 While 1
-	$IDMSG = GUIGetMsg ( )
+	$idMsg = GUIGetMsg ( )
 	Select
 	; Close GUI
-	Case $IDMSG = $GUI_EVENT_CLOSE
-		Local $SPIDHANDLE = ProcessExists ( "GenPPP-2.7.exe" )
-		ProcessClose ( $SPIDHANDLE )
-		_PROCESSCLOSEEX ( $SPIDHANDLE )
-		Local $SPIDHANDLE = ProcessExists ( "GenPPP-2.7.exe" )
-		ProcessClose ( $SPIDHANDLE )
-		_PROCESSCLOSEEX ( $SPIDHANDLE )
-		$SPIDHANDLE = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE )
-		DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE , "int" , 1 )
+	Case $idMsg = $GUI_EVENT_CLOSE
+		Local $sPidHandle = ProcessExists ( "GenPPP-2.7.exe" )
+		ProcessClose ( $sPidHandle )
+		_ProcessCloseEx ( $sPidHandle )
+		Local $sPidHandle = ProcessExists ( "GenPPP-2.7.exe" )
+		ProcessClose ( $sPidHandle )
+		_ProcessCloseEx ( $sPidHandle )
+		$sPidHandle = _WinAPI_OpenProcess ( 1 , 0 , $sPidHandle )
+		DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $sPidHandle , "int" , 1 )
 
-		Local $SPIDHANDLE1 = ProcessExists ( "HotKeySet.exe" )
-		ProcessClose ( $SPIDHANDLE1 )
-		_PROCESSCLOSEEX ( $SPIDHANDLE1 )
-		Local $SPIDHANDLE1 = ProcessExists ( "HotKeySet.exe" )
-		ProcessClose ( $SPIDHANDLE1 )
-		_PROCESSCLOSEEX ( $SPIDHANDLE1 )
-		$SPIDHANDLE1 = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE1 )
-		DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE1 , "int" , 1 )
+		Local $sPidHandle1 = ProcessExists ( "HotKeySet.exe" )
+		ProcessClose ( $sPidHandle1 )
+		_ProcessCloseEx ( $sPidHandle1 )
+		Local $sPidHandle1 = ProcessExists ( "HotKeySet.exe" )
+		ProcessClose ( $sPidHandle1 )
+		_ProcessCloseEx ( $sPidHandle1 )
+		$sPidHandle1 = _WinAPI_OpenProcess ( 1 , 0 , $sPidHandle1 )
+		DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $sPidHandle1 , "int" , 1 )
 		ExitLoop
 	; Setup to target CC2019
-	Case $IDMSG = $IDBUTTON_PATH2019
-		SELECTCUSTOMFOLDER2019 ( )
-		CHECKPATHES ( )
-		_DISABLEPROBLEMATICAPPS ( )
-		MEMOWRITE ( @CRLF & "---" & @CRLF & "CC 2019 automatic mode" & @CRLF & "---" )
+	Case $idMsg = $idButton_path2019
+		SelectCustomFolder2019 ( )
+		CheckPathes ( )
+		_DisableProblematicApps ( )
+		MemoWrite ( @CRLF & "---" & @CRLF & "CC 2019 automatic mode" & @CRLF & "---" )
 	; Setup to target CC2020
-	Case $IDMSG = $IDBUTTON_PATH2020
-		SELECTCUSTOMFOLDER2020 ( )
-		CHECKPATHES ( )
-		_DISABLEPROBLEMATICAPPS ( )
-		MEMOWRITE ( @CRLF & "---" & @CRLF & "CC 2020 automatic mode" & @CRLF & "---" )
+	Case $idMsg = $idButton_path2020
+		SelectCustomFolder2020 ( )
+		CheckPathes ( )
+		_DisableProblematicApps ( )
+		MemoWrite ( @CRLF & "---" & @CRLF & "CC 2020 automatic mode" & @CRLF & "---" )
 	; Setup to target CC2021
-	Case $IDMSG = $IDBUTTON_PATH2021
-		SELECTCUSTOMFOLDER2021 ( )
-		CHECKPATHES ( )
-		_DISABLEPROBLEMATICAPPS ( )
-		MEMOWRITE ( @CRLF & "---" & @CRLF & "CC 2021 automatic mode" & @CRLF & "---" )
+	Case $idMsg = $idButton_path2021
+		SelectCustomFolder2021 ( )
+		CheckPathes ( )
+		_DisableProblematicApps ( )
+		MemoWrite ( @CRLF & "---" & @CRLF & "CC 2021 automatic mode" & @CRLF & "---" )
 	; Setup to target CC2022
-	Case $IDMSG = $IDBUTTON_PATH2022
-		SELECTCUSTOMFOLDER2022 ( )
-		CHECKPATHES ( )
-		_DISABLEPROBLEMATICAPPS ( )
-		MEMOWRITE ( @CRLF & "---" & @CRLF & "CC 2022 automatic mode" & @CRLF & "---" )
+	Case $idMsg = $idButton_path2022
+		SelectCustomFolder2022 ( )
+		CheckPathes ( )
+		_DisableProblematicApps ( )
+		MemoWrite ( @CRLF & "---" & @CRLF & "CC 2022 automatic mode" & @CRLF & "---" )
 	; Select all button - Selects the checkbox for all Adobe products
-	Case $IDMSG = $G_IDDESELECTALL
-		$A_IDPATH = $A_IDPATHNULL
-		For $X = 0 To 23
-			GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
-			_ARRAYADD ( $A_IDPATH , "" )
+	Case $idMsg = $g_idDeselectAll
+		$a_idPath = $a_idPathNull
+		For $x = 0 To 23
+			GUICtrlSetState ( $a_idChk [ $x ] , $GUI_UNCHECKED )
+			_ArrayAdd ( $a_idPath , "" )
 		Next
-		_DISABLEPROBLEMATICAPPS ( )
-		MEMOWRITE ( @CRLF & "---" & @CRLF & "Manual mode - custom path" & @CRLF & "---" )
+		_DisableProblematicApps ( )
+		MemoWrite ( @CRLF & "---" & @CRLF & "Manual mode - custom path" & @CRLF & "---" )
 	; The cure (patch) button
-	Case $IDMSG = $IDBTNCURE
+	Case $idMsg = $idBtnCure
 		; Prevent interaction on all controls
-		For $X = 0 To 23
-			GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_DISABLE )
-			GUICtrlSetState ( $IDBUTTON_PATH2019 , $GUI_DISABLE )
-			GUICtrlSetState ( $IDBUTTON_PATH2020 , $GUI_DISABLE )
-			GUICtrlSetState ( $IDBUTTON_PATH2021 , $GUI_DISABLE )
-			GUICtrlSetState ( $IDBUTTON_PATH2022 , $GUI_DISABLE )
-			GUICtrlSetState ( $G_IDDESELECTALL , $GUI_DISABLE )
-			GUICtrlSetState ( $IDBTNCURE , $GUI_DISABLE )
+		For $x = 0 To 23
+			GUICtrlSetState ( $a_idChk [ $x ] , $GUI_DISABLE )
+			GUICtrlSetState ( $idButton_path2019 , $GUI_DISABLE )
+			GUICtrlSetState ( $idButton_path2020 , $GUI_DISABLE )
+			GUICtrlSetState ( $idButton_path2021 , $GUI_DISABLE )
+			GUICtrlSetState ( $idButton_path2022 , $GUI_DISABLE )
+			GUICtrlSetState ( $g_idDeselectAll , $GUI_DISABLE )
+			GUICtrlSetState ( $idBtnCure , $GUI_DISABLE )
 		Next
 
 		; Performs the patching if checkbox selected
-		$MYIBUTTONCLICKED = 0
-		$MYINPATH = ""
-		_DISABLEPROBLEMATICAPPS ( )
-		For $X = 0 To 23
-			$A_IDCHKSTATE [ $X ] = GUICtrlRead ( $A_IDCHK [ $X ] )
-			If $A_IDCHKSTATE [ $X ] = 1 Then
-				$MYIBUTTONCLICKED = $X + 1
-				$MYINPATH = $A_IDPATH [ $MYIBUTTONCLICKED - 1 ]
+		$myIButtonClicked = 0
+		$myInPath = ""
+		_DisableProblematicApps ( )
+		For $x = 0 To 23
+			$a_idChkState [ $x ] = GUICtrlRead ( $a_idChk [ $x ] )
+			If $a_idChkState [ $x ] = 1 Then
+				$myIButtonClicked = $x + 1
+				$myInPath = $a_idPath [ $myIButtonClicked - 1 ]
 				Select
-				Case $MYIBUTTONCLICKED = 1
-					If FileExists ( $MYINPATH ) = 0 Then
-						$MYINPATH = ""
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "AfterFXLib*.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 1
+					If FileExists ( $myInPath ) = 0 Then
+						$myInPath = ""
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "AfterFXLib*.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						Local $SDRIVE = "" , $SDIR = "" , $SFILENAME = "" , $SEXTENSION = "" , $APATHSPLIT = ""
-						Local $IPATH = $MYINPATH
-						Local $APATHSPLIT = _PATHSPLIT ( $IPATH , $SDRIVE , $SDIR , $SFILENAME , $SEXTENSION )
-						$APATHSPLITPEA = $SDRIVE & $SDIR & "SweetPeaSupport.dll"
-						$APATHSPLITEAC = $SDRIVE & $SDIR & "EAClient.dll"
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						Local $sDrive = "" , $sDir = "" , $sFilename = "" , $sExtension = "" , $aPathSplit = ""
+						Local $iPath = $myInPath
+						Local $aPathSplit = _PATHSPLIT ( $iPath , $sDrive , $sDir , $sFilename , $sExtension )
+						$aPathSplitPea = $sDrive & $sDir & "SweetPeaSupport.dll"
+						$aPathSplitEAC = $sDrive & $sDir & "EAClient.dll"
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 2
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "Animate*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 2
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "Animate*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 3
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "auui*.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 3
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "auui*.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 4
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "bridge*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 4
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "bridge*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 5
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "character animator*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 5
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "character animator*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 6
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "dreamweaver*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 6
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "dreamweaver*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 7
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "illustrator*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 7
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "illustrator*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 8
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "public*.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 8
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "public*.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 9
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "public*.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 9
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "public*.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 10
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "lightroom*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 10
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "lightroom*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 11
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "lightroom*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 11
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "lightroom*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 12
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "Adobe Media Encoder*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 12
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "Adobe Media Encoder*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						Local $SDRIVE = "" , $SDIR = "" , $SFILENAME = "" , $SEXTENSION = "" , $APATHSPLIT = ""
-						Local $IPATH = $MYINPATH
-						Local $APATHSPLIT = _PATHSPLIT ( $IPATH , $SDRIVE , $SDIR , $SFILENAME , $SEXTENSION )
-						$APATHSPLITPEA = $SDRIVE & $SDIR & "SweetPeaSupport.dll"
-						$APATHSPLITEAC = $SDRIVE & $SDIR & "EAClient.dll"
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						Local $sDrive = "" , $sDir = "" , $sFilename = "" , $sExtension = "" , $aPathSplit = ""
+						Local $iPath = $myInPath
+						Local $aPathSplit = _PATHSPLIT ( $iPath , $sDrive , $sDir , $sFilename , $sExtension )
+						$aPathSplitPea = $sDrive & $sDir & "SweetPeaSupport.dll"
+						$aPathSplitEAC = $sDrive & $sDir & "EAClient.dll"
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 13
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "photoshop*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 13
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "photoshop*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 14
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "registration*.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 14
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "registration*.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						Local $SDRIVE = "" , $SDIR = "" , $SFILENAME = "" , $SEXTENSION = "" , $APATHSPLIT = ""
-						Local $IPATH = $MYINPATH
-						Local $APATHSPLIT = _PATHSPLIT ( $IPATH , $SDRIVE , $SDIR , $SFILENAME , $SEXTENSION )
-						$APATHSPLITPEA = $SDRIVE & $SDIR & "SweetPeaSupport.dll"
-						$APATHSPLITEAC = $SDRIVE & $SDIR & "EAClient.dll"
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						Local $sDrive = "" , $sDir = "" , $sFilename = "" , $sExtension = "" , $aPathSplit = ""
+						Local $iPath = $myInPath
+						Local $aPathSplit = _PATHSPLIT ( $iPath , $sDrive , $sDir , $sFilename , $sExtension )
+						$aPathSplitPea = $sDrive & $sDir & "SweetPeaSupport.dll"
+						$aPathSplitEAC = $sDrive & $sDir & "EAClient.dll"
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 15
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "registration*.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 15
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "registration*.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						Local $SDRIVE = "" , $SDIR = "" , $SFILENAME = "" , $SEXTENSION = "" , $APATHSPLIT = ""
-						Local $IPATH = $MYINPATH
-						Local $APATHSPLIT = _PATHSPLIT ( $IPATH , $SDRIVE , $SDIR , $SFILENAME , $SEXTENSION )
-						$APATHSPLITPEA = $SDRIVE & $SDIR & "SweetPeaSupport.dll"
-						$APATHSPLITEAC = $SDRIVE & $SDIR & "EAClient.dll"
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						Local $sDrive = "" , $sDir = "" , $sFilename = "" , $sExtension = "" , $aPathSplit = ""
+						Local $iPath = $myInPath
+						Local $aPathSplit = _PATHSPLIT ( $iPath , $sDrive , $sDir , $sFilename , $sExtension )
+						$aPathSplitPea = $sDrive & $sDir & "SweetPeaSupport.dll"
+						$aPathSplitEAC = $sDrive & $sDir & "EAClient.dll"
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 16
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "registration*.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 16
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "registration*.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						Local $SDRIVE = "" , $SDIR = "" , $SFILENAME = "" , $SEXTENSION = "" , $APATHSPLIT = ""
-						Local $IPATH = $MYINPATH
-						Local $APATHSPLIT = _PATHSPLIT ( $IPATH , $SDRIVE , $SDIR , $SFILENAME , $SEXTENSION )
-						$APATHSPLITPEA = $SDRIVE & $SDIR & "SweetPeaSupport.dll"
-						$APATHSPLITEAC = $SDRIVE & $SDIR & "EAClient.dll"
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						Local $sDrive = "" , $sDir = "" , $sFilename = "" , $sExtension = "" , $aPathSplit = ""
+						Local $iPath = $myInPath
+						Local $aPathSplit = _PATHSPLIT ( $iPath , $sDrive , $sDir , $sFilename , $sExtension )
+						$aPathSplitPea = $sDrive & $sDir & "SweetPeaSupport.dll"
+						$aPathSplitEAC = $sDrive & $sDir & "EAClient.dll"
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 17
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "Acrobat*.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 17
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "Acrobat*.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						Local $SDRIVE = "" , $SDIR = "" , $SFILENAME = "" , $SEXTENSION = "" , $APATHSPLIT = ""
-						Local $IPATH = $MYINPATH
-						Local $APATHSPLIT = _PATHSPLIT ( $IPATH , $SDRIVE , $SDIR , $SFILENAME , $SEXTENSION )
-						$APATHSPLITACRODIST = $SDRIVE & $SDIR & "acrodistdll.dll"
-						$APATHSPLITACROTRAY = $SDRIVE & $SDIR & "acrotray.exe"
-						$APATHSPLITFRONTEND = $SDRIVE & $SDIR & "amtlib.dll"
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITACRODIST , $APATHSPLITACROTRAY , $APATHSPLITFRONTEND )
+						Local $sDrive = "" , $sDir = "" , $sFilename = "" , $sExtension = "" , $aPathSplit = ""
+						Local $iPath = $myInPath
+						Local $aPathSplit = _PATHSPLIT ( $iPath , $sDrive , $sDir , $sFilename , $sExtension )
+						$aPathSplitACRODIST = $sDrive & $sDir & "acrodistdll.dll"
+						$aPathSplitACROTRAY = $sDrive & $sDir & "acrotray.exe"
+						$aPathSplitFrontend = $sDrive & $sDir & "amtlib.dll"
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitACRODIST , $aPathSplitACROTRAY , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 18
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "euclid-core-plugin*.pepper"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 18
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "euclid-core-plugin*.pepper"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						Local $SDRIVE = "" , $SDIR = "" , $SFILENAME = "" , $SEXTENSION = "" , $APATHSPLIT = ""
-						Local $IPATH = $MYINPATH
-						Local $APATHSPLIT = _PATHSPLIT ( $IPATH , $SDRIVE , $SDIR , $SFILENAME , $SEXTENSION )
-						$APATHSPLITPEA = $SDRIVE & $SDIR & "SweetPeaSupport.dll"
-						$APATHSPLITEAC = $SDRIVE & $SDIR & "EAClient.dll"
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						Local $sDrive = "" , $sDir = "" , $sFilename = "" , $sExtension = "" , $aPathSplit = ""
+						Local $iPath = $myInPath
+						Local $aPathSplit = _PATHSPLIT ( $iPath , $sDrive , $sDir , $sFilename , $sExtension )
+						$aPathSplitPea = $sDrive & $sDir & "SweetPeaSupport.dll"
+						$aPathSplitEAC = $sDrive & $sDir & "EAClient.dll"
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 19
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYDEFAULTSEARCHPATH = ""
-						$SMYDEFAULTSEARCHPATH = "C:\Program Files\WindowsApps"
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "XD*.exe"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
-						$SMYDEFAULTSEARCHPATH = ""
-						$SMYDEFAULTSEARCHPATH = "C:\Program Files\Adobe"
+				Case $myIButtonClicked = 19
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyDefaultSearchPath = ""
+						$sMyDefaultSearchPath = "C:\Program Files\WindowsApps"
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "XD*.exe"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
+						$sMyDefaultSearchPath = ""
+						$sMyDefaultSearchPath = "C:\Program Files\Adobe"
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 20
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYDEFAULTSEARCHPATH = ""
-						$SMYDEFAULTSEARCHPATH = "C:\Program Files\WindowsApps"
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "ngl-lib*.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
-						$SMYDEFAULTSEARCHPATH = ""
-						$SMYDEFAULTSEARCHPATH = "C:\Program Files\Adobe"
+				Case $myIButtonClicked = 20
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyDefaultSearchPath = ""
+						$sMyDefaultSearchPath = "C:\Program Files\WindowsApps"
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "ngl-lib*.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
+						$sMyDefaultSearchPath = ""
+						$sMyDefaultSearchPath = "C:\Program Files\Adobe"
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 21
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "amtlib.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 21
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "amtlib.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 22
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$MYDEFEXTENSIONFILENAME = "amtlib.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 22
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$myDefExtensionFilename = "amtlib.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
-				Case $MYIBUTTONCLICKED = 23
-					MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
-				Case $MYIBUTTONCLICKED = 24
-					If FileExists ( $MYINPATH ) = 0 Then
-						$SMYFILEOPENDIALOG1 = ""
-						$SMYDEFAULTSEARCHPATH = "C:\Program Files (x86)\Adobe\Adobe Creative Cloud\AppsPanel"
-						$MYDEFEXTENSIONFILENAME = "AppsPanelBL.dll"
-						$MYDEFEXTENSIONFILE = "(" & $MYDEFEXTENSIONFILENAME & ")"
-						MYFILEOPENDIALOG ( $SMYDEFAULTSEARCHPATH , $MYDEFEXTENSIONFILE , $MYDEFEXTENSIONFILENAME )
-						$MYINPATH = $SMYFILEOPENDIALOG1
+				Case $myIButtonClicked = 23
+					MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+				Case $myIButtonClicked = 24
+					If FileExists ( $myInPath ) = 0 Then
+						$sMyFileOpenDialog1 = ""
+						$sMyDefaultSearchPath = "C:\Program Files (x86)\Adobe\Adobe Creative Cloud\AppsPanel"
+						$myDefExtensionFilename = "AppsPanelBL.dll"
+						$myDefExtensionFile = "(" & $myDefExtensionFilename & ")"
+						MyFileOpenDialog ( $sMyDefaultSearchPath , $myDefExtensionFile , $myDefExtensionFilename )
+						$myInPath = $sMyFileOpenDialog1
 					EndIf
-					Local $IFILEEXISTS = FileExists ( $MYINPATH )
-					If $IFILEEXISTS = 0 Then
-						MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+					Local $iFileExists = FileExists ( $myInPath )
+					If $iFileExists = 0 Then
+						MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 					Else
-						Local $SPIDHANDLE = ProcessExists ( "Adobe Desktop Service.exe" )
-						$SPIDHANDLE = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE )
-						DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE , "int" , 1 )
-						$SPIDHANDLE = ProcessExists ( "Creative Cloud.exe" )
-						$SPIDHANDLE = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE )
-						DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE , "int" , 1 )
-						MYGLOBALPATTERNSEARCH ( $MYINPATH , $APATHSPLITPEA , $APATHSPLITEAC , $APATHSPLITFRONTEND )
+						Local $sPidHandle = ProcessExists ( "Adobe Desktop Service.exe" )
+						$sPidHandle = _WinAPI_OpenProcess ( 1 , 0 , $sPidHandle )
+						DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $sPidHandle , "int" , 1 )
+						$sPidHandle = ProcessExists ( "Creative Cloud.exe" )
+						$sPidHandle = _WinAPI_OpenProcess ( 1 , 0 , $sPidHandle )
+						DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $sPidHandle , "int" , 1 )
+						MyGlobalPatternSearch ( $myInPath , $aPathSplitPea , $aPathSplitEAC , $aPathSplitFrontend )
 					EndIf
 				EndSelect
 			Else
-				$MYIBUTTONCLICKED = 0
-				$MYINPATH = ""
+				$myIButtonClicked = 0
+				$myInPath = ""
 			EndIf
-			If $A_IDCHKSTATE [ $X ] = 1 Then
+			If $a_idChkState [ $x ] = 1 Then
 				WinWaitClose ( "GenPPP-2.7" , "" )
 			Else
 			EndIf
-			GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
+			GUICtrlSetState ( $a_idChk [ $x ] , 4 )
 		Next
 
 		; Re-enable controls
-		For $X = 0 To 23
-			GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_ENABLE )
+		For $x = 0 To 23
+			GUICtrlSetState ( $a_idChk [ $x ] , $GUI_ENABLE )
 		Next
-		GUICtrlSetData ( $MYOWNIDPROGRESS , 0 )
-		GUICtrlSetState ( $IDBUTTON_PATH2019 , $GUI_ENABLE )
-		GUICtrlSetState ( $IDBUTTON_PATH2020 , $GUI_ENABLE )
-		GUICtrlSetState ( $IDBUTTON_PATH2021 , $GUI_ENABLE )
-		GUICtrlSetState ( $IDBUTTON_PATH2022 , $GUI_ENABLE )
-		GUICtrlSetState ( $G_IDDESELECTALL , $GUI_ENABLE )
-		GUICtrlSetState ( $IDBTNCURE , $GUI_ENABLE )
+		GUICtrlSetData ( $myOwnIdProgress , 0 )
+		GUICtrlSetState ( $idButton_path2019 , $GUI_ENABLE )
+		GUICtrlSetState ( $idButton_path2020 , $GUI_ENABLE )
+		GUICtrlSetState ( $idButton_path2021 , $GUI_ENABLE )
+		GUICtrlSetState ( $idButton_path2022 , $GUI_ENABLE )
+		GUICtrlSetState ( $g_idDeselectAll , $GUI_ENABLE )
+		GUICtrlSetState ( $idBtnCure , $GUI_ENABLE )
 
 		; Reset options
-		$A_IDPATH = $A_IDPATHNULL
-		For $X = 0 To 23
-			GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
-			_ARRAYADD ( $A_IDPATH , "" )
+		$a_idPath = $a_idPathNull
+		For $x = 0 To 23
+			GUICtrlSetState ( $a_idChk [ $x ] , $GUI_UNCHECKED )
+			_ArrayAdd ( $a_idPath , "" )
 		Next
-		_DISABLEPROBLEMATICAPPS ( )
-		$MYIBUTTONCLICKED = 0
-		MEMOWRITE ( @CRLF & "---" & @CRLF & "Manual mode - custom path" & @CRLF & "---" )
+		_DisableProblematicApps ( )
+		$myIButtonClicked = 0
+		MemoWrite ( @CRLF & "---" & @CRLF & "Manual mode - custom path" & @CRLF & "---" )
 	EndSelect
 WEnd
 
 ; Initializes the GUI
-Func MAINGUI ( )
-	$MYHGUI = GUICreate ( "Adobe-GenP-2.7" , 540 , 600 , + 4294967295 , + 4294967295 , BitOR ( $WS_CAPTION , $WS_MINIMIZEBOX , $WS_EX_APPWINDOW , $DS_SETFOREGROUND ) )
-	Local $STYLE = _WINAPI_GETWINDOWLONG ( $MYHGUI , $GWL_STYLE )
-	If BitAND ( $STYLE , BitOR ( $WS_SIZEBOX , $WS_MAXIMIZEBOX ) ) Then
-		_WINAPI_SETWINDOWLONG ( $MYHGUI , $GWL_STYLE , BitXOR ( $STYLE , $WS_SIZEBOX ) )
+Func MainGui ( )
+	$myHGui = GUICreate ( "Adobe-GenP-2.7" , 540 , 600 , + 4294967295 , + 4294967295 , BitOR ( $WS_CAPTION , $WS_MINIMIZEBOX , $WS_EX_APPWINDOW , $DS_SETFOREGROUND ) )
+	Local $style = _WINAPI_GETWINDOWLONG ( $myHGui , $GWL_STYLE )
+	If BitAND ( $style , BitOR ( $WS_SIZEBOX , $WS_MAXIMIZEBOX ) ) Then
+		_WINAPI_SETWINDOWLONG ( $myHGui , $GWL_STYLE , BitXOR ( $style , $WS_SIZEBOX ) )
 	EndIf
 	GUISetState ( @SW_SHOW )
-	$Y = 80
-	For $X = 0 To 7
-		$A_IDCHK [ $X ] = GUICtrlCreateCheckbox ( "" , 50 , $Y + 4294967236 , 120 , 25 )
-		GUICtrlCreatePic ( ".\ICONS\" & $X & ".jpg" , 20 , $Y + 4294967238 , 24 , 24 )
-		GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
-		$Y += 40
+	$y = 80
+	For $x = 0 To 7
+		$a_idChk [ $x ] = GUICtrlCreateCheckbox ( "" , 50 , $y + 4294967236 , 120 , 25 )
+		GUICtrlCreatePic ( ".\ICONS\" & $x & ".jpg" , 20 , $y + 4294967238 , 24 , 24 )
+		GUICtrlSetState ( $a_idChk [ $x ] , 4 )
+		$y += 40
 	Next
-	$Y = 80
-	For $X = 8 To 15
-		$A_IDCHK [ $X ] = GUICtrlCreateCheckbox ( "" , 230 , $Y + 4294967236 , 120 , 25 )
-		GUICtrlCreatePic ( ".\ICONS\" & $X & ".jpg" , 200 , $Y + 4294967238 , 24 , 24 )
-		GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
-		$Y += 40
+	$y = 80
+	For $x = 8 To 15
+		$a_idChk [ $x ] = GUICtrlCreateCheckbox ( "" , 230 , $y + 4294967236 , 120 , 25 )
+		GUICtrlCreatePic ( ".\ICONS\" & $x & ".jpg" , 200 , $y + 4294967238 , 24 , 24 )
+		GUICtrlSetState ( $a_idChk [ $x ] , 4 )
+		$y += 40
 	Next
-	$Y = 80
-	For $X = 16 To 23
-		$A_IDCHK [ $X ] = GUICtrlCreateCheckbox ( "" , 410 , $Y + 4294967236 , 120 , 25 )
-		GUICtrlCreatePic ( ".\ICONS\" & $X & ".jpg" , 380 , $Y + 4294967238 , 24 , 24 )
-		GUICtrlSetState ( $A_IDCHK [ $X ] , 4 )
-		$Y += 40
+	$y = 80
+	For $x = 16 To 23
+		$a_idChk [ $x ] = GUICtrlCreateCheckbox ( "" , 410 , $y + 4294967236 , 120 , 25 )
+		GUICtrlCreatePic ( ".\ICONS\" & $x & ".jpg" , 380 , $y + 4294967238 , 24 , 24 )
+		GUICtrlSetState ( $a_idChk [ $x ] , 4 )
+		$y += 40
 	Next
-	_DISABLEPROBLEMATICAPPS ( )
-	$IDBUTTON_PATH2019 = GUICtrlCreateButton ( "CC2019" , 30 , 380 , 80 , 20 )
+	_DisableProblematicApps ( )
+	$idButton_path2019 = GUICtrlCreateButton ( "CC2019" , 30 , 380 , 80 , 20 )
 	GUICtrlSetTip ( + 4294967295 , "Let GenP find CC2019 Apps automatically in def location" )
-	$IDBUTTON_PATH2020 = GUICtrlCreateButton ( "CC2020" , 130 , 380 , 80 , 20 )
+	$idButton_path2020 = GUICtrlCreateButton ( "CC2020" , 130 , 380 , 80 , 20 )
 	GUICtrlSetTip ( + 4294967295 , "Let GenP find CC2020 Apps automatically in def location" )
-	$G_IDDESELECTALL = GUICtrlCreateButton ( "" , 230 , 380 , 80 , 20 )
-	GUICtrlSetData ( $G_IDDESELECTALL , "Reset Paths" )
+	$g_idDeselectAll = GUICtrlCreateButton ( "" , 230 , 380 , 80 , 20 )
+	GUICtrlSetData ( $g_idDeselectAll , "Reset Paths" )
 	GUICtrlSetTip ( + 4294967295 , "Reset ALL paths - Manual mode" )
-	$IDBUTTON_PATH2021 = GUICtrlCreateButton ( "CC2021" , 330 , 380 , 80 , 20 )
+	$idButton_path2021 = GUICtrlCreateButton ( "CC2021" , 330 , 380 , 80 , 20 )
 	GUICtrlSetTip ( + 4294967295 , "Let GenP find CC2021 Apps automatically in def location" )
-	$IDBUTTON_PATH2022 = GUICtrlCreateButton ( "CC2022" , 430 , 380 , 80 , 20 )
+	$idButton_path2022 = GUICtrlCreateButton ( "CC2022" , 430 , 380 , 80 , 20 )
 	GUICtrlSetTip ( + 4294967295 , "Let GenP find CC2022 Apps automatically in def location" )
-	$MYOWNIDPROGRESS = GUICtrlCreateProgress ( 170 , 350 , 200 , 10 , $PBS_SMOOTHREVERSE )
-	$G_IDMEMO = GUICtrlCreateEdit ( "" , 20 , 420 , 500 , 80 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
-	MEMOWRITE ( @CRLF & "---" & @CRLF & "Manual mode - custom path" & @CRLF & "---" )
-	$IDBTNCURE = GUICtrlCreateButton ( "" , 240 , 520 , 56 , 56 , $BS_BITMAP )
-	_GUICTRLBUTTON_SETIMAGE ( $IDBTNCURE , ".\ICONS\Cure.bmp" )
+	$myOwnIdProgress = GUICtrlCreateProgress ( 170 , 350 , 200 , 10 , $PBS_SMOOTHREVERSE )
+	$g_idMemo = GUICtrlCreateEdit ( "" , 20 , 420 , 500 , 80 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
+	MemoWrite ( @CRLF & "---" & @CRLF & "Manual mode - custom path" & @CRLF & "---" )
+	$idBtnCure = GUICtrlCreateButton ( "" , 240 , 520 , 56 , 56 , $BS_BITMAP )
+	_GuiCtrlButton_SetImage ( $idBtnCure , ".\ICONS\Cure.bmp" )
 	GUICtrlSetTip ( + 4294967295 , "Cure" )
-	GUICtrlSetData ( $A_IDCHK [ 0 ] , "1. After Effects" )
-	GUICtrlSetData ( $A_IDCHK [ 1 ] , "2. Animate" )
-	GUICtrlSetData ( $A_IDCHK [ 2 ] , "3. Audition" )
-	GUICtrlSetData ( $A_IDCHK [ 3 ] , "4. Bridge" )
-	GUICtrlSetData ( $A_IDCHK [ 4 ] , "5. Character Animator" )
-	GUICtrlSetData ( $A_IDCHK [ 5 ] , "6. Dreamweaver" )
-	GUICtrlSetData ( $A_IDCHK [ 6 ] , "7. Illustrator" )
-	GUICtrlSetData ( $A_IDCHK [ 7 ] , "8. InCopy" )
-	GUICtrlSetData ( $A_IDCHK [ 8 ] , "9. InDesign" )
-	GUICtrlSetData ( $A_IDCHK [ 9 ] , "10. Lightroom" )
-	GUICtrlSetData ( $A_IDCHK [ 10 ] , "11. Lightroom Classic" )
-	GUICtrlSetData ( $A_IDCHK [ 11 ] , "12. Media Encoder" )
-	GUICtrlSetData ( $A_IDCHK [ 12 ] , "13. Photoshop" )
-	GUICtrlSetData ( $A_IDCHK [ 13 ] , "14. Prelude" )
-	GUICtrlSetData ( $A_IDCHK [ 14 ] , "15. Premiere Pro" )
-	GUICtrlSetData ( $A_IDCHK [ 15 ] , "16. Premiere Rush" )
-	GUICtrlSetData ( $A_IDCHK [ 16 ] , "17. Acrobat" )
-	GUICtrlSetData ( $A_IDCHK [ 17 ] , "18. Dimension" )
-	GUICtrlSetData ( $A_IDCHK [ 18 ] , "19. XD" )
-	GUICtrlSetData ( $A_IDCHK [ 19 ] , "20. Fresco" )
-	GUICtrlSetData ( $A_IDCHK [ 20 ] , "21. Flash Builder" )
-	GUICtrlSetData ( $A_IDCHK [ 21 ] , "22. Speed Grade" )
-	GUICtrlSetData ( $A_IDCHK [ 22 ] , "-----------------------" )
-	GUICtrlSetState ( $A_IDCHK [ 22 ] , 160 )
-	GUICtrlSetData ( $A_IDCHK [ 23 ] , "24. Creative Cloud" )
+	GUICtrlSetData ( $a_idChk [ 0 ] , "1. After Effects" )
+	GUICtrlSetData ( $a_idChk [ 1 ] , "2. Animate" )
+	GUICtrlSetData ( $a_idChk [ 2 ] , "3. Audition" )
+	GUICtrlSetData ( $a_idChk [ 3 ] , "4. Bridge" )
+	GUICtrlSetData ( $a_idChk [ 4 ] , "5. Character Animator" )
+	GUICtrlSetData ( $a_idChk [ 5 ] , "6. Dreamweaver" )
+	GUICtrlSetData ( $a_idChk [ 6 ] , "7. Illustrator" )
+	GUICtrlSetData ( $a_idChk [ 7 ] , "8. InCopy" )
+	GUICtrlSetData ( $a_idChk [ 8 ] , "9. InDesign" )
+	GUICtrlSetData ( $a_idChk [ 9 ] , "10. Lightroom" )
+	GUICtrlSetData ( $a_idChk [ 10 ] , "11. Lightroom Classic" )
+	GUICtrlSetData ( $a_idChk [ 11 ] , "12. Media Encoder" )
+	GUICtrlSetData ( $a_idChk [ 12 ] , "13. Photoshop" )
+	GUICtrlSetData ( $a_idChk [ 13 ] , "14. Prelude" )
+	GUICtrlSetData ( $a_idChk [ 14 ] , "15. Premiere Pro" )
+	GUICtrlSetData ( $a_idChk [ 15 ] , "16. Premiere Rush" )
+	GUICtrlSetData ( $a_idChk [ 16 ] , "17. Acrobat" )
+	GUICtrlSetData ( $a_idChk [ 17 ] , "18. Dimension" )
+	GUICtrlSetData ( $a_idChk [ 18 ] , "19. XD" )
+	GUICtrlSetData ( $a_idChk [ 19 ] , "20. Fresco" )
+	GUICtrlSetData ( $a_idChk [ 20 ] , "21. Flash Builder" )
+	GUICtrlSetData ( $a_idChk [ 21 ] , "22. Speed Grade" )
+	GUICtrlSetData ( $a_idChk [ 22 ] , "-----------------------" )
+	GUICtrlSetState ( $a_idChk [ 22 ] , 160 )
+	GUICtrlSetData ( $a_idChk [ 23 ] , "24. Creative Cloud" )
 EndFunc
 
 ; Sets up paths to CC 2019 products
-Func FILLARRAYPATH2019 ( )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe After Effects CC 2019\Support Files\AfterFXLib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Animate CC 2019\Animate.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Audition CC 2019\auui.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Bridge CC 2019\bridge.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Character Animator CC 2019\Support Files\character animator.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Dreamweaver CC 2019\dreamweaver.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Illustrator CC 2019\Support Files\Contents\Windows\illustrator.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe InCopy CC 2019\public.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe InDesign CC 2019\public.dll" )
-	Local $SFILENAMETEMPLR = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe" ) )
-	$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe"
-	If FileExists ( $SFILENAMETEMPLR ) = 1 Then
-		$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe"
+Func FillArrayPath2019 ( )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe After Effects CC 2019\Support Files\AfterFXLib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Animate CC 2019\Animate.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Audition CC 2019\auui.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Bridge CC 2019\bridge.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Character Animator CC 2019\Support Files\character animator.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Dreamweaver CC 2019\dreamweaver.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Illustrator CC 2019\Support Files\Contents\Windows\illustrator.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe InCopy CC 2019\public.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe InDesign CC 2019\public.dll" )
+	Local $sFilenameTempLR = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe" ) )
+	$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe"
+	If FileExists ( $sFilenameTempLR ) = 1 Then
+		$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe"
 	Else
-		$SFILENAMETEMPLR = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom CC\lightroom.exe" ) )
-		$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroom.exe"
+		$sFilenameTempLR = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom CC\lightroom.exe" ) )
+		$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroom.exe"
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPLR )
-	Local $SFILENAMETEMPLRCC = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe" ) )
-	$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe"
-	If FileExists ( $SFILENAMETEMPLRCC ) = 1 Then
-		$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe"
+	_ArrayAdd ( $a_idPath , $sFilenameTempLR )
+	Local $sFilenameTempLRCC = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe" ) )
+	$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe"
+	If FileExists ( $sFilenameTempLRCC ) = 1 Then
+		$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe"
 	Else
-		$SFILENAMETEMPLRCC = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom Classic\lightroom.exe" ) )
-		$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic\lightroom.exe"
+		$sFilenameTempLRCC = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom Classic\lightroom.exe" ) )
+		$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic\lightroom.exe"
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPLRCC )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Media Encoder CC 2019\Adobe Media Encoder.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Photoshop CC 2019\photoshop.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Prelude CC 2019\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Premiere Pro CC 2019\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Premiere Rush CC\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Dimension CC\euclid-core-plugin.pepper" )
-	Local $SFILENAMETEMPXD = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.CC.XD*" ) )
-	Local $MYINPATHTEMPXD0 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPXD & "\XD*.exe"
-	Local $SFILENAMETEMPXD1 = FileFindNextFile ( FileFindFirstFile ( $MYINPATHTEMPXD0 ) )
-	If $SFILENAMETEMPXD1 = "" Then
-		_ARRAYADD ( $A_IDPATH , "" )
+	_ArrayAdd ( $a_idPath , $sFilenameTempLRCC )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Media Encoder CC 2019\Adobe Media Encoder.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Photoshop CC 2019\photoshop.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Prelude CC 2019\registration.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Premiere Pro CC 2019\registration.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Premiere Rush CC\registration.dll" )
+	_ArrayAdd ( $a_idPath , "C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Dimension CC\euclid-core-plugin.pepper" )
+	Local $sFilenameTempXD = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.CC.XD*" ) )
+	Local $myInPathTempXD0 = "C:\Program Files\WindowsApps\" & $sFilenameTempXD & "\XD*.exe"
+	Local $sFilenameTempXD1 = FileFindNextFile ( FileFindFirstFile ( $myInPathTempXD0 ) )
+	If $sFilenameTempXD1 = "" Then
+		_ArrayAdd ( $a_idPath , "" )
 	Else
-		Local $SFILENAMETEMPXD2 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPXD & "\" & $SFILENAMETEMPXD1
-		_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPXD2 )
+		Local $sFilenameTempXD2 = "C:\Program Files\WindowsApps\" & $sFilenameTempXD & "\" & $sFilenameTempXD1
+		_ArrayAdd ( $a_idPath , $sFilenameTempXD2 )
 	EndIf
-	Local $SFILENAMETEMPFR = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.Fresco*" ) )
-	Local $MYINPATHTEMPFR0 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPFR & "\ngl-lib.dll"
-	Local $SFILENAMETEMPFR1 = FileFindNextFile ( FileFindFirstFile ( $MYINPATHTEMPFR0 ) )
-	If $SFILENAMETEMPFR1 = "" Then
-		_ARRAYADD ( $A_IDPATH , "" )
+	Local $sFilenameTempFR = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.Fresco*" ) )
+	Local $myInPathTempFR0 = "C:\Program Files\WindowsApps\" & $sFilenameTempFR & "\ngl-lib.dll"
+	Local $sFilenameTempFR1 = FileFindNextFile ( FileFindFirstFile ( $myInPathTempFR0 ) )
+	If $sFilenameTempFR1 = "" Then
+		_ArrayAdd ( $a_idPath , "" )
 	Else
-		Local $SFILENAMETEMPFR2 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPFR & "\" & $SFILENAMETEMPFR1
-		_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPFR2 )
+		Local $sFilenameTempFR2 = "C:\Program Files\WindowsApps\" & $sFilenameTempFR & "\" & $sFilenameTempFR1
+		_ArrayAdd ( $a_idPath , $sFilenameTempFR2 )
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Flash Builder 4.7 (64 Bit)\eclipse\plugins\com.adobe.flexide.amt_4.7.0.349722\os\win32\x86_64\amtlib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe SpeedGrade CC 2015\amtlib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "" )
-	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Adobe\Adobe Creative Cloud\AppsPanel\AppsPanelBL.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Flash Builder 4.7 (64 Bit)\eclipse\plugins\com.adobe.flexide.amt_4.7.0.349722\os\win32\x86_64\amtlib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe SpeedGrade CC 2015\amtlib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "" )
+	_ArrayAdd ( $a_idPath , "C:\Program Files (x86)\Adobe\Adobe Creative Cloud\AppsPanel\AppsPanelBL.dll" )
 EndFunc
 ; Sets up paths to CC 2020 products
-Func FILLARRAYPATH2020 ( )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe After Effects 2020\Support Files\AfterFXLib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Animate 2020\Animate.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Audition 2020\auui.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Bridge 2020\bridge.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Character Animator 2020\Support Files\character animator.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Dreamweaver 2020\dreamweaver.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Illustrator 2020\Support Files\Contents\Windows\illustrator.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe InCopy 2020\public.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe InDesign 2020\public.dll" )
-	Local $SFILENAMETEMPLR = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe" ) )
-	$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe"
-	If FileExists ( $SFILENAMETEMPLR ) = 1 Then
-		$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe"
+Func FillArrayPath2020 ( )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe After Effects 2020\Support Files\AfterFXLib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Animate 2020\Animate.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Audition 2020\auui.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Bridge 2020\bridge.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Character Animator 2020\Support Files\character animator.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Dreamweaver 2020\dreamweaver.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Illustrator 2020\Support Files\Contents\Windows\illustrator.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe InCopy 2020\public.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe InDesign 2020\public.dll" )
+	Local $sFilenameTempLR = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe" ) )
+	$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe"
+	If FileExists ( $sFilenameTempLR ) = 1 Then
+		$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe"
 	Else
-		$SFILENAMETEMPLR = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom CC\lightroom.exe" ) )
-		$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroom.exe"
+		$sFilenameTempLR = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom CC\lightroom.exe" ) )
+		$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroom.exe"
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPLR )
-	Local $SFILENAMETEMPLRCC = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe" ) )
-	$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe"
-	If FileExists ( $SFILENAMETEMPLRCC ) = 1 Then
-		$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe"
+	_ArrayAdd ( $a_idPath , $sFilenameTempLR )
+	Local $sFilenameTempLRCC = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe" ) )
+	$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe"
+	If FileExists ( $sFilenameTempLRCC ) = 1 Then
+		$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe"
 	Else
-		$SFILENAMETEMPLRCC = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom Classic\lightroom.exe" ) )
-		$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic\lightroom.exe"
+		$sFilenameTempLRCC = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom Classic\lightroom.exe" ) )
+		$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic\lightroom.exe"
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPLRCC )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Media Encoder 2020\Adobe Media Encoder.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Photoshop 2020\photoshop.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Prelude 2020\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Premiere Pro 2020\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Premiere Rush\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Dimension\euclid-core-plugin.pepper" )
-	Local $SFILENAMETEMPXD = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.CC.XD*" ) )
-	Local $MYINPATHTEMPXD0 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPXD & "\XD*.exe"
-	Local $SFILENAMETEMPXD1 = FileFindNextFile ( FileFindFirstFile ( $MYINPATHTEMPXD0 ) )
-	If $SFILENAMETEMPXD1 = "" Then
-		_ARRAYADD ( $A_IDPATH , "" )
+	_ArrayAdd ( $a_idPath , $sFilenameTempLRCC )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Media Encoder 2020\Adobe Media Encoder.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Photoshop 2020\photoshop.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Prelude 2020\registration.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Premiere Pro 2020\registration.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Premiere Rush\registration.dll" )
+	_ArrayAdd ( $a_idPath , "C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Dimension\euclid-core-plugin.pepper" )
+	Local $sFilenameTempXD = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.CC.XD*" ) )
+	Local $myInPathTempXD0 = "C:\Program Files\WindowsApps\" & $sFilenameTempXD & "\XD*.exe"
+	Local $sFilenameTempXD1 = FileFindNextFile ( FileFindFirstFile ( $myInPathTempXD0 ) )
+	If $sFilenameTempXD1 = "" Then
+		_ArrayAdd ( $a_idPath , "" )
 	Else
-		Local $SFILENAMETEMPXD2 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPXD & "\" & $SFILENAMETEMPXD1
-		_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPXD2 )
+		Local $sFilenameTempXD2 = "C:\Program Files\WindowsApps\" & $sFilenameTempXD & "\" & $sFilenameTempXD1
+		_ArrayAdd ( $a_idPath , $sFilenameTempXD2 )
 	EndIf
-	Local $SFILENAMETEMPFR = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.Fresco*" ) )
-	Local $MYINPATHTEMPFR0 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPFR & "\ngl-lib.dll"
-	Local $SFILENAMETEMPFR1 = FileFindNextFile ( FileFindFirstFile ( $MYINPATHTEMPFR0 ) )
-	If $SFILENAMETEMPFR1 = "" Then
-		_ARRAYADD ( $A_IDPATH , "" )
+	Local $sFilenameTempFR = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.Fresco*" ) )
+	Local $myInPathTempFR0 = "C:\Program Files\WindowsApps\" & $sFilenameTempFR & "\ngl-lib.dll"
+	Local $sFilenameTempFR1 = FileFindNextFile ( FileFindFirstFile ( $myInPathTempFR0 ) )
+	If $sFilenameTempFR1 = "" Then
+		_ArrayAdd ( $a_idPath , "" )
 	Else
-		Local $SFILENAMETEMPFR2 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPFR & "\" & $SFILENAMETEMPFR1
-		_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPFR2 )
+		Local $sFilenameTempFR2 = "C:\Program Files\WindowsApps\" & $sFilenameTempFR & "\" & $sFilenameTempFR1
+		_ArrayAdd ( $a_idPath , $sFilenameTempFR2 )
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Flash Builder 4.7 (64 Bit)\eclipse\plugins\com.adobe.flexide.amt_4.7.0.349722\os\win32\x86_64\amtlib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe SpeedGrade CC 2015\amtlib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "" )
-	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AppsPanel\AppsPanelBL.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Flash Builder 4.7 (64 Bit)\eclipse\plugins\com.adobe.flexide.amt_4.7.0.349722\os\win32\x86_64\amtlib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe SpeedGrade CC 2015\amtlib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "" )
+	_ArrayAdd ( $a_idPath , "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AppsPanel\AppsPanelBL.dll" )
 EndFunc
 ; Sets up paths to CC 2021 products
-Func FILLARRAYPATH2021 ( )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe After Effects 2021\Support Files\AfterFXLib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Animate 2021\Animate.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Audition 2021\auui.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Bridge 2021\bridge.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Character Animator 2021\Support Files\character animator.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Dreamweaver 2021\dreamweaver.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Illustrator 2021\Support Files\Contents\Windows\illustrator.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe InCopy 2021\public.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe InDesign 2021\public.dll" )
-	Local $SFILENAMETEMPLR = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe" ) )
-	$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe"
-	If FileExists ( $SFILENAMETEMPLR ) = 1 Then
-		$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe"
+Func FillArrayPath2021 ( )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe After Effects 2021\Support Files\AfterFXLib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Animate 2021\Animate.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Audition 2021\auui.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Bridge 2021\bridge.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Character Animator 2021\Support Files\character animator.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Dreamweaver 2021\dreamweaver.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Illustrator 2021\Support Files\Contents\Windows\illustrator.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe InCopy 2021\public.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe InDesign 2021\public.dll" )
+	Local $sFilenameTempLR = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe" ) )
+	$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe"
+	If FileExists ( $sFilenameTempLR ) = 1 Then
+		$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe"
 	Else
-		$SFILENAMETEMPLR = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom CC\lightroom.exe" ) )
-		$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroom.exe"
+		$sFilenameTempLR = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom CC\lightroom.exe" ) )
+		$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroom.exe"
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPLR )
-	Local $SFILENAMETEMPLRCC = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe" ) )
-	$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe"
-	If FileExists ( $SFILENAMETEMPLRCC ) = 1 Then
-		$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe"
+	_ArrayAdd ( $a_idPath , $sFilenameTempLR )
+	Local $sFilenameTempLRCC = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe" ) )
+	$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe"
+	If FileExists ( $sFilenameTempLRCC ) = 1 Then
+		$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe"
 	Else
-		$SFILENAMETEMPLRCC = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom Classic\lightroom.exe" ) )
-		$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic\lightroom.exe"
+		$sFilenameTempLRCC = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom Classic\lightroom.exe" ) )
+		$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic\lightroom.exe"
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPLRCC )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Media Encoder 2021\Adobe Media Encoder.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Photoshop 2021\photoshop.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Prelude 2021\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Premiere Pro 2021\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Premiere Rush\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Dimension\euclid-core-plugin.pepper" )
-	Local $SFILENAMETEMPXD = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.CC.XD*" ) )
-	Local $MYINPATHTEMPXD0 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPXD & "\XD*.exe"
-	Local $SFILENAMETEMPXD1 = FileFindNextFile ( FileFindFirstFile ( $MYINPATHTEMPXD0 ) )
-	If $SFILENAMETEMPXD1 = "" Then
-		_ARRAYADD ( $A_IDPATH , "" )
+	_ArrayAdd ( $a_idPath , $sFilenameTempLRCC )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Media Encoder 2021\Adobe Media Encoder.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Photoshop 2021\photoshop.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Prelude 2021\registration.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Premiere Pro 2021\registration.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Premiere Rush\registration.dll" )
+	_ArrayAdd ( $a_idPath , "C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Dimension\euclid-core-plugin.pepper" )
+	Local $sFilenameTempXD = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.CC.XD*" ) )
+	Local $myInPathTempXD0 = "C:\Program Files\WindowsApps\" & $sFilenameTempXD & "\XD*.exe"
+	Local $sFilenameTempXD1 = FileFindNextFile ( FileFindFirstFile ( $myInPathTempXD0 ) )
+	If $sFilenameTempXD1 = "" Then
+		_ArrayAdd ( $a_idPath , "" )
 	Else
-		Local $SFILENAMETEMPXD2 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPXD & "\" & $SFILENAMETEMPXD1
-		_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPXD2 )
+		Local $sFilenameTempXD2 = "C:\Program Files\WindowsApps\" & $sFilenameTempXD & "\" & $sFilenameTempXD1
+		_ArrayAdd ( $a_idPath , $sFilenameTempXD2 )
 	EndIf
-	Local $SFILENAMETEMPFR = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.Fresco*" ) )
-	Local $MYINPATHTEMPFR0 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPFR & "\ngl-lib.dll"
-	Local $SFILENAMETEMPFR1 = FileFindNextFile ( FileFindFirstFile ( $MYINPATHTEMPFR0 ) )
-	If $SFILENAMETEMPFR1 = "" Then
-		_ARRAYADD ( $A_IDPATH , "" )
+	Local $sFilenameTempFR = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.Fresco*" ) )
+	Local $myInPathTempFR0 = "C:\Program Files\WindowsApps\" & $sFilenameTempFR & "\ngl-lib.dll"
+	Local $sFilenameTempFR1 = FileFindNextFile ( FileFindFirstFile ( $myInPathTempFR0 ) )
+	If $sFilenameTempFR1 = "" Then
+		_ArrayAdd ( $a_idPath , "" )
 	Else
-		Local $SFILENAMETEMPFR2 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPFR & "\" & $SFILENAMETEMPFR1
-		_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPFR2 )
+		Local $sFilenameTempFR2 = "C:\Program Files\WindowsApps\" & $sFilenameTempFR & "\" & $sFilenameTempFR1
+		_ArrayAdd ( $a_idPath , $sFilenameTempFR2 )
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Flash Builder 4.7 (64 Bit)\eclipse\plugins\com.adobe.flexide.amt_4.7.0.349722\os\win32\x86_64\amtlib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe SpeedGrade CC 2015\amtlib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "" )
-	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AppsPanel\AppsPanelBL.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Flash Builder 4.7 (64 Bit)\eclipse\plugins\com.adobe.flexide.amt_4.7.0.349722\os\win32\x86_64\amtlib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe SpeedGrade CC 2015\amtlib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "" )
+	_ArrayAdd ( $a_idPath , "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AppsPanel\AppsPanelBL.dll" )
 EndFunc
 ; Sets up paths to CC 2022 products
-Func FILLARRAYPATH2022 ( )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe After Effects 2022\Support Files\AfterFXLib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Animate 2022\Animate.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Audition 2022\auui.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Bridge 2022\bridge.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Character Animator 2022\Support Files\character animator.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Dreamweaver 2022\dreamweaver.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Illustrator 2022\Support Files\Contents\Windows\illustrator.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe InCopy 2022\public.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe InDesign 2022\public.dll" )
-	Local $SFILENAMETEMPLR = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe" ) )
-	$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe"
-	If FileExists ( $SFILENAMETEMPLR ) = 1 Then
-		$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroomcc.exe"
+Func FillArrayPath2022 ( )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe After Effects 2022\Support Files\AfterFXLib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Animate 2022\Animate.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Audition 2022\auui.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Bridge 2022\bridge.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Character Animator 2022\Support Files\character animator.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Dreamweaver 2022\dreamweaver.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Illustrator 2022\Support Files\Contents\Windows\illustrator.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe InCopy 2022\public.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe InDesign 2022\public.dll" )
+	Local $sFilenameTempLR = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe" ) )
+	$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe"
+	If FileExists ( $sFilenameTempLR ) = 1 Then
+		$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroomcc.exe"
 	Else
-		$SFILENAMETEMPLR = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom CC\lightroom.exe" ) )
-		$SFILENAMETEMPLR = $MYDEFPATH & "\Adobe Lightroom CC\lightroom.exe"
+		$sFilenameTempLR = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom CC\lightroom.exe" ) )
+		$sFilenameTempLR = $myDefPath & "\Adobe Lightroom CC\lightroom.exe"
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPLR )
-	Local $SFILENAMETEMPLRCC = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe" ) )
-	$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe"
-	If FileExists ( $SFILENAMETEMPLRCC ) = 1 Then
-		$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic CC\lightroom.exe"
+	_ArrayAdd ( $a_idPath , $sFilenameTempLR )
+	Local $sFilenameTempLRCC = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe" ) )
+	$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe"
+	If FileExists ( $sFilenameTempLRCC ) = 1 Then
+		$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic CC\lightroom.exe"
 	Else
-		$SFILENAMETEMPLRCC = FileFindNextFile ( FileFindFirstFile ( $MYDEFPATH & "\Adobe Lightroom Classic\lightroom.exe" ) )
-		$SFILENAMETEMPLRCC = $MYDEFPATH & "\Adobe Lightroom Classic\lightroom.exe"
+		$sFilenameTempLRCC = FileFindNextFile ( FileFindFirstFile ( $myDefPath & "\Adobe Lightroom Classic\lightroom.exe" ) )
+		$sFilenameTempLRCC = $myDefPath & "\Adobe Lightroom Classic\lightroom.exe"
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPLRCC )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Media Encoder 2022\Adobe Media Encoder.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Photoshop 2022\photoshop.exe" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Prelude 2022\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Premiere Pro 2022\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Premiere Rush\registration.dll" )
-	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Dimension\euclid-core-plugin.pepper" )
-	Local $SFILENAMETEMPXD = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.CC.XD*" ) )
-	Local $MYINPATHTEMPXD0 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPXD & "\XD*.exe"
-	Local $SFILENAMETEMPXD1 = FileFindNextFile ( FileFindFirstFile ( $MYINPATHTEMPXD0 ) )
-	If $SFILENAMETEMPXD1 = "" Then
-		_ARRAYADD ( $A_IDPATH , "" )
+	_ArrayAdd ( $a_idPath , $sFilenameTempLRCC )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Media Encoder 2022\Adobe Media Encoder.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Photoshop 2022\photoshop.exe" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Prelude 2022\registration.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Premiere Pro 2022\registration.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Premiere Rush\registration.dll" )
+	_ArrayAdd ( $a_idPath , "C:\Program Files (x86)\Adobe\Acrobat DC\Acrobat\Acrobat.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Dimension\euclid-core-plugin.pepper" )
+	Local $sFilenameTempXD = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.CC.XD*" ) )
+	Local $myInPathTempXD0 = "C:\Program Files\WindowsApps\" & $sFilenameTempXD & "\XD*.exe"
+	Local $sFilenameTempXD1 = FileFindNextFile ( FileFindFirstFile ( $myInPathTempXD0 ) )
+	If $sFilenameTempXD1 = "" Then
+		_ArrayAdd ( $a_idPath , "" )
 	Else
-		Local $SFILENAMETEMPXD2 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPXD & "\" & $SFILENAMETEMPXD1
-		_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPXD2 )
+		Local $sFilenameTempXD2 = "C:\Program Files\WindowsApps\" & $sFilenameTempXD & "\" & $sFilenameTempXD1
+		_ArrayAdd ( $a_idPath , $sFilenameTempXD2 )
 	EndIf
-	Local $SFILENAMETEMPFR = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.Fresco*" ) )
-	Local $MYINPATHTEMPFR0 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPFR & "\ngl-lib.dll"
-	Local $SFILENAMETEMPFR1 = FileFindNextFile ( FileFindFirstFile ( $MYINPATHTEMPFR0 ) )
-	If $SFILENAMETEMPFR1 = "" Then
-		_ARRAYADD ( $A_IDPATH , "" )
+	Local $sFilenameTempFR = FileFindNextFile ( FileFindFirstFile ( "C:\Program Files\WindowsApps\Adobe.Fresco*" ) )
+	Local $myInPathTempFR0 = "C:\Program Files\WindowsApps\" & $sFilenameTempFR & "\ngl-lib.dll"
+	Local $sFilenameTempFR1 = FileFindNextFile ( FileFindFirstFile ( $myInPathTempFR0 ) )
+	If $sFilenameTempFR1 = "" Then
+		_ArrayAdd ( $a_idPath , "" )
 	Else
-		Local $SFILENAMETEMPFR2 = "C:\Program Files\WindowsApps\" & $SFILENAMETEMPFR & "\" & $SFILENAMETEMPFR1
-		_ARRAYADD ( $A_IDPATH , $SFILENAMETEMPFR2 )
+		Local $sFilenameTempFR2 = "C:\Program Files\WindowsApps\" & $sFilenameTempFR & "\" & $sFilenameTempFR1
+		_ArrayAdd ( $a_idPath , $sFilenameTempFR2 )
 	EndIf
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe Flash Builder 4.7 (64 Bit)\eclipse\plugins\com.adobe.flexide.amt_4.7.0.349722\os\win32\x86_64\amtlib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "\Adobe SpeedGrade CC 2015\amtlib.dll" )
-	_ARRAYADD ( $A_IDPATH , $MYDEFPATH & "" )
-	_ARRAYADD ( $A_IDPATH , "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AppsPanel\AppsPanelBL.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe Flash Builder 4.7 (64 Bit)\eclipse\plugins\com.adobe.flexide.amt_4.7.0.349722\os\win32\x86_64\amtlib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "\Adobe SpeedGrade CC 2015\amtlib.dll" )
+	_ArrayAdd ( $a_idPath , $myDefPath & "" )
+	_ArrayAdd ( $a_idPath , "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AppsPanel\AppsPanelBL.dll" )
 EndFunc
 
 ; Checks for the Adobe products at their paths
 ; Sets checkbox if it exists
-Func CHECKPATHES ( )
-	For $X = 0 To 23
-		If FileExists ( $A_IDPATH [ $X ] ) Then
-			GUICtrlSetState ( $A_IDCHK [ $X ] , 1 )
+Func CheckPathes ( )
+	For $x = 0 To 23
+		If FileExists ( $a_idPath [ $x ] ) Then
+			GUICtrlSetState ( $a_idChk [ $x ] , 1 )
 		EndIf
 	Next
 EndFunc
 
 ; Resets checkboxes and sets up paths to CC 2019 products
-Func SELECTCUSTOMFOLDER2019 ( )
-	For $X = 0 To 23
-		GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
+Func SelectCustomFolder2019 ( )
+	For $x = 0 To 23
+		GUICtrlSetState ( $a_idChk [ $x ] , $GUI_UNCHECKED )
 	Next
-	$A_IDPATH = $A_IDPATHNULL
-	FILLARRAYPATH2019 ( )
-	CHECKPATHES ( )
+	$a_idPath = $a_idPathNull
+	FillArrayPath2019 ( )
+	CheckPathes ( )
 EndFunc
 ; Resets checkboxes and sets up paths to CC 2020 products
-Func SELECTCUSTOMFOLDER2020 ( )
-	For $X = 0 To 23
-		GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
+Func SelectCustomFolder2020 ( )
+	For $x = 0 To 23
+		GUICtrlSetState ( $a_idChk [ $x ] , $GUI_UNCHECKED )
 	Next
-	$A_IDPATH = $A_IDPATHNULL
-	FILLARRAYPATH2020 ( )
-	CHECKPATHES ( )
+	$a_idPath = $a_idPathNull
+	FillArrayPath2020 ( )
+	CheckPathes ( )
 EndFunc
 ; Resets checkboxes and sets up paths to CC 2021 products
-Func SELECTCUSTOMFOLDER2021 ( )
-	For $X = 0 To 23
-		GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
+Func SelectCustomFolder2021 ( )
+	For $x = 0 To 23
+		GUICtrlSetState ( $a_idChk [ $x ] , $GUI_UNCHECKED )
 	Next
-	$A_IDPATH = $A_IDPATHNULL
-	FILLARRAYPATH2021 ( )
-	CHECKPATHES ( )
+	$a_idPath = $a_idPathNull
+	FillArrayPath2021 ( )
+	CheckPathes ( )
 EndFunc
 ; Resets checkboxes and sets up paths to CC 2022 products
-Func SELECTCUSTOMFOLDER2022 ( )
-	For $X = 0 To 23
-		GUICtrlSetState ( $A_IDCHK [ $X ] , $GUI_UNCHECKED )
+Func SelectCustomFolder2022 ( )
+	For $x = 0 To 23
+		GUICtrlSetState ( $a_idChk [ $x ] , $GUI_UNCHECKED )
 	Next
-	$A_IDPATH = $A_IDPATHNULL
-	FILLARRAYPATH2022 ( )
-	CHECKPATHES ( )
+	$a_idPath = $a_idPathNull
+	FillArrayPath2022 ( )
+	CheckPathes ( )
 EndFunc
 
 ; Opens file dialog
-Func MYFILEOPENDIALOG ( $MYDEFAULTPATH , $MYDEFAULTEXT , $MYDEFAULTNAME )
-	Local Const $SMESSAGE = "Select file to patch."
-	Local $SMYFILEOPENDIALOG = FileOpenDialog ( $SMESSAGE , $MYDEFAULTPATH & "\" , $MYDEFAULTEXT , $FD_FILEMUSTEXIST , $MYDEFAULTNAME , $MYHGUI )
+Func MyFileOpenDialog ( $myDefaultPath , $myDefaultText , $myDefaultName )
+	Local Const $sMessage = "Select file to patch."
+	Local $sMyFileOpenDialog = FileOpenDialog ( $sMessage , $myDefaultPath & "\" , $myDefaultText , $FD_FILEMUSTEXIST , $myDefaultName , $myHGui )
 	If @error Then
 		FileChangeDir ( @ScriptDir )
 	Else
 		FileChangeDir ( @WorkingDir )
-		$SMYFILEOPENDIALOG = StringReplace ( $SMYFILEOPENDIALOG , "|" , @CRLF )
-		$SMYFILEOPENDIALOG1 = $SMYFILEOPENDIALOG
-		$SMYDEFAULTSEARCHPATH = @WorkingDir
+		$sMyFileOpenDialog = StringReplace ( $sMyFileOpenDialog , "|" , @CRLF )
+		$sMyFileOpenDialog1 = $sMyFileOpenDialog
+		$sMyDefaultSearchPath = @WorkingDir
 	EndIf
 EndFunc
 
 ; Sets the memo message
-Func MEMOWRITE ( $SMESSAGE )
-	GUICtrlSetData ( $G_IDMEMO , $SMESSAGE )
+Func MemoWrite ( $sMessage )
+	GUICtrlSetData ( $g_idMemo , $sMessage )
 EndFunc
 
 ; Starts GenPPP-2.7.exe to perform patching of given file
-Func MYGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $MYFILETOPARSSWEATPEA , $MYFILETOPARSEEACLIENT , $MYFILETOPARSEFRONTEND )
-	MEMOWRITE ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Preparing to Analyze" & @CRLF & "---" & @CRLF & "*" )
+Func MyGlobalPatternSearch ( $myFileToParse , $myFileToParseSweetPea , $myFileToParseEAClient , $myFileToParseFrontend )
+	MemoWrite ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Preparing to Analyze" & @CRLF & "---" & @CRLF & "*" )
 
-	Local $SPIDHANDLE = ProcessExists ( "GenPPP-2.7.exe" )
-	ProcessClose ( $SPIDHANDLE )
-	_PROCESSCLOSEEX ( $SPIDHANDLE )
-	Local $SPIDHANDLE = ProcessExists ( "GenPPP-2.7.exe" )
-	ProcessClose ( $SPIDHANDLE )
-	_PROCESSCLOSEEX ( $SPIDHANDLE )
-	$SPIDHANDLE = _WINAPI_OPENPROCESS ( 1 , 0 , $SPIDHANDLE )
-	DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $SPIDHANDLE , "int" , 1 )
+	Local $sPidHandle = ProcessExists ( "GenPPP-2.7.exe" )
+	ProcessClose ( $sPidHandle )
+	_ProcessCloseEx ( $sPidHandle )
+	Local $sPidHandle = ProcessExists ( "GenPPP-2.7.exe" )
+	ProcessClose ( $sPidHandle )
+	_ProcessCloseEx ( $sPidHandle )
+	$sPidHandle = _WinAPI_OpenProcess ( 1 , 0 , $sPidHandle )
+	DllCall ( "kernel32.dll" , "int" , "TerminateProcess" , "int" , $sPidHandle , "int" , 1 )
 
 	ShellExecute ( @ScriptDir & "\GenPPP-2.7.exe" )
-	Local $MYRUNTIMEOUT = WinWait ( "GenPPP-2.7" , "" , 5 )
-	If $MYRUNTIMEOUT = 0 Then
-		MEMOWRITE ( @CRLF & "---" & @CRLF & "GenPPP-2.7.exe failed to start" & @CRLF & "---" )
+	Local $myRunTimeout = WinWait ( "GenPPP-2.7" , "" , 5 )
+	If $myRunTimeout = 0 Then
+		MemoWrite ( @CRLF & "---" & @CRLF & "GenPPP-2.7.exe failed to start" & @CRLF & "---" )
 		Sleep ( 3000 )
-		$APATHSPLITPEA = ""
-		$APATHSPLITEAC = ""
-		$APATHSPLITFRONTEND = ""
-		MEMOWRITE ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+		$aPathSplitPea = ""
+		$aPathSplitEAC = ""
+		$aPathSplitFrontend = ""
+		MemoWrite ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 	Else
-		MEMOWRITE ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Preparing to Analyze" & @CRLF & "---" & @CRLF & "***" )
+		MemoWrite ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Preparing to Analyze" & @CRLF & "---" & @CRLF & "***" )
 		Sleep ( 100 )
 
 		; Send data over to GenPPP-2.7
-		$HWNDCHILDWINDOW = WinGetHandle ( "GenPPP-2.7" )
-		ControlSetText ( $HWNDCHILDWINDOW , "" , "Edit1" , $MYFILETOPARSE )
-		ControlSetText ( $HWNDCHILDWINDOW , "" , "Edit2" , $MYFILETOPARSSWEATPEA )
-		ControlSetText ( $HWNDCHILDWINDOW , "" , "Edit3" , $MYFILETOPARSEEACLIENT )
-		ControlSetText ( $HWNDCHILDWINDOW , "" , "Edit4" , $MYFILETOPARSEFRONTEND )
-		ControlSetText ( $HWNDCHILDWINDOW , "" , "Edit5" , $MYIBUTTONCLICKED )
-		ControlSetText ( $HWNDCHILDWINDOW , "" , "Edit6" , 1 )
+		$hWndChildWindow = WinGetHandle ( "GenPPP-2.7" )
+		ControlSetText ( $hWndChildWindow , "" , "Edit1" , $myFileToParse )
+		ControlSetText ( $hWndChildWindow , "" , "Edit2" , $myFileToParseSweetPea )
+		ControlSetText ( $hWndChildWindow , "" , "Edit3" , $myFileToParseEAClient )
+		ControlSetText ( $hWndChildWindow , "" , "Edit4" , $myFileToParseFrontend )
+		ControlSetText ( $hWndChildWindow , "" , "Edit5" , $myIButtonClicked )
+		ControlSetText ( $hWndChildWindow , "" , "Edit6" , 1 )
 	EndIf
-	$MYINPATH = ""
+	$myInPath = ""
 EndFunc
 
 ; Closes process with taskkill
-Func _PROCESSCLOSEEX ( $SPIDHANDLE )
-	If IsString ( $SPIDHANDLE ) Then $SPIDHANDLE = ProcessExists ( $SPIDHANDLE )
-	If Not $SPIDHANDLE Then Return SetError ( 1 , 0 , 0 )
-	Return Run ( @ComSpec & " /c taskkill /F /PID " & $SPIDHANDLE & " /T" , @SystemDir , @SW_HIDE )
+Func _ProcessCloseEx ( $sPidHandle )
+	If IsString ( $sPidHandle ) Then $sPidHandle = ProcessExists ( $sPidHandle )
+	If Not $sPidHandle Then Return SetError ( 1 , 0 , 0 )
+	Return Run ( @ComSpec & " /c taskkill /F /PID " & $sPidHandle & " /T" , @SystemDir , @SW_HIDE )
 EndFunc
 
 ; Deselects "Flash Builder" and "Speed Grade"
-Func _DISABLEPROBLEMATICAPPS ( )
-	GUICtrlSetState ( $A_IDCHK [ 20 ] , $GUI_UNCHECKED + $GUI_DISABLE )
-	GUICtrlSetState ( $A_IDCHK [ 21 ] , $GUI_UNCHECKED + $GUI_DISABLE )
+Func _DisableProblematicApps ( )
+	GUICtrlSetState ( $a_idChk [ 20 ] , $GUI_UNCHECKED + $GUI_DISABLE )
+	GUICtrlSetState ( $a_idChk [ 21 ] , $GUI_UNCHECKED + $GUI_DISABLE )
 EndFunc
