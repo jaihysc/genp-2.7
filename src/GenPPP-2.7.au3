@@ -67,152 +67,152 @@
 ; Replacement is thus
 ;     31C075AAAAAAAAAA7500B800000000E9
 ;           ~~~~~~~~~~ Capturing group remains
-Global $IPATTERNPROFILE_EXPIREDS = "85C075(.{8,10})750AB892010000E9"
-Global $IPATTERNPROFILE_EXPIREDR [ 2 ] = [ "31C075" , "7500B800000000E9" ]
+Global $iPatternPROFILE_EXPIREDS = "85C075(.{8,10})750AB892010000E9"
+Global $iPatternPROFILE_EXPIREDR [ 2 ] = [ "31C075" , "7500B800000000E9" ]
 
-Global $IPATTERNVALIDATELICENSES = "83F80175(.{2})BA94010000"
-Global $IPATTERNVALIDATELICENSER [ 2 ] = [ "83F80175" , "BA00000000" ]
+Global $iPatternValidateLicenseS = "83F80175(.{2})BA94010000"
+Global $iPatternValidateLicenseR [ 2 ] = [ "83F80175" , "BA00000000" ]
 
-Global $IPATTERNVALIDATELICENSE1S = "83F8040F95C281C293010000"
-Global $IPATTERNVALIDATELICENSE1R [ 1 ] = [ "83F8040F95C2BA0000000090" ]
+Global $iPatternValidateLicense1S = "83F8040F95C281C293010000"
+Global $iPatternValidateLicense1R [ 1 ] = [ "83F8040F95C2BA0000000090" ]
 
-Global $IPATTERNVALIDATELICENSE2S = "83F8040F95C181C193010000"
-Global $IPATTERNVALIDATELICENSE2R [ 1 ] = [ "83F8040F95C1B90000000090" ]
+Global $iPatternValidateLicense2S = "83F8040F95C181C193010000"
+Global $iPatternValidateLicense2R [ 1 ] = [ "83F8040F95C1B90000000090" ]
 
-Global $IPATTERNVALIDATELICENSE3S = "83BF(.{8})0175(.{2})C7(.{6})94010000"
-Global $IPATTERNVALIDATELICENSE3R [ 4 ] = [ "83BF" , "0175" , "C7" , "00000000" ]
+Global $iPatternValidateLicense3S = "83BF(.{8})0175(.{2})C7(.{6})94010000"
+Global $iPatternValidateLicense3R [ 4 ] = [ "83BF" , "0175" , "C7" , "00000000" ]
 
-Global $IPATTERNCMPEAX6S = "85C074(.{2})83F80674(.{4})83(.{4,6})007D"
-Global $IPATTERNCMPEAX6R [ 4 ] = [ "FFC074" , "90909074" , "83" , "00EB" ]
+Global $iPatternCmpEax6S = "85C074(.{2})83F80674(.{4})83(.{4,6})007D"
+Global $iPatternCmpEax6R [ 4 ] = [ "FFC074" , "90909074" , "83" , "00EB" ]
 
-Global $IPATTERNPROCESSV2PROFILE1AS = "00007504488D4850"
-Global $IPATTERNPROCESSV2PROFILE1AR [ 1 ] = [ "00007500488D4850" ]
+Global $iPatternProcessV2Profile1aS = "00007504488D4850"
+Global $iPatternProcessV2Profile1aR [ 1 ] = [ "00007500488D4850" ]
 
-Global $IPATTERNPROCESSV2PROFILE1A1S = "00007504488D5050"
-Global $IPATTERNPROCESSV2PROFILE1A1R [ 1 ] = [ "00007500488D5050" ]
+Global $iPatternProcessV2Profile1a1S = "00007504488D5050"
+Global $iPatternProcessV2Profile1a1R [ 1 ] = [ "00007500488D5050" ]
 
-Global $IPATTERNPROCESSV2PROFILE1B1S = "84C00F85(.{4})000033DB"
-Global $IPATTERNPROCESSV2PROFILE1B1R [ 2 ] = [ "30C00F85" , "000033DB" ]
+Global $iPatternProcessV2Profile1b1S = "84C00F85(.{4})000033DB"
+Global $iPatternProcessV2Profile1b1R [ 2 ] = [ "30C00F85" , "000033DB" ]
 
-Global $IPATTERNPROCESSV2PROFILE1B2S = "84C00F85(.{4})0000F30F7F85(.{8})8885(.{8})48"
-Global $IPATTERNPROCESSV2PROFILE1B2R [ 4 ] = [ "30C00F85" , "0000F30F7F85" , "8885" , "48" ]
+Global $iPatternProcessV2Profile1b2S = "84C00F85(.{4})0000F30F7F85(.{8})8885(.{8})48"
+Global $iPatternProcessV2Profile1b2R [ 4 ] = [ "30C00F85" , "0000F30F7F85" , "8885" , "48" ]
 
-Global $IPATTERNPROCESSV2PROFILE1B3S = "84C00F85(.{4})0000F30F7F85(.{8})8885(.{8})48(.{12})E8(.{8})90"
-Global $IPATTERNPROCESSV2PROFILE1B3R [ 6 ] = [ "30C00F85" , "0000F30F7F85" , "8885" , "48" , "E8" , "90" ]
+Global $iPatternProcessV2Profile1b3S = "84C00F85(.{4})0000F30F7F85(.{8})8885(.{8})48(.{12})E8(.{8})90"
+Global $iPatternProcessV2Profile1b3R [ 6 ] = [ "30C00F85" , "0000F30F7F85" , "8885" , "48" , "E8" , "90" ]
 
-Global $IPATTERNPROCESSV2PROFILE1B4S = "84C00F85(.{4})000048C785"
-Global $IPATTERNPROCESSV2PROFILE1B4R [ 2 ] = [ "30C00F85" , "000048C785" ]
+Global $iPatternProcessV2Profile1b4S = "84C00F85(.{4})000048C785"
+Global $iPatternProcessV2Profile1b4R [ 2 ] = [ "30C00F85" , "000048C785" ]
 
-Global $IPATTERNPROCESSV2PROFILE1CNV1S = "84C075(.{2,10})BA91010000"
-Global $IPATTERNPROCESSV2PROFILE1CNV1R [ 2 ] = [ "84C075" , "BA00000000" ]
+Global $iPatternProcessV2Profile1CnV1S = "84C075(.{2,10})BA91010000"
+Global $iPatternProcessV2Profile1CnV1R [ 2 ] = [ "84C075" , "BA00000000" ]
 
-Global $IPATTERNPROCESSV2PROFILE1CNV2S = "84C075(.{2})C744(.{4})91010000"
-Global $IPATTERNPROCESSV2PROFILE1CNV2R [ 3 ] = [ "84C075" , "C744" , "00000000" ]
+Global $iPatternProcessV2Profile1CnV2S = "84C075(.{2})C744(.{4})91010000"
+Global $iPatternProcessV2Profile1CnV2R [ 3 ] = [ "84C075" , "C744" , "00000000" ]
 
-Global $IPATTERNPROCESSV2PROFILE1D1S = "0C0F84(.{2})000000BA(.{4})0000"
-Global $IPATTERNPROCESSV2PROFILE1D1R [ 3 ] = [ "0C0F85" , "000000BA" , "0000" ]
+Global $iPatternProcessV2Profile1d1S = "0C0F84(.{2})000000BA(.{4})0000"
+Global $iPatternProcessV2Profile1d1R [ 3 ] = [ "0C0F85" , "000000BA" , "0000" ]
 
-Global $IPATTERNPROCESSV2PROFILE1D2S = "0C0F84(.{4})0000C744(.{8})0000"
-Global $IPATTERNPROCESSV2PROFILE1D2R [ 3 ] = [ "0C0F85" , "0000C744" , "0000" ]
+Global $iPatternProcessV2Profile1d2S = "0C0F84(.{4})0000C744(.{8})0000"
+Global $iPatternProcessV2Profile1d2R [ 3 ] = [ "0C0F85" , "0000C744" , "0000" ]
 
-Global $IPATTERNPREVENTINSTANTSHUTDOWNS = "7504B001EB0232C08805"
-Global $IPATTERNPREVENTINSTANTSHUTDOWNR [ 1 ] = [ "7500B001EB0232C08805" ]
+Global $iPatternPreventInstantShutdownS = "7504B001EB0232C08805"
+Global $iPatternPreventInstantShutdownR [ 1 ] = [ "7500B001EB0232C08805" ]
 
-Global $IPATTERNLIGHTSUBSTATUS1S = "85DB0F84(.{8})83EB010F84(.{8})83(.{2})02"
-Global $IPATTERNLIGHTSUBSTATUS1R [ 4 ] = [ "B3030F84" , "83EB010F84" , "83" , "02" ]
+Global $iPatternLightSubStatus1S = "85DB0F84(.{8})83EB010F84(.{8})83(.{2})02"
+Global $iPatternLightSubStatus1R [ 4 ] = [ "B3030F84" , "83EB010F84" , "83" , "02" ]
 
-Global $IPATTERNLIGHTSUBSTATUS2S = "0FB6(.{4})84C00F85(.{8})C7"
-Global $IPATTERNLIGHTSUBSTATUS2R [ 3 ] = [ "0FB6" , "30C00F85" , "C7" ]
+Global $iPatternLightSubStatus2S = "0FB6(.{4})84C00F85(.{8})C7"
+Global $iPatternLightSubStatus2R [ 3 ] = [ "0FB6" , "30C00F85" , "C7" ]
 
-Global $IPATTERNBRIDGECAMRAWS = "84C074(.{2})8B(.{2})83(.{2})0174(.{2})83(.{2})0174(.{2})83(.{2})01"
-Global $IPATTERNBRIDGECAMRAWR [ 8 ] = [ "84C074" , "8B" , "83" , "01EB" , "83" , "0174" , "83" , "01" ]
+Global $iPatternBridgeCamRawS = "84C074(.{2})8B(.{2})83(.{2})0174(.{2})83(.{2})0174(.{2})83(.{2})01"
+Global $iPatternBridgeCamRawR [ 8 ] = [ "84C074" , "8B" , "83" , "01EB" , "83" , "0174" , "83" , "01" ]
 
-Global $IPATTERNXDCOMPLETES = "807909000F84"
-Global $IPATTERNXDCOMPLETER [ 1 ] = [ "C64109010F84" ]
+Global $iPatternXDCompleteS = "807909000F84"
+Global $iPatternXDCompleteR [ 1 ] = [ "C64109010F84" ]
 
-Global $IPATTERNINDESIGNSSWS = "4883EC2833D2488D4C2430E8"
-Global $IPATTERNINDESIGNSSWR [ 1 ] = [ "31C0C32833D2488D4C2430E8" ]
+Global $iPatternInDesignSSWS = "4883EC2833D2488D4C2430E8"
+Global $iPatternInDesignSSWR [ 1 ] = [ "31C0C32833D2488D4C2430E8" ]
 
-Global $IPATTERNINCOPYSSWS = "4883EC2833D2488D4C2430E8"
-Global $IPATTERNINCOPYSSWR [ 1 ] = [ "31C0C32833D2488D4C2430E8" ]
+Global $iPatternInCopySSWS = "4883EC2833D2488D4C2430E8"
+Global $iPatternInCopySSWR [ 1 ] = [ "31C0C32833D2488D4C2430E8" ]
 
-Global $IPATTERNPSESHSS1 = "8338010F94C04883C428C3"
-Global $IPATTERNPSESHSR1 [ 1 ] = [ "8308010F94C04883C428C3" ]
+Global $iPatternPSEshSS1 = "8338010F94C04883C428C3"
+Global $iPatternPSEshSR1 [ 1 ] = [ "8308010F94C04883C428C3" ]
 
-Global $IPATTERNPSESHSS2 = "833F01400F94C74885F6"
-Global $IPATTERNPSESHSR2 [ 1 ] = [ "830F01400F94C74885F6" ]
+Global $iPatternPSEshSS2 = "833F01400F94C74885F6"
+Global $iPatternPSEshSR2 [ 1 ] = [ "830F01400F94C74885F6" ]
 
-Global $IPATTERNPSAIESHSS3 = "80(.{4})0000000074(.{2})B9020000003BC1"
-Global $IPATTERNPSAIESHSR3 [ 3 ] = [ "80" , "0000000074" , "B9030000003BC1" ]
+Global $iPatternPSAIEshSS3 = "80(.{4})0000000074(.{2})B9020000003BC1"
+Global $iPatternPSAIEshSR3 [ 3 ] = [ "80" , "0000000074" , "B9030000003BC1" ]
 
-Global $IPATTERNAIESHSS = "8338010F94C0880233C0C3"
-Global $IPATTERNAIESHSR [ 1 ] = [ "8308010F94C0880233C0C3" ]
+Global $iPatternAIEshSS = "8338010F94C0880233C0C3"
+Global $iPatternAIEshSR [ 1 ] = [ "8308010F94C0880233C0C3" ]
 
-Global $IPATTERNAEPRRUPLTRYOUTS = "4883EC28E8(.{8})83F8010F94C04883C428C3"
-Global $IPATTERNAEPRRUPLTRYOUTR [ 2 ] = [ "4883EC28E8" , "83F80131C0904883C428C3" ]
+Global $iPatternAEPrruplTryoutS = "4883EC28E8(.{8})83F8010F94C04883C428C3"
+Global $iPatternAEPrruplTryoutR [ 2 ] = [ "4883EC28E8" , "83F80131C0904883C428C3" ]
 
-Global $IPATTERNISLICCOMPS = "32C0C3(.{16})0FB605(.{8})C3(.{16})0FB605(.{8})C3"
-Global $IPATTERNISLICCOMPR [ 5 ] = [ "32C0C3" , "C605" , "01C3" , "0FB605" , "C3" ]
+Global $iPatternIsLicCompS = "32C0C3(.{16})0FB605(.{8})C3(.{16})0FB605(.{8})C3"
+Global $iPatternIsLicCompR [ 5 ] = [ "32C0C3" , "C605" , "01C3" , "0FB605" , "C3" ]
 
-Global $IPATTERNPSVIDEOEXPORTS = "488BC448894808574881EC9000000048C74088FEFFFFFF488958100F2970E80F"
-Global $IPATTERNPSVIDEOEXPORTR [ 1 ] = [ "488BC448894808C34881EC9000000048C74088FEFFFFFF488958100F2970E80F" ]
+Global $iPatternPSvideoExportS = "488BC448894808574881EC9000000048C74088FEFFFFFF488958100F2970E80F"
+Global $iPatternPSvideoExportR [ 1 ] = [ "488BC448894808C34881EC9000000048C74088FEFFFFFF488958100F2970E80F" ]
 
-Global $IPATTERNHEVCMPEGENABLER1S = "8B(.{2})FF50380FB6"
-Global $IPATTERNHEVCMPEGENABLER1R [ 2 ] = [ "8B" , "FFC0900FB6" ]
+Global $iPatternHevcMpegEnabler1S = "8B(.{2})FF50380FB6"
+Global $iPatternHevcMpegEnabler1R [ 2 ] = [ "8B" , "FFC0900FB6" ]
 
-Global $IPATTERNHEVCMPEGENABLER2S = "8B(.{2})FF50380FB6"
-Global $IPATTERNHEVCMPEGENABLER2R [ 2 ] = [ "8B" , "FFC0900FB6" ]
+Global $iPatternHevcMpegEnabler2S = "8B(.{2})FF50380FB6"
+Global $iPatternHevcMpegEnabler2R [ 2 ] = [ "8B" , "FFC0900FB6" ]
 
-Global $IPATTERNHEVCMPEGENABLER3S = "8B(.{2})FF5038(.{2})0FB6"
-Global $IPATTERNHEVCMPEGENABLER3R [ 3 ] = [ "8B" , "FFC090" , "0FB6" ]
+Global $iPatternHevcMpegEnabler3S = "8B(.{2})FF5038(.{2})0FB6"
+Global $iPatternHevcMpegEnabler3R [ 3 ] = [ "8B" , "FFC090" , "0FB6" ]
 
-Global $IPATTERNHEVCMPEGENABLER4S = "8B(.{2})FF5038(.{2})0FB6"
-Global $IPATTERNHEVCMPEGENABLER4R [ 3 ] = [ "8B" , "FFC090" , "0FB6" ]
+Global $iPatternHevcMpegEnabler4S = "8B(.{2})FF5038(.{2})0FB6"
+Global $iPatternHevcMpegEnabler4R [ 3 ] = [ "8B" , "FFC090" , "0FB6" ]
 
-Global $IPATTERNTEAMPROJECTENABLERAS = "84C07448488D4C242048895C2450"
-Global $IPATTERNTEAMPROJECTENABLERAR [ 1 ] = [ "FEC07448488D4C242048895C2450" ]
+Global $iPatternTeamProjectEnablerAS = "84C07448488D4C242048895C2450"
+Global $iPatternTeamProjectEnablerAR [ 1 ] = [ "FEC07448488D4C242048895C2450" ]
 
-Global $IPATTERNTEAMPROJECTENABLERBS = "E8(.{8})84C074(.{2})488D4C24(.{2})E8(.{8})90"
-Global $IPATTERNTEAMPROJECTENABLERBR [ 5 ] = [ "E8" , "FEC074" , "488D4C24" , "E8" , "90" ]
+Global $iPatternTeamProjectEnablerBS = "E8(.{8})84C074(.{2})488D4C24(.{2})E8(.{8})90"
+Global $iPatternTeamProjectEnablerBR [ 5 ] = [ "E8" , "FEC074" , "488D4C24" , "E8" , "90" ]
 
-Global $IPATTERNTEAMPROJECTENABLERCS = "488BC4574883EC7048C740A8FEFFFFFF4889580848897010E8(.{8})84C00F84"
-Global $IPATTERNTEAMPROJECTENABLERCR [ 2 ] = [ "488BC4574883EC7048C740A8FEFFFFFF4889580848897010E8" , "FEC00F84" ]
+Global $iPatternTeamProjectEnablerCS = "488BC4574883EC7048C740A8FEFFFFFF4889580848897010E8(.{8})84C00F84"
+Global $iPatternTeamProjectEnablerCR [ 2 ] = [ "488BC4574883EC7048C740A8FEFFFFFF4889580848897010E8" , "FEC00F84" ]
 
-Global $IPATTERNACROBATAS = "EB(.{2})33C066A3(.{8})881D(.{8})8AC35BC3"
-Global $IPATTERNACROBATAR [ 4 ] = [ "EB" , "B00166A3" , "881D" , "8AC35BC3" ]
+Global $iPatternAcrobatAS = "EB(.{2})33C066A3(.{8})881D(.{8})8AC35BC3"
+Global $iPatternAcrobatAR [ 4 ] = [ "EB" , "B00166A3" , "881D" , "8AC35BC3" ]
 
-Global $IPATTERNACRODISTAS = "5332DBE8(.{8})84C075(.{2})E8(.{8})84C074(.{2})32C05BC3"
-Global $IPATTERNACRODISTAR [ 5 ] = [ "5332DBE8" , "30C075" , "E8" , "FEC074" , "32C05BC3" ]
+Global $iPatternAcrodistAS = "5332DBE8(.{8})84C075(.{2})E8(.{8})84C074(.{2})32C05BC3"
+Global $iPatternAcrodistAR [ 5 ] = [ "5332DBE8" , "30C075" , "E8" , "FEC074" , "32C05BC3" ]
 
-Global $IPATTERNACROTRAYAS = "5332DBE8(.{8})84C075(.{2})E8(.{8})84C074(.{2})32C05BC3"
-Global $IPATTERNACROTRAYAR [ 5 ] = [ "5332DBE8" , "30C075" , "E8" , "FEC074" , "32C05BC3" ]
+Global $iPatternAcroTrayAS = "5332DBE8(.{8})84C075(.{2})E8(.{8})84C074(.{2})32C05BC3"
+Global $iPatternAcroTrayAR [ 5 ] = [ "5332DBE8" , "30C075" , "E8" , "FEC074" , "32C05BC3" ]
 
-Global $IPATTERNAMTLIB1S = "B801000000EB(.{2})B803000000EB(.{2})B802000000EB(.{2})33C0"
-Global $IPATTERNAMTLIB1R [ 4 ] = [ "B801000000EB" , "B803000000EB" , "B802000000EB" , "EBF0" ]
+Global $iPatternAmtlib1S = "B801000000EB(.{2})B803000000EB(.{2})B802000000EB(.{2})33C0"
+Global $iPatternAmtlib1R [ 4 ] = [ "B801000000EB" , "B803000000EB" , "B802000000EB" , "EBF0" ]
 
-Global $IPATTERNAMTLIB2S = "83E80074(.{2})83E80174(.{2})33C0B90A000000"
-Global $IPATTERNAMTLIB2R [ 3 ] = [ "83C00174" , "83E80174" , "33C0B90A000000" ]
+Global $iPatternAmtlib2S = "83E80074(.{2})83E80174(.{2})33C0B90A000000"
+Global $iPatternAmtlib2R [ 3 ] = [ "83C00174" , "83E80174" , "33C0B90A000000" ]
 
-Global $IPATTERNAMTLIB3S = "83F8037F(.{2})74(.{2})83E80174(.{2})83E801"
-Global $IPATTERNAMTLIB3R [ 4 ] = [ "83F803EB" , "74" , "83E80174" , "83E801" ]
+Global $iPatternAmtlib3S = "83F8037F(.{2})74(.{2})83E80174(.{2})83E801"
+Global $iPatternAmtlib3R [ 4 ] = [ "83F803EB" , "74" , "83E80174" , "83E801" ]
 
-Global $IPATTERNAMTLIB4S = "3D0101000074(.{2})33C9"
-Global $IPATTERNAMTLIB4R [ 2 ] = [ "3D01010000EB" , "33C9" ]
+Global $iPatternAmtlib4S = "3D0101000074(.{2})33C9"
+Global $iPatternAmtlib4R [ 2 ] = [ "3D01010000EB" , "33C9" ]
 
-Global $IPATTERNAMTLIB5S = "83C4048B86(.{8})391874"
-Global $IPATTERNAMTLIB5R [ 2 ] = [ "83C4048B86" , "3918EB" ]
+Global $iPatternAmtlib5S = "83C4048B86(.{8})391874"
+Global $iPatternAmtlib5R [ 2 ] = [ "83C4048B86" , "3918EB" ]
 
-Global $IPATTERNACCAS = "83B9AC00000000741583B9C400000000740C83B9DC000000007403B001C332C0C3"
-Global $IPATTERNACCAR [ 1 ] = [ "C681AC000000017400C681C4000000017400C681DC000000017400B001C332C0C3" ]
+Global $iPatternACCAS = "83B9AC00000000741583B9C400000000740C83B9DC000000007403B001C332C0C3"
+Global $iPatternACCAR [ 1 ] = [ "C681AC000000017400C681C4000000017400C681DC000000017400B001C332C0C3" ]
 
-Global $IPATTERNACCBS = "8BCEE8(.{4})FFFF85C00F85(.{4})000083EC18"
-Global $IPATTERNACCBR [ 3 ] = [ "8BCEE8" , "FFFFB0010F85" , "000083EC18" ]
+Global $iPatternACCBS = "8BCEE8(.{4})FFFF85C00F85(.{4})000083EC18"
+Global $iPatternACCBR [ 3 ] = [ "8BCEE8" , "FFFFB0010F85" , "000083EC18" ]
 
-Global $IPATTERNACCCS = "8BB5F8FEFFFF0F84A50000006A00"
-Global $IPATTERNACCCR [ 1 ] = [ "8BB5F8FEFFFF0F85A50000006A00" ]
+Global $iPatternACCCS = "8BB5F8FEFFFF0F84A50000006A00"
+Global $iPatternACCCR [ 1 ] = [ "8BB5F8FEFFFF0F85A50000006A00" ]
 
-Global $IPATTERNACCDS = "75118D4DD832DB"
-Global $IPATTERNACCDR [ 1 ] = [ "74118D4DD832DB" ]
+Global $iPatternACCDS = "75118D4DD832DB"
+Global $iPatternACCDR [ 1 ] = [ "74118D4DD832DB" ]
 
 #include <File.au3>
 #include <Misc.au3>
@@ -232,12 +232,12 @@ If _SINGLETON ( "GenPPP-2.7.exe" , 1 ) = 0 Then
 EndIf
 
 ; Handle to parts of Adobe-GenP-2.7, NOT this GUI
-Global $HWNDPARENTWINDOW ; Handle to Adobe-GenP-2.7
-Global $HWND_PROGRESS ; Progress bar
+Global $hWndParentWindow ; Handle to Adobe-GenP-2.7
+Global $hWnd_progress ; Progress bar
 
 ; Calculating progress when creating the regex replacements
-Global $MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0 ; Number of regex replacements created
-Global $COUNT = 0 ; Number of regex replacements which must be created
+Global $myRegexPGlobalPatternSearchCount = 0 ; Number of regex replacements created
+Global $count = 0 ; Number of regex replacements which must be created
 
 ; Indices -> Adobe product
 ;  1 : After Effects
@@ -266,1222 +266,1222 @@ Global $COUNT = 0 ; Number of regex replacements which must be created
 ; 24 : Creative Cloud
 
 ; These controls are used to send arguments from Adobe-GenP-2.7 to this application
-; $MYFILETOPARSE           : Path to exe
-; $MYFILETOPARSSWEATPEA    : Path to SweetPeaSupport.dll
-; $MYFILETOPARSEEACLIENT   : Path to EAClient.dll
-; $MYFILETOPARSEFRONTEND   : Path to amtlib.dll
-; $MYIBUTTONCLICKED        : Index of the Adobe icon button, see indices to Adobe product
-; $G_IDMEMOPPSWITCHDATA    : Always 1 when passed in as argument
-Global $G_IDMEMO0 ; Edit1 is its name (Referred to in Adobe-GenP-2.7)
-Global $G_IDMEMO1 ; Edit2
-Global $G_IDMEMO2 ; Edit3
-Global $G_IDMEMO3 ; Edit4
-Global $G_IDMEMO4 ; Edit5
-Global $G_IDMEMOPPSWITCH ; Edit6
+; $myFileToParse           : Path to exe
+; $myFileToParseSweetPea    : Path to SweetPeaSupport.dll
+; $myFileToParseEAClient   : Path to EAClient.dll
+; $myFileToParseFrontend   : Path to amtlib.dll
+; $myIButtonClicked        : Index of the Adobe icon button, see indices to Adobe product
+; $g_idMemoPPSwitchData    : Always 1 when passed in as argument
+Global $g_idMemo0 ; Edit1 is its name (Referred to in Adobe-GenP-2.7)
+Global $g_idMemo1 ; Edit2
+Global $g_idMemo2 ; Edit3
+Global $g_idMemo3 ; Edit4
+Global $g_idMemo4 ; Edit5
+Global $g_idMemoPPSwitch ; Edit6
 ; Used as local variables to hold the value of the above controls
-Global $MYFILETOPARSE = "" ; Holds value stored in control $G_IDMEM00
-Global $MYFILETOPARSSWEATPEA = "" ; Holds value stored in control $G_IDMEM01
-Global $MYFILETOPARSEEACLIENT = "" ; Holds value stored in control $G_IDMEM02
-Global $MYFILETOPARSEFRONTEND = "" ; Holds value stored in control $G_IDMEM03
-Global $MYIBUTTONCLICKED = 0 ; Holds value stored in control $G_IDMEM04
-Global $G_IDMEMOPPSWITCHDATA ; Holds value stored in control $G_IDMEMOPPSWITCH
+Global $myFileToParse = "" ; Holds value stored in control $G_IDMEM00
+Global $myFileToParseSweetPea = "" ; Holds value stored in control $G_IDMEM01
+Global $myFileToParseEAClient = "" ; Holds value stored in control $G_IDMEM02
+Global $myFileToParseFrontend = "" ; Holds value stored in control $G_IDMEM03
+Global $myIButtonClicked = 0 ; Holds value stored in control $G_IDMEM04
+Global $g_idMemoPPSwitchData ; Holds value stored in control $g_idMemoPPSwitch
 
-; These arrays hold regex patterns from the MYREGEXPGLOBALPATTERNSEARCH family of functions
-Global $AOUTHEXGLOBALARRAY [ 0 ]
-Global $AOUTHEXGLOBALARRAYACRODIST [ 0 ]
-Global $AOUTHEXGLOBALARRAYACROTRAY [ 0 ]
-Global $AOUTHEXGLOBALARRAYSWEATPEA [ 0 ]
-Global $AOUTHEXGLOBALARRAYEACLIENT [ 0 ]
-Global $AOUTHEXGLOBALARRAYPREMIEREHSR [ 0 ]
-Global $ANULLARRAY [ 0 ] ; Used to clear arrays
+; These arrays hold regex patterns from the MyRegexPGlobalPatternSearch family of functions
+Global $aOutHexGlobalArray [ 0 ]
+Global $aOutHexGlobalArrayAcroDist [ 0 ]
+Global $aOutHexGlobalArrayAcroTray [ 0 ]
+Global $aOutHexGlobalArraySweetPea [ 0 ]
+Global $aOutHexGlobalArrayEAClient [ 0 ]
+Global $aOutHexGlobalArrayPremiereHSR [ 0 ]
+Global $aNullArray [ 0 ] ; Used to clear arrays
 
 
 
 WinWait ( "Adobe-GenP-2.7" , "" , 5 )
-$HWNDPARENTWINDOW = WinGetHandle ( "Adobe-GenP-2.7" )
+$hWndParentWindow = WinGetHandle ( "Adobe-GenP-2.7" )
 If @error Then
 	Exit
 Else
-	WinActivate ( $HWNDPARENTWINDOW )
-	$HWND_PROGRESS = ControlGetHandle ( $HWNDPARENTWINDOW , "" , "msctls_progress321" )
-	$HWND_EDIT = ControlGetHandle ( $HWNDPARENTWINDOW , "" , "Edit1" )
+	WinActivate ( $hWndParentWindow )
+	$hWnd_progress = ControlGetHandle ( $hWndParentWindow , "" , "msctls_progress321" )
+	$hWnd_edit = ControlGetHandle ( $hWndParentWindow , "" , "Edit1" )
 EndIf
-MYOWNGUI ( )
+MyOwnGui ( )
 
 ; Loop to process GUI messages
 ; Perform patch upon receiving message
 While 1
-	$MYOWNIMSG = GUIGetMsg ( )
-	$G_IDMEMOPPSWITCHDATA = GUICtrlRead ( $G_IDMEMOPPSWITCH )
+	$myOwnIMsg = GUIGetMsg ( )
+	$g_idMemoPPSwitchData = GUICtrlRead ( $g_idMemoPPSwitch )
 
-	; Load the appropriate patches into $AOUTHEXGLOBALARRAY family of variables
+	; Load the appropriate patches into $aOutHexGlobalArray family of variables
 
 	; These 2 below do not get patched as no patches get loaded
 	; Flash Builder
-	If GUICtrlRead ( $G_IDMEMO4 , 4 ) = 21 Then
-		$MYFILETOPARSE = GUICtrlRead ( $G_IDMEMO0 , 0 )
-		$MYFILETOPARSSWEATPEA = GUICtrlRead ( $G_IDMEMO1 , 1 )
-		$MYFILETOPARSEEACLIENT = GUICtrlRead ( $G_IDMEMO2 , 2 )
-		$MYFILETOPARSEFRONTEND = GUICtrlRead ( $G_IDMEMO3 , 3 )
-		$MYIBUTTONCLICKED = GUICtrlRead ( $G_IDMEMO4 , 4 )
+	If GUICtrlRead ( $g_idMemo4 , 4 ) = 21 Then
+		$myFileToParse = GUICtrlRead ( $g_idMemo0 , 0 )
+		$myFileToParseSweetPea = GUICtrlRead ( $g_idMemo1 , 1 )
+		$myFileToParseEAClient = GUICtrlRead ( $g_idMemo2 , 2 )
+		$myFileToParseFrontend = GUICtrlRead ( $g_idMemo3 , 3 )
+		$myIButtonClicked = GUICtrlRead ( $g_idMemo4 , 4 )
 
-		GUICtrlSetData ( $G_IDMEMOPPSWITCH , "2" )
+		GUICtrlSetData ( $g_idMemoPPSwitch , "2" )
 	EndIf
 	; Speed Grade
-	If GUICtrlRead ( $G_IDMEMO4 , 4 ) = 22 Then
-		$MYFILETOPARSE = GUICtrlRead ( $G_IDMEMO0 , 0 )
-		$MYFILETOPARSSWEATPEA = GUICtrlRead ( $G_IDMEMO1 , 1 )
-		$MYFILETOPARSEEACLIENT = GUICtrlRead ( $G_IDMEMO2 , 2 )
-		$MYFILETOPARSEFRONTEND = GUICtrlRead ( $G_IDMEMO3 , 3 )
-		$MYIBUTTONCLICKED = GUICtrlRead ( $G_IDMEMO4 , 4 )
+	If GUICtrlRead ( $g_idMemo4 , 4 ) = 22 Then
+		$myFileToParse = GUICtrlRead ( $g_idMemo0 , 0 )
+		$myFileToParseSweetPea = GUICtrlRead ( $g_idMemo1 , 1 )
+		$myFileToParseEAClient = GUICtrlRead ( $g_idMemo2 , 2 )
+		$myFileToParseFrontend = GUICtrlRead ( $g_idMemo3 , 3 )
+		$myIButtonClicked = GUICtrlRead ( $g_idMemo4 , 4 )
 
-		GUICtrlSetData ( $G_IDMEMOPPSWITCH , "2" )
+		GUICtrlSetData ( $g_idMemoPPSwitch , "2" )
 	EndIf
 
-	If $G_IDMEMOPPSWITCHDATA = 1 Then
-		$MYFILETOPARSE = GUICtrlRead ( $G_IDMEMO0 , 0 )
-		$MYFILETOPARSSWEATPEA = GUICtrlRead ( $G_IDMEMO1 , 1 )
-		$MYFILETOPARSEEACLIENT = GUICtrlRead ( $G_IDMEMO2 , 2 )
-		$MYFILETOPARSEFRONTEND = GUICtrlRead ( $G_IDMEMO3 , 3 )
-		$MYIBUTTONCLICKED = GUICtrlRead ( $G_IDMEMO4 , 4 )
+	If $g_idMemoPPSwitchData = 1 Then
+		$myFileToParse = GUICtrlRead ( $g_idMemo0 , 0 )
+		$myFileToParseSweetPea = GUICtrlRead ( $g_idMemo1 , 1 )
+		$myFileToParseEAClient = GUICtrlRead ( $g_idMemo2 , 2 )
+		$myFileToParseFrontend = GUICtrlRead ( $g_idMemo3 , 3 )
+		$myIButtonClicked = GUICtrlRead ( $g_idMemo4 , 4 )
 
-		MYGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $MYFILETOPARSSWEATPEA , $MYFILETOPARSEEACLIENT , $MYFILETOPARSEFRONTEND )
-		GUICtrlSetData ( $G_IDMEMOPPSWITCH , "2" )
+		MyGlobalPatternSearch ( $myFileToParse , $myFileToParseSweetPea , $myFileToParseEAClient , $myFileToParseFrontend )
+		GUICtrlSetData ( $g_idMemoPPSwitch , "2" )
 	EndIf
 
 	; Patch the file
-	If $G_IDMEMOPPSWITCHDATA = 2 Then
-		$MYINPATH = $MYFILETOPARSE
-		$APATHSPLITPEA = $MYFILETOPARSSWEATPEA
-		$APATHSPLITEAC = $MYFILETOPARSEEACLIENT
-		$APATHSPLITFRONTEND = $MYFILETOPARSEFRONTEND
-		$MYIBUTTONCLICKED = GUICtrlRead ( $G_IDMEMO4 , 4 )
+	If $g_idMemoPPSwitchData = 2 Then
+		$myInPath = $myFileToParse
+		$aPathSplitPea = $myFileToParseSweetPea
+		$aPathSplitEAC = $myFileToParseEAClient
+		$aPathSplitFrontend = $myFileToParseFrontend
+		$myIButtonClicked = GUICtrlRead ( $g_idMemo4 , 4 )
 		Select
-		Case $MYIBUTTONCLICKED = 1
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe After Effects" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITPEA , $AOUTHEXGLOBALARRAYSWEATPEA )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITEAC , $AOUTHEXGLOBALARRAYEACLIENT )
-		Case $MYIBUTTONCLICKED = 2
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Animate" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 3
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Audition" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 4
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Bridge" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 5
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Character Animator" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 6
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Dreamweaver" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 7
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Illustrator" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 8
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe InCopy" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 9
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe InDesign" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 10
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Lightroom CC" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 11
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Lightroom Classic CC" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 12
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Media Encoder" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITPEA , $AOUTHEXGLOBALARRAYSWEATPEA )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITEAC , $AOUTHEXGLOBALARRAYEACLIENT )
-		Case $MYIBUTTONCLICKED = 13
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Photoshop" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 14
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Prelude" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITPEA , $AOUTHEXGLOBALARRAYSWEATPEA )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITEAC , $AOUTHEXGLOBALARRAYEACLIENT )
-		Case $MYIBUTTONCLICKED = 15
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Premiere" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITPEA , $AOUTHEXGLOBALARRAYSWEATPEA )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITEAC , $AOUTHEXGLOBALARRAYEACLIENT )
-		Case $MYIBUTTONCLICKED = 16
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Premiere Rush CC" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITPEA , $AOUTHEXGLOBALARRAYSWEATPEA )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITEAC , $AOUTHEXGLOBALARRAYEACLIENT )
-		Case $MYIBUTTONCLICKED = 17
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Acrobat DC" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Amtlib" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITFRONTEND , $AOUTHEXGLOBALARRAYPREMIEREHSR )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Acrodist" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITPEA , $AOUTHEXGLOBALARRAYACRODIST )
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "AcroTray" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $APATHSPLITEAC , $AOUTHEXGLOBALARRAYACROTRAY )
-		Case $MYIBUTTONCLICKED = 18
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Dimension CC" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 19
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe XD CC" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 20
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Fresco" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-		Case $MYIBUTTONCLICKED = 21
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Flash Builder 4.7 (64 Bit)" & @CRLF & "---" & @CRLF & "medication :)" )
-		Case $MYIBUTTONCLICKED = 22
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe SpeedGrade CC 2015" & @CRLF & "---" & @CRLF & "medication :)" )
-		Case $MYIBUTTONCLICKED = 23
-		Case $MYIBUTTONCLICKED = 24
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Adobe Creative Cloud Fix" & @CRLF & "---" & @CRLF & "medication :)" )
-			MYGLOBALPATTERNPATCH ( $MYINPATH , $AOUTHEXGLOBALARRAY )
-			WinSetOnTop ( $HWNDPARENTWINDOW , "Adobe-GenP-2.7" , $WINDOWS_NOONTOP )
-			_EXTMSGBOX ( 64 , "Ok" , "Info" , "Restart your ACC app manually." & @CRLF & "If it fails or you have problems with 'Sign In'," & @CRLF & "reboot your computer and ACC will start properly." , 0 , $HWNDPARENTWINDOW , 0 , False )
-			WinSetOnTop ( $HWNDPARENTWINDOW , "Adobe-GenP-2.7" , $WINDOWS_ONTOP )
+		Case $myIButtonClicked = 1
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe After Effects" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitPea , $aOutHexGlobalArraySweetPea )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitEAC , $aOutHexGlobalArrayEAClient )
+		Case $myIButtonClicked = 2
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Animate" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 3
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Audition" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 4
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Bridge" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 5
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Character Animator" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 6
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Dreamweaver" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 7
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Illustrator" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 8
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe InCopy" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 9
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe InDesign" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 10
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Lightroom CC" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 11
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Lightroom Classic CC" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 12
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Media Encoder" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitPea , $aOutHexGlobalArraySweetPea )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitEAC , $aOutHexGlobalArrayEAClient )
+		Case $myIButtonClicked = 13
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Photoshop" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 14
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Prelude" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitPea , $aOutHexGlobalArraySweetPea )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitEAC , $aOutHexGlobalArrayEAClient )
+		Case $myIButtonClicked = 15
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Premiere" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitPea , $aOutHexGlobalArraySweetPea )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitEAC , $aOutHexGlobalArrayEAClient )
+		Case $myIButtonClicked = 16
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Premiere Rush CC" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "HEVC & MPEG" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitPea , $aOutHexGlobalArraySweetPea )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Team Project" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitEAC , $aOutHexGlobalArrayEAClient )
+		Case $myIButtonClicked = 17
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Acrobat DC" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Amtlib" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitFrontend , $aOutHexGlobalArrayPremiereHSR )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Acrodist" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitPea , $aOutHexGlobalArrayAcroDist )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "AcroTray" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $aPathSplitEAC , $aOutHexGlobalArrayAcroTray )
+		Case $myIButtonClicked = 18
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Dimension CC" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 19
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe XD CC" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 20
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Fresco" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+		Case $myIButtonClicked = 21
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Flash Builder 4.7 (64 Bit)" & @CRLF & "---" & @CRLF & "medication :)" )
+		Case $myIButtonClicked = 22
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe SpeedGrade CC 2015" & @CRLF & "---" & @CRLF & "medication :)" )
+		Case $myIButtonClicked = 23
+		Case $myIButtonClicked = 24
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Adobe Creative Cloud Fix" & @CRLF & "---" & @CRLF & "medication :)" )
+			MyGlobalPatternPatch ( $myInPath , $aOutHexGlobalArray )
+			WinSetOnTop ( $hWndParentWindow , "Adobe-GenP-2.7" , $WINDOWS_NOONTOP )
+			_ExtMsgBox ( 64 , "Ok" , "Info" , "Restart your ACC app manually." & @CRLF & "If it fails or you have problems with 'Sign In'," & @CRLF & "reboot your computer and ACC will start properly." , 0 , $hWndParentWindow , 0 , False )
+			WinSetOnTop ( $hWndParentWindow , "Adobe-GenP-2.7" , $WINDOWS_ONTOP )
 		EndSelect
-		MEMOWRITE1 ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
+		MemoWrite1 ( @CRLF & "---" & @CRLF & "Waitng for your command :)" & @CRLF & "---" )
 
 		; Reset arguments
-		$MYFILETOPARSE = ""
-		$MYFILETOPARSSWEATPEA = ""
-		$MYFILETOPARSEEACLIENT = ""
-		$MYFILETOPARSEFRONTEND = ""
-		$MYIBUTTONCLICKED = 0
-		GUICtrlSetData ( $G_IDMEMO0 , "0" )
-		GUICtrlSetData ( $G_IDMEMO1 , "0" )
-		GUICtrlSetData ( $G_IDMEMO2 , "0" )
-		GUICtrlSetData ( $G_IDMEMO3 , "0" )
-		GUICtrlSetData ( $G_IDMEMO4 , "0" )
-		GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+		$myFileToParse = ""
+		$myFileToParseSweetPea = ""
+		$myFileToParseEAClient = ""
+		$myFileToParseFrontend = ""
+		$myIButtonClicked = 0
+		GUICtrlSetData ( $g_idMemo0 , "0" )
+		GUICtrlSetData ( $g_idMemo1 , "0" )
+		GUICtrlSetData ( $g_idMemo2 , "0" )
+		GUICtrlSetData ( $g_idMemo3 , "0" )
+		GUICtrlSetData ( $g_idMemo4 , "0" )
+		GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 
-		WinSetOnTop ( $HWNDPARENTWINDOW , "Adobe-GenP-2.7" , $WINDOWS_NOONTOP )
+		WinSetOnTop ( $hWndParentWindow , "Adobe-GenP-2.7" , $WINDOWS_NOONTOP )
 		Sleep ( 100 )
 		Exit
 	EndIf
 WEnd
 
 ; Initializes the GUI elements to receive arguments from Adobe-GenP-2.7
-Func MYOWNGUI ( )
-	$MYHGUI = GUICreate ( "GenPPP-2.7" , 260 , 80 , - 1 , - 1 , $WS_CAPTION )
+Func MyOwnGui ( )
+	$myHGui = GUICreate ( "GenPPP-2.7" , 260 , 80 , - 1 , - 1 , $WS_CAPTION )
 	; Creates the Edit controls for sending arguments between Adobe-GenP-2.7,
-	$G_IDMEMO0 = GUICtrlCreateEdit ( "" , 10 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
-	GUICtrlSetFont ( $G_IDMEMO0 , 9 , 400 , 0 , "Comic Sans Ms" )
-	GUICtrlSetData ( $G_IDMEMO0 , "0" )
+	$g_idMemo0 = GUICtrlCreateEdit ( "" , 10 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
+	GUICtrlSetFont ( $g_idMemo0 , 9 , 400 , 0 , "Comic Sans Ms" )
+	GUICtrlSetData ( $g_idMemo0 , "0" )
 
-	$G_IDMEMO1 = GUICtrlCreateEdit ( "" , 60 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
-	GUICtrlSetFont ( $G_IDMEMO1 , 9 , 400 , 0 , "Comic Sans Ms" )
-	GUICtrlSetData ( $G_IDMEMO1 , "0" )
+	$g_idMemo1 = GUICtrlCreateEdit ( "" , 60 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
+	GUICtrlSetFont ( $g_idMemo1 , 9 , 400 , 0 , "Comic Sans Ms" )
+	GUICtrlSetData ( $g_idMemo1 , "0" )
 
-	$G_IDMEMO2 = GUICtrlCreateEdit ( "" , 110 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
-	GUICtrlSetFont ( $G_IDMEMO2 , 9 , 400 , 0 , "Comic Sans Ms" )
-	GUICtrlSetData ( $G_IDMEMO2 , "0" )
+	$g_idMemo2 = GUICtrlCreateEdit ( "" , 110 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
+	GUICtrlSetFont ( $g_idMemo2 , 9 , 400 , 0 , "Comic Sans Ms" )
+	GUICtrlSetData ( $g_idMemo2 , "0" )
 
-	$G_IDMEMO3 = GUICtrlCreateEdit ( "" , 160 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
-	GUICtrlSetFont ( $G_IDMEMO3 , 9 , 400 , 0 , "Comic Sans Ms" )
-	GUICtrlSetData ( $G_IDMEMO3 , "0" )
+	$g_idMemo3 = GUICtrlCreateEdit ( "" , 160 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
+	GUICtrlSetFont ( $g_idMemo3 , 9 , 400 , 0 , "Comic Sans Ms" )
+	GUICtrlSetData ( $g_idMemo3 , "0" )
 
-	$G_IDMEMO4 = GUICtrlCreateEdit ( "" , 210 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
-	GUICtrlSetFont ( $G_IDMEMO4 , 9 , 400 , 0 , "Comic Sans Ms" )
-	GUICtrlSetData ( $G_IDMEMO4 , "0" )
+	$g_idMemo4 = GUICtrlCreateEdit ( "" , 210 , 10 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
+	GUICtrlSetFont ( $g_idMemo4 , 9 , 400 , 0 , "Comic Sans Ms" )
+	GUICtrlSetData ( $g_idMemo4 , "0" )
 
-	$G_IDMEMOPPSWITCH = GUICtrlCreateEdit ( "" , 110 , 40 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
-	GUICtrlSetFont ( $G_IDMEMOPPSWITCH , 9 , 400 , 0 , "Comic Sans Ms" )
-	GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
-	GUISetState ( @SW_DISABLE , $MYHGUI )
+	$g_idMemoPPSwitch = GUICtrlCreateEdit ( "" , 110 , 40 , 40 , 20 , BitOR ( $ES_READONLY , $ES_CENTER , $WS_DISABLED ) )
+	GUICtrlSetFont ( $g_idMemoPPSwitch , 9 , 400 , 0 , "Comic Sans Ms" )
+	GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
+	GUISetState ( @SW_DISABLE , $myHGui )
 EndFunc
 
 ; Writes messages onto Adobe-GenP-2.7
-Func MEMOWRITE1 ( $SMESSAGE )
-	ControlSetText ( $HWNDPARENTWINDOW , "" , "Edit1" , $SMESSAGE )
+Func MemoWrite1 ( $sMessage )
+	ControlSetText ( $hWndParentWindow , "" , "Edit1" , $sMessage )
 EndFunc
 ; Sets progress bar on Adobe-GenP-2.7
-Func PROGRESSWRITE ( $MSG_PROGRESS )
-	_SENDMESSAGE ( $HWND_PROGRESS , $PBM_SETPOS , $MSG_PROGRESS )
+Func ProgressWrite ( $msg_progress )
+	_SendMessage ( $hWnd_progress , $PBM_SETPOS , $msg_progress )
 EndFunc
 
-; Load the appropriate patches into $AOUTHEXGLOBALARRAY... family of variables
-Func MYGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $MYFILETOPARSSWEATPEA , $MYFILETOPARSEEACLIENT , $MYFILETOPARSEFRONTEND )
-	MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "Preparing to Analyze" & @CRLF & "---" & @CRLF & "*****" )
-	$AINHEXARRAY = $ANULLARRAY
-	$AOUTHEXGLOBALARRAY = $ANULLARRAY
-	$AOUTHEXGLOBALARRAYSWEATPEA = $ANULLARRAY
-	$AOUTHEXGLOBALARRAYEACLIENT = $ANULLARRAY
-	$AOUTHEXGLOBALARRAYPREMIEREHSR = $ANULLARRAY
-	PROGRESSWRITE ( 0 )
-	$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
+; Load the appropriate patches into $aOutHexGlobalArray... family of variables
+Func MyGlobalPatternSearch ( $myFileToParse , $myFileToParseSweetPea , $myFileToParseEAClient , $myFileToParseFrontend )
+	MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "Preparing to Analyze" & @CRLF & "---" & @CRLF & "*****" )
+	$aInHexArray = $aNullArray
+	$aOutHexGlobalArray = $aNullArray
+	$aOutHexGlobalArraySweetPea = $aNullArray
+	$aOutHexGlobalArrayEAClient = $aNullArray
+	$aOutHexGlobalArrayPremiereHSR = $aNullArray
+	ProgressWrite ( 0 )
+	$myRegexPGlobalPatternSearchCount = 0
 	Select
-	Case $MYIBUTTONCLICKED = 1
-		$COUNT = 26
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNAEPRRUPLTRYOUTS , $IPATTERNAEPRRUPLTRYOUTR , "$iPatternAEPRRUPLTryoutS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNISLICCOMPS , $IPATTERNISLICCOMPR , "$iPatternIsLicCompS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPREVENTINSTANTSHUTDOWNS , $IPATTERNPREVENTINSTANTSHUTDOWNR , "$iPatternPreventInstantShutdownS" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER1S , $IPATTERNHEVCMPEGENABLER1R , "$iPatternHevcMpegEnabler1S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER2S , $IPATTERNHEVCMPEGENABLER2R , "$iPatternHevcMpegEnabler2S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER3S , $IPATTERNHEVCMPEGENABLER3R , "$iPatternHevcMpegEnabler3S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER4S , $IPATTERNHEVCMPEGENABLER4R , "$iPatternHevcMpegEnabler4S" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERAS , $IPATTERNTEAMPROJECTENABLERAR , "$iPatternTeamProjectEnablerAS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERBS , $IPATTERNTEAMPROJECTENABLERBR , "$iPatternTeamProjectEnablerBS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERCS , $IPATTERNTEAMPROJECTENABLERCR , "$iPatternTeamProjectEnablerCS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 1
+		$count = 26
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAEPrruplTryoutS , $iPatternAEPrruplTryoutR , "$iPatternAEPrruplTryoutS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternIsLicCompS , $iPatternIsLicCompR , "$iPatternIsLicCompS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPreventInstantShutdownS , $iPatternPreventInstantShutdownR , "$iPatternPreventInstantShutdownS" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler1S , $iPatternHevcMpegEnabler1R , "$iPatternHevcMpegEnabler1S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler2S , $iPatternHevcMpegEnabler2R , "$iPatternHevcMpegEnabler2S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler3S , $iPatternHevcMpegEnabler3R , "$iPatternHevcMpegEnabler3S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler4S , $iPatternHevcMpegEnabler4R , "$iPatternHevcMpegEnabler4S" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerAS , $iPatternTeamProjectEnablerAR , "$iPatternTeamProjectEnablerAS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerBS , $iPatternTeamProjectEnablerBR , "$iPatternTeamProjectEnablerBS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerCS , $iPatternTeamProjectEnablerCR , "$iPatternTeamProjectEnablerCS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 2
-		$COUNT = 16
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 2
+		$count = 16
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 3
-		$COUNT = 26
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNAEPRRUPLTRYOUTS , $IPATTERNAEPRRUPLTRYOUTR , "$iPatternAEPRRUPLTryoutS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNISLICCOMPS , $IPATTERNISLICCOMPR , "$iPatternIsLicCompS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPREVENTINSTANTSHUTDOWNS , $IPATTERNPREVENTINSTANTSHUTDOWNR , "$iPatternPreventInstantShutdownS" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER1S , $IPATTERNHEVCMPEGENABLER1R , "$iPatternHevcMpegEnabler1S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER2S , $IPATTERNHEVCMPEGENABLER2R , "$iPatternHevcMpegEnabler2S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER3S , $IPATTERNHEVCMPEGENABLER3R , "$iPatternHevcMpegEnabler3S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER4S , $IPATTERNHEVCMPEGENABLER4R , "$iPatternHevcMpegEnabler4S" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERAS , $IPATTERNTEAMPROJECTENABLERAR , "$iPatternTeamProjectEnablerAS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERBS , $IPATTERNTEAMPROJECTENABLERBR , "$iPatternTeamProjectEnablerBS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERCS , $IPATTERNTEAMPROJECTENABLERCR , "$iPatternTeamProjectEnablerCS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 3
+		$count = 26
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAEPrruplTryoutS , $iPatternAEPrruplTryoutR , "$iPatternAEPrruplTryoutS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternIsLicCompS , $iPatternIsLicCompR , "$iPatternIsLicCompS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPreventInstantShutdownS , $iPatternPreventInstantShutdownR , "$iPatternPreventInstantShutdownS" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler1S , $iPatternHevcMpegEnabler1R , "$iPatternHevcMpegEnabler1S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler2S , $iPatternHevcMpegEnabler2R , "$iPatternHevcMpegEnabler2S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler3S , $iPatternHevcMpegEnabler3R , "$iPatternHevcMpegEnabler3S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler4S , $iPatternHevcMpegEnabler4R , "$iPatternHevcMpegEnabler4S" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerAS , $iPatternTeamProjectEnablerAR , "$iPatternTeamProjectEnablerAS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerBS , $iPatternTeamProjectEnablerBR , "$iPatternTeamProjectEnablerBS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerCS , $iPatternTeamProjectEnablerCR , "$iPatternTeamProjectEnablerCS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 4
-		$COUNT = 17
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNBRIDGECAMRAWS , $IPATTERNBRIDGECAMRAWR , "$iPatternBridgeCamRawS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 4
+		$count = 17
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternBridgeCamRawS , $iPatternBridgeCamRawR , "$iPatternBridgeCamRawS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 5
-		$COUNT = 26
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNAEPRRUPLTRYOUTS , $IPATTERNAEPRRUPLTRYOUTR , "$iPatternAEPRRUPLTryoutS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNISLICCOMPS , $IPATTERNISLICCOMPR , "$iPatternIsLicCompS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPREVENTINSTANTSHUTDOWNS , $IPATTERNPREVENTINSTANTSHUTDOWNR , "$iPatternPreventInstantShutdownS" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER1S , $IPATTERNHEVCMPEGENABLER1R , "$iPatternHevcMpegEnabler1S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER2S , $IPATTERNHEVCMPEGENABLER2R , "$iPatternHevcMpegEnabler2S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER3S , $IPATTERNHEVCMPEGENABLER3R , "$iPatternHevcMpegEnabler3S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER4S , $IPATTERNHEVCMPEGENABLER4R , "$iPatternHevcMpegEnabler4S" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERAS , $IPATTERNTEAMPROJECTENABLERAR , "$iPatternTeamProjectEnablerAS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERBS , $IPATTERNTEAMPROJECTENABLERBR , "$iPatternTeamProjectEnablerBS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERCS , $IPATTERNTEAMPROJECTENABLERCR , "$iPatternTeamProjectEnablerCS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 5
+		$count = 26
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAEPrruplTryoutS , $iPatternAEPrruplTryoutR , "$iPatternAEPrruplTryoutS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternIsLicCompS , $iPatternIsLicCompR , "$iPatternIsLicCompS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPreventInstantShutdownS , $iPatternPreventInstantShutdownR , "$iPatternPreventInstantShutdownS" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler1S , $iPatternHevcMpegEnabler1R , "$iPatternHevcMpegEnabler1S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler2S , $iPatternHevcMpegEnabler2R , "$iPatternHevcMpegEnabler2S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler3S , $iPatternHevcMpegEnabler3R , "$iPatternHevcMpegEnabler3S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler4S , $iPatternHevcMpegEnabler4R , "$iPatternHevcMpegEnabler4S" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerAS , $iPatternTeamProjectEnablerAR , "$iPatternTeamProjectEnablerAS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerBS , $iPatternTeamProjectEnablerBR , "$iPatternTeamProjectEnablerBS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerCS , $iPatternTeamProjectEnablerCR , "$iPatternTeamProjectEnablerCS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 6
-		$COUNT = 16
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 6
+		$count = 16
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 7
-		$COUNT = 17
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNAIESHSS , $IPATTERNAIESHSR , "$iPatternAIESHSS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 7
+		$count = 17
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAIEshSS , $iPatternAIEshSR , "$iPatternAIEshSS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 8
-		$COUNT = 27
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNINCOPYSSWS , $IPATTERNINCOPYSSWR , "$iPatternInCopySSWS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNAEPRRUPLTRYOUTS , $IPATTERNAEPRRUPLTRYOUTR , "$iPatternAEPRRUPLTryoutS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNISLICCOMPS , $IPATTERNISLICCOMPR , "$iPatternIsLicCompS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPREVENTINSTANTSHUTDOWNS , $IPATTERNPREVENTINSTANTSHUTDOWNR , "$iPatternPreventInstantShutdownS" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER1S , $IPATTERNHEVCMPEGENABLER1R , "$iPatternHevcMpegEnabler1S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER2S , $IPATTERNHEVCMPEGENABLER2R , "$iPatternHevcMpegEnabler2S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER3S , $IPATTERNHEVCMPEGENABLER3R , "$iPatternHevcMpegEnabler3S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER4S , $IPATTERNHEVCMPEGENABLER4R , "$iPatternHevcMpegEnabler4S" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERAS , $IPATTERNTEAMPROJECTENABLERAR , "$iPatternTeamProjectEnablerAS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERBS , $IPATTERNTEAMPROJECTENABLERBR , "$iPatternTeamProjectEnablerBS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERCS , $IPATTERNTEAMPROJECTENABLERCR , "$iPatternTeamProjectEnablerCS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 8
+		$count = 27
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternInCopySSWS , $iPatternInCopySSWR , "$iPatternInCopySSWS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAEPrruplTryoutS , $iPatternAEPrruplTryoutR , "$iPatternAEPrruplTryoutS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternIsLicCompS , $iPatternIsLicCompR , "$iPatternIsLicCompS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPreventInstantShutdownS , $iPatternPreventInstantShutdownR , "$iPatternPreventInstantShutdownS" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler1S , $iPatternHevcMpegEnabler1R , "$iPatternHevcMpegEnabler1S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler2S , $iPatternHevcMpegEnabler2R , "$iPatternHevcMpegEnabler2S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler3S , $iPatternHevcMpegEnabler3R , "$iPatternHevcMpegEnabler3S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler4S , $iPatternHevcMpegEnabler4R , "$iPatternHevcMpegEnabler4S" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerAS , $iPatternTeamProjectEnablerAR , "$iPatternTeamProjectEnablerAS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerBS , $iPatternTeamProjectEnablerBR , "$iPatternTeamProjectEnablerBS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerCS , $iPatternTeamProjectEnablerCR , "$iPatternTeamProjectEnablerCS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 9
-		$COUNT = 17
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNINDESIGNSSWS , $IPATTERNINDESIGNSSWR , "$iPatternInDesignSSWS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 9
+		$count = 17
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternInDesignSSWS , $iPatternInDesignSSWR , "$iPatternInDesignSSWS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 10
-		$COUNT = 18
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNLIGHTSUBSTATUS1S , $IPATTERNLIGHTSUBSTATUS1R , "$iPatternLightSubStatus1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNLIGHTSUBSTATUS2S , $IPATTERNLIGHTSUBSTATUS2R , "$iPatternLightSubStatus2S" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 10
+		$count = 18
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternLightSubStatus1S , $iPatternLightSubStatus1R , "$iPatternLightSubStatus1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternLightSubStatus2S , $iPatternLightSubStatus2R , "$iPatternLightSubStatus2S" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 11
-		$COUNT = 18
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNLIGHTSUBSTATUS1S , $IPATTERNLIGHTSUBSTATUS1R , "$iPatternLightSubStatus1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNLIGHTSUBSTATUS2S , $IPATTERNLIGHTSUBSTATUS2R , "$iPatternLightSubStatus2S" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 11
+		$count = 18
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternLightSubStatus1S , $iPatternLightSubStatus1R , "$iPatternLightSubStatus1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternLightSubStatus2S , $iPatternLightSubStatus2R , "$iPatternLightSubStatus2S" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 12
-		$COUNT = 26
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNAEPRRUPLTRYOUTS , $IPATTERNAEPRRUPLTRYOUTR , "$iPatternAEPRRUPLTryoutS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNISLICCOMPS , $IPATTERNISLICCOMPR , "$iPatternIsLicCompS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPREVENTINSTANTSHUTDOWNS , $IPATTERNPREVENTINSTANTSHUTDOWNR , "$iPatternPreventInstantShutdownS" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER1S , $IPATTERNHEVCMPEGENABLER1R , "$iPatternHevcMpegEnabler1S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER2S , $IPATTERNHEVCMPEGENABLER2R , "$iPatternHevcMpegEnabler2S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER3S , $IPATTERNHEVCMPEGENABLER3R , "$iPatternHevcMpegEnabler3S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER4S , $IPATTERNHEVCMPEGENABLER4R , "$iPatternHevcMpegEnabler4S" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERAS , $IPATTERNTEAMPROJECTENABLERAR , "$iPatternTeamProjectEnablerAS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERBS , $IPATTERNTEAMPROJECTENABLERBR , "$iPatternTeamProjectEnablerBS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERCS , $IPATTERNTEAMPROJECTENABLERCR , "$iPatternTeamProjectEnablerCS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 12
+		$count = 26
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAEPrruplTryoutS , $iPatternAEPrruplTryoutR , "$iPatternAEPrruplTryoutS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternIsLicCompS , $iPatternIsLicCompR , "$iPatternIsLicCompS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPreventInstantShutdownS , $iPatternPreventInstantShutdownR , "$iPatternPreventInstantShutdownS" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler1S , $iPatternHevcMpegEnabler1R , "$iPatternHevcMpegEnabler1S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler2S , $iPatternHevcMpegEnabler2R , "$iPatternHevcMpegEnabler2S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler3S , $iPatternHevcMpegEnabler3R , "$iPatternHevcMpegEnabler3S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler4S , $iPatternHevcMpegEnabler4R , "$iPatternHevcMpegEnabler4S" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerAS , $iPatternTeamProjectEnablerAR , "$iPatternTeamProjectEnablerAS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerBS , $iPatternTeamProjectEnablerBR , "$iPatternTeamProjectEnablerBS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerCS , $iPatternTeamProjectEnablerCR , "$iPatternTeamProjectEnablerCS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 13
-		$COUNT = 20
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPSESHSS1 , $IPATTERNPSESHSR1 , "$iPatternPSESHSS1" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPSESHSS2 , $IPATTERNPSESHSR2 , "$iPatternPSESHSS2" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPSAIESHSS3 , $IPATTERNPSAIESHSR3 , "$iPatternPSAIESHSS3" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPSVIDEOEXPORTS , $IPATTERNPSVIDEOEXPORTR , "$iPatternPSvideoExportS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			$COUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 13
+		$count = 20
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPSEshSS1 , $iPatternPSEshSR1 , "$iPatternPSEshSS1" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPSEshSS2 , $iPatternPSEshSR2 , "$iPatternPSEshSS2" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPSAIEshSS3 , $iPatternPSAIEshSR3 , "$iPatternPSAIEshSS3" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPSvideoExportS , $iPatternPSvideoExportR , "$iPatternPSvideoExportS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			$count = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 14
-		$COUNT = 26
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNAEPRRUPLTRYOUTS , $IPATTERNAEPRRUPLTRYOUTR , "$iPatternAEPRRUPLTryoutS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNISLICCOMPS , $IPATTERNISLICCOMPR , "$iPatternIsLicCompS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPREVENTINSTANTSHUTDOWNS , $IPATTERNPREVENTINSTANTSHUTDOWNR , "$iPatternPreventInstantShutdownS" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER1S , $IPATTERNHEVCMPEGENABLER1R , "$iPatternHevcMpegEnabler1S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER2S , $IPATTERNHEVCMPEGENABLER2R , "$iPatternHevcMpegEnabler2S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER3S , $IPATTERNHEVCMPEGENABLER3R , "$iPatternHevcMpegEnabler3S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER4S , $IPATTERNHEVCMPEGENABLER4R , "$iPatternHevcMpegEnabler4S" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERAS , $IPATTERNTEAMPROJECTENABLERAR , "$iPatternTeamProjectEnablerAS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERBS , $IPATTERNTEAMPROJECTENABLERBR , "$iPatternTeamProjectEnablerBS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERCS , $IPATTERNTEAMPROJECTENABLERCR , "$iPatternTeamProjectEnablerCS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 14
+		$count = 26
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAEPrruplTryoutS , $iPatternAEPrruplTryoutR , "$iPatternAEPrruplTryoutS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternIsLicCompS , $iPatternIsLicCompR , "$iPatternIsLicCompS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPreventInstantShutdownS , $iPatternPreventInstantShutdownR , "$iPatternPreventInstantShutdownS" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler1S , $iPatternHevcMpegEnabler1R , "$iPatternHevcMpegEnabler1S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler2S , $iPatternHevcMpegEnabler2R , "$iPatternHevcMpegEnabler2S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler3S , $iPatternHevcMpegEnabler3R , "$iPatternHevcMpegEnabler3S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler4S , $iPatternHevcMpegEnabler4R , "$iPatternHevcMpegEnabler4S" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerAS , $iPatternTeamProjectEnablerAR , "$iPatternTeamProjectEnablerAS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerBS , $iPatternTeamProjectEnablerBR , "$iPatternTeamProjectEnablerBS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerCS , $iPatternTeamProjectEnablerCR , "$iPatternTeamProjectEnablerCS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 15
-		$COUNT = 26
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNAEPRRUPLTRYOUTS , $IPATTERNAEPRRUPLTRYOUTR , "$iPatternAEPRRUPLTryoutS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNISLICCOMPS , $IPATTERNISLICCOMPR , "$iPatternIsLicCompS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPREVENTINSTANTSHUTDOWNS , $IPATTERNPREVENTINSTANTSHUTDOWNR , "$iPatternPreventInstantShutdownS" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER1S , $IPATTERNHEVCMPEGENABLER1R , "$iPatternHevcMpegEnabler1S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER2S , $IPATTERNHEVCMPEGENABLER2R , "$iPatternHevcMpegEnabler2S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER3S , $IPATTERNHEVCMPEGENABLER3R , "$iPatternHevcMpegEnabler3S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER4S , $IPATTERNHEVCMPEGENABLER4R , "$iPatternHevcMpegEnabler4S" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERAS , $IPATTERNTEAMPROJECTENABLERAR , "$iPatternTeamProjectEnablerAS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERBS , $IPATTERNTEAMPROJECTENABLERBR , "$iPatternTeamProjectEnablerBS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERCS , $IPATTERNTEAMPROJECTENABLERCR , "$iPatternTeamProjectEnablerCS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 15
+		$count = 26
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAEPrruplTryoutS , $iPatternAEPrruplTryoutR , "$iPatternAEPrruplTryoutS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternIsLicCompS , $iPatternIsLicCompR , "$iPatternIsLicCompS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPreventInstantShutdownS , $iPatternPreventInstantShutdownR , "$iPatternPreventInstantShutdownS" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler1S , $iPatternHevcMpegEnabler1R , "$iPatternHevcMpegEnabler1S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler2S , $iPatternHevcMpegEnabler2R , "$iPatternHevcMpegEnabler2S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler3S , $iPatternHevcMpegEnabler3R , "$iPatternHevcMpegEnabler3S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler4S , $iPatternHevcMpegEnabler4R , "$iPatternHevcMpegEnabler4S" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerAS , $iPatternTeamProjectEnablerAR , "$iPatternTeamProjectEnablerAS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerBS , $iPatternTeamProjectEnablerBR , "$iPatternTeamProjectEnablerBS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerCS , $iPatternTeamProjectEnablerCR , "$iPatternTeamProjectEnablerCS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 16
-		$COUNT = 26
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNAEPRRUPLTRYOUTS , $IPATTERNAEPRRUPLTRYOUTR , "$iPatternAEPRRUPLTryoutS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNISLICCOMPS , $IPATTERNISLICCOMPR , "$iPatternIsLicCompS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPREVENTINSTANTSHUTDOWNS , $IPATTERNPREVENTINSTANTSHUTDOWNR , "$iPatternPreventInstantShutdownS" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER1S , $IPATTERNHEVCMPEGENABLER1R , "$iPatternHevcMpegEnabler1S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER2S , $IPATTERNHEVCMPEGENABLER2R , "$iPatternHevcMpegEnabler2S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER3S , $IPATTERNHEVCMPEGENABLER3R , "$iPatternHevcMpegEnabler3S" )
-			MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $MYFILETOPARSSWEATPEA , $IPATTERNHEVCMPEGENABLER4S , $IPATTERNHEVCMPEGENABLER4R , "$iPatternHevcMpegEnabler4S" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERAS , $IPATTERNTEAMPROJECTENABLERAR , "$iPatternTeamProjectEnablerAS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERBS , $IPATTERNTEAMPROJECTENABLERBR , "$iPatternTeamProjectEnablerBS" )
-			MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $MYFILETOPARSEEACLIENT , $IPATTERNTEAMPROJECTENABLERCS , $IPATTERNTEAMPROJECTENABLERCR , "$iPatternTeamProjectEnablerCS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 16
+		$count = 26
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAEPrruplTryoutS , $iPatternAEPrruplTryoutR , "$iPatternAEPrruplTryoutS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternIsLicCompS , $iPatternIsLicCompR , "$iPatternIsLicCompS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPreventInstantShutdownS , $iPatternPreventInstantShutdownR , "$iPatternPreventInstantShutdownS" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler1S , $iPatternHevcMpegEnabler1R , "$iPatternHevcMpegEnabler1S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler2S , $iPatternHevcMpegEnabler2R , "$iPatternHevcMpegEnabler2S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler3S , $iPatternHevcMpegEnabler3R , "$iPatternHevcMpegEnabler3S" )
+			MyRegexPGlobalPatternSearchSweetPea ( $myFileToParseSweetPea , $iPatternHevcMpegEnabler4S , $iPatternHevcMpegEnabler4R , "$iPatternHevcMpegEnabler4S" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerAS , $iPatternTeamProjectEnablerAR , "$iPatternTeamProjectEnablerAS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerBS , $iPatternTeamProjectEnablerBR , "$iPatternTeamProjectEnablerBS" )
+			MyRegexPGlobalPatternSearchEAClient ( $myFileToParseEAClient , $iPatternTeamProjectEnablerCS , $iPatternTeamProjectEnablerCR , "$iPatternTeamProjectEnablerCS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 17
-		$COUNT = 10
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNACROBATAS , $IPATTERNACROBATAR , "$iPatternAcrobatAS" )
-		MYREGEXPGLOBALPATTERNSEARCHPREMIEREHSR ( $MYFILETOPARSEFRONTEND , $IPATTERNAMTLIB1S , $IPATTERNAMTLIB1R , "$iPatternAmtlib1S" )
-		MYREGEXPGLOBALPATTERNSEARCHPREMIEREHSR ( $MYFILETOPARSEFRONTEND , $IPATTERNAMTLIB2S , $IPATTERNAMTLIB2R , "$iPatternAmtlib2S" )
-		MYREGEXPGLOBALPATTERNSEARCHPREMIEREHSR ( $MYFILETOPARSEFRONTEND , $IPATTERNAMTLIB3S , $IPATTERNAMTLIB3R , "$iPatternAmtlib3S" )
-		MYREGEXPGLOBALPATTERNSEARCHPREMIEREHSR ( $MYFILETOPARSEFRONTEND , $IPATTERNAMTLIB4S , $IPATTERNAMTLIB4R , "$iPatternAmtlib4S" )
-		MYREGEXPGLOBALPATTERNSEARCHPREMIEREHSR ( $MYFILETOPARSEFRONTEND , $IPATTERNAMTLIB5S , $IPATTERNAMTLIB5R , "$iPatternAmtlib5S" )
-		MYREGEXPGLOBALPATTERNSEARCHACRODIST ( $MYFILETOPARSSWEATPEA , $IPATTERNACRODISTAS , $IPATTERNACRODISTAR , "$iPatternAcrodistAS" )
-		MYREGEXPGLOBALPATTERNSEARCHACROTRAY ( $MYFILETOPARSEEACLIENT , $IPATTERNACROTRAYAS , $IPATTERNACROTRAYAR , "$iPatternAcroTrayAS" )
-		$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-		PROGRESSWRITE ( 0 )
-		GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
-	Case $MYIBUTTONCLICKED = 18
-		$COUNT = 16
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 17
+		$count = 10
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternAcrobatAS , $iPatternAcrobatAR , "$iPatternAcrobatAS" )
+		MyRegexPGlobalPatternSearchPremiereHSR ( $myFileToParseFrontend , $iPatternAmtlib1S , $iPatternAmtlib1R , "$iPatternAmtlib1S" )
+		MyRegexPGlobalPatternSearchPremiereHSR ( $myFileToParseFrontend , $iPatternAmtlib2S , $iPatternAmtlib2R , "$iPatternAmtlib2S" )
+		MyRegexPGlobalPatternSearchPremiereHSR ( $myFileToParseFrontend , $iPatternAmtlib3S , $iPatternAmtlib3R , "$iPatternAmtlib3S" )
+		MyRegexPGlobalPatternSearchPremiereHSR ( $myFileToParseFrontend , $iPatternAmtlib4S , $iPatternAmtlib4R , "$iPatternAmtlib4S" )
+		MyRegexPGlobalPatternSearchPremiereHSR ( $myFileToParseFrontend , $iPatternAmtlib5S , $iPatternAmtlib5R , "$iPatternAmtlib5S" )
+		MyRegexPGlobalPatternSearchAcroDist ( $myFileToParseSweetPea , $iPatternAcrodistAS , $iPatternAcrodistAR , "$iPatternAcrodistAS" )
+		MyRegexPGlobalPatternSearchAcroTray ( $myFileToParseEAClient , $iPatternAcroTrayAS , $iPatternAcroTrayAR , "$iPatternAcroTrayAS" )
+		$myRegexPGlobalPatternSearchCount = 0
+		ProgressWrite ( 0 )
+		GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
+	Case $myIButtonClicked = 18
+		$count = 16
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 19
-		$COUNT = 17
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNXDCOMPLETES , $IPATTERNXDCOMPLETER , "$iPatternXDCompleteS" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 19
+		$count = 17
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternXDCompleteS , $iPatternXDCompleteR , "$iPatternXDCompleteS" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 20
-		$COUNT = 16
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROFILE_EXPIREDS , $IPATTERNPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
-		If UBound ( $AOUTHEXGLOBALARRAY ) > 0 Then
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSES , $IPATTERNVALIDATELICENSER , "$iPatternValidateLicenseS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE1S , $IPATTERNVALIDATELICENSE1R , "$iPatternValidateLicense1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE2S , $IPATTERNVALIDATELICENSE2R , "$iPatternValidateLicense2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNCMPEAX6S , $IPATTERNCMPEAX6R , "$iPatternCmpEax6S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1AS , $IPATTERNPROCESSV2PROFILE1AR , "$iPatternProcessV2Profile1aS" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1A1S , $IPATTERNPROCESSV2PROFILE1A1R , "$iPatternProcessV2Profile1a1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNVALIDATELICENSE3S , $IPATTERNVALIDATELICENSE3R , "$iPatternValidateLicense3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B1S , $IPATTERNPROCESSV2PROFILE1B1R , "$iPatternProcessV2Profile1b1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B2S , $IPATTERNPROCESSV2PROFILE1B2R , "$iPatternProcessV2Profile1b2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B3S , $IPATTERNPROCESSV2PROFILE1B3R , "$iPatternProcessV2Profile1b3S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1B4S , $IPATTERNPROCESSV2PROFILE1B4R , "$iPatternProcessV2Profile1b4S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV1S , $IPATTERNPROCESSV2PROFILE1CNV1R , "$iPatternProcessV2Profile1CnV1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1CNV2S , $IPATTERNPROCESSV2PROFILE1CNV2R , "$iPatternProcessV2Profile1CnV2S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D1S , $IPATTERNPROCESSV2PROFILE1D1R , "$iPatternProcessV2Profile1d1S" )
-			MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNPROCESSV2PROFILE1D2S , $IPATTERNPROCESSV2PROFILE1D2R , "$iPatternProcessV2Profile1d2S" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 20
+		$count = 16
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternPROFILE_EXPIREDS , $iPatternPROFILE_EXPIREDR , "$iPatternPROFILE_EXPIREDS" )
+		If UBound ( $aOutHexGlobalArray ) > 0 Then
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicenseS , $iPatternValidateLicenseR , "$iPatternValidateLicenseS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense1S , $iPatternValidateLicense1R , "$iPatternValidateLicense1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense2S , $iPatternValidateLicense2R , "$iPatternValidateLicense2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternCmpEax6S , $iPatternCmpEax6R , "$iPatternCmpEax6S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1aS , $iPatternProcessV2Profile1aR , "$iPatternProcessV2Profile1aS" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1a1S , $iPatternProcessV2Profile1a1R , "$iPatternProcessV2Profile1a1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternValidateLicense3S , $iPatternValidateLicense3R , "$iPatternValidateLicense3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b1S , $iPatternProcessV2Profile1b1R , "$iPatternProcessV2Profile1b1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b2S , $iPatternProcessV2Profile1b2R , "$iPatternProcessV2Profile1b2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b3S , $iPatternProcessV2Profile1b3R , "$iPatternProcessV2Profile1b3S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1b4S , $iPatternProcessV2Profile1b4R , "$iPatternProcessV2Profile1b4S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV1S , $iPatternProcessV2Profile1CnV1R , "$iPatternProcessV2Profile1CnV1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1CnV2S , $iPatternProcessV2Profile1CnV2R , "$iPatternProcessV2Profile1CnV2S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d1S , $iPatternProcessV2Profile1d1R , "$iPatternProcessV2Profile1d1S" )
+			MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternProcessV2Profile1d2S , $iPatternProcessV2Profile1d2R , "$iPatternProcessV2Profile1d2S" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 		Else
-			MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-			PROGRESSWRITE ( 0 )
-			GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+			MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "File is not 'vanilla'. Aborting..." & @CRLF & "---" )
+			$myRegexPGlobalPatternSearchCount = 0
+			ProgressWrite ( 0 )
+			GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 			Sleep ( 2000 )
 		EndIf
-	Case $MYIBUTTONCLICKED = 24
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNACCAS , $IPATTERNACCAR , "$iPatternACCAS" )
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNACCBS , $IPATTERNACCBR , "$iPatternACCBS" )
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNACCCS , $IPATTERNACCCR , "$iPatternACCCS" )
-		MYREGEXPGLOBALPATTERNSEARCH ( $MYFILETOPARSE , $IPATTERNACCDS , $IPATTERNACCDR , "$iPatternACCDS" )
-		$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-		PROGRESSWRITE ( 0 )
-		GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+	Case $myIButtonClicked = 24
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternACCAS , $iPatternACCAR , "$iPatternACCAS" )
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternACCBS , $iPatternACCBR , "$iPatternACCBS" )
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternACCCS , $iPatternACCCR , "$iPatternACCCS" )
+		MyRegexPGlobalPatternSearch ( $myFileToParse , $iPatternACCDS , $iPatternACCDR , "$iPatternACCDS" )
+		$myRegexPGlobalPatternSearchCount = 0
+		ProgressWrite ( 0 )
+		GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 Case Else
-		MEMOWRITE1 ( $MYIBUTTONCLICKED & @CRLF & "---" & @CRLF & "---Not Implemented---" & @CRLF & "---" & @CRLF & "---Not Implemented---" )
-		$MYREGEXPGLOBALPATTERNSEARCHCOUNT = 0
-		PROGRESSWRITE ( 0 )
-		GUICtrlSetData ( $G_IDMEMOPPSWITCH , "0" )
+		MemoWrite1 ( $myIButtonClicked & @CRLF & "---" & @CRLF & "---Not Implemented---" & @CRLF & "---" & @CRLF & "---Not Implemented---" )
+		$myRegexPGlobalPatternSearchCount = 0
+		ProgressWrite ( 0 )
+		GUICtrlSetData ( $g_idMemoPPSwitch , "0" )
 	EndSelect
 EndFunc
 
 ; These functions are duplicates, except the global variable where the output is stored is different
 ; See the documentation at the top of where the patterns are stored for how the replacement works
 
-; Matches search pattern in files, generates regex with replacement pattern stored in $AOUTHEXGLOBALARRAY
-Func MYREGEXPGLOBALPATTERNSEARCH ( $FILETOPARSE , $PATTERNTOSEARCH , $PATTERNTOREPLACE , $PATTERNNAME )
-	; Find matches of $PATTERNTOSEARCH in $FILETOPARSE, stored in $AINHEXARRAY
-	Local $HFILEOPEN = FileOpen ( $FILETOPARSE , $FO_READ + $FO_BINARY )
-	Local $SFILEREAD = FileRead ( $HFILEOPEN )
-	Local $ISEARCHPATTERN = $PATTERNTOSEARCH
-	Local $IREPLACEPATTERN = $PATTERNTOREPLACE
-	Local $INEWREPLACECONSTRUCT = ""
-	Local $AINHEXARRAY = StringRegExp ( $SFILEREAD , $ISEARCHPATTERN , $STR_REGEXPARRAYFULLMATCH , 1 )
+; Matches search pattern in files, generates regex with replacement pattern stored in $aOutHexGlobalArray
+Func MyRegexPGlobalPatternSearch ( $fileToParse , $patternToSearch , $patternToReplace , $patternName )
+	; Find matches of $patternToSearch in $fileToParse, stored in $aInHexArray
+	Local $hFileOpen = FileOpen ( $fileToParse , $FO_READ + $FO_BINARY )
+	Local $sFileRead = FileRead ( $hFileOpen )
+	Local $iSearchPattern = $patternToSearch
+	Local $iReplacePattern = $patternToReplace
+	Local $iNewReplaceConstruct = ""
+	Local $aInHexArray = StringRegExp ( $sFileRead , $iSearchPattern , $STR_REGEXPARRAYFULLMATCH , 1 )
 
 	If @error = 0 Then
-		If UBound ( $AINHEXARRAY ) > 1 Then
+		If UBound ( $aInHexArray ) > 1 Then
 			; Has capturing groups in regex replacement
 
 			; Join the replacement and the capturing groups together, where n in number of elements in replacement pattern
 			; ReplacePattern[0] CapturingGroup[0] ReplacePattern[1] CapturingGroup[1] ... ReplacePattern[n-2] CapturingGroup[n-2]
-			For $I = 1 To UBound ( $AINHEXARRAY ) - 1
-				$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ $I - 1 ] & $AINHEXARRAY [ $I ]
+			For $I = 1 To UBound ( $aInHexArray ) - 1
+				$iNewReplaceConstruct &= $iReplacePattern [ $I - 1 ] & $aInHexArray [ $I ]
 			Next
 			; ReplacePattern[0] CapturingGroup[0] ReplacePattern[1] CapturingGroup[1] ... ReplacePattern[n-2] CapturingGroup[n-2] ReplacePattern[n-1]
-			$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ UBound ( $IREPLACEPATTERN ) - 1 ]
+			$iNewReplaceConstruct &= $iReplacePattern [ UBound ( $iReplacePattern ) - 1 ]
 
-			_ARRAYADD ( $AOUTHEXGLOBALARRAY , $AINHEXARRAY [ 0 ] ) ; Index 0 is full matching text
-			_ARRAYADD ( $AOUTHEXGLOBALARRAY , $INEWREPLACECONSTRUCT )
+			_ArrayAdd ( $aOutHexGlobalArray , $aInHexArray [ 0 ] ) ; Index 0 is full matching text
+			_ArrayAdd ( $aOutHexGlobalArray , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
 		Else
 			; Regex replacement does not use capturing groups
 			; ReplacePattern[0] ReplacePattern[1] ... ReplacePattern[n-1]
-			$INEWREPLACECONSTRUCT = _ARRAYTOSTRING ( $PATTERNTOREPLACE , -1 , 0 , 0 , 0 , 0 )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAY , $AINHEXARRAY [ 0 ] ) ; Index 0 is full matching text
-			_ARRAYADD ( $AOUTHEXGLOBALARRAY , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct = _ArrayToString ( $patternToReplace , -1 , 0 , 0 , 0 , 0 )
+			_ArrayAdd ( $aOutHexGlobalArray , $aInHexArray [ 0 ] ) ; Index 0 is full matching text
+			_ArrayAdd ( $aOutHexGlobalArray , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
 		EndIf
 	Else
 		; Failed to match
-		ConsoleWrite ( $PATTERNNAME & "---" & @TAB & "No" & "	" & @CRLF )
-		MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "No" )
+		ConsoleWrite ( $patternName & "---" & @TAB & "No" & "	" & @CRLF )
+		MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "No" )
 	EndIf
 
-	$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
-	FileClose ( $HFILEOPEN )
-	$SFILEREAD = ""
+	$myRegexPGlobalPatternSearchCount += 1
+	FileClose ( $hFileOpen )
+	$sFileRead = ""
 
-	PROGRESSWRITE ( Round ( $MYREGEXPGLOBALPATTERNSEARCHCOUNT / $COUNT * 100 ) )
+	ProgressWrite ( Round ( $myRegexPGlobalPatternSearchCount / $count * 100 ) )
 	Sleep ( 100 )
 EndFunc
-; Matches search pattern in files, generates regex with replacement pattern stored in $AOUTHEXGLOBALARRAYACRODIST
-Func MYREGEXPGLOBALPATTERNSEARCHACRODIST ( $FILETOPARSE , $PATTERNTOSEARCH , $PATTERNTOREPLACE , $PATTERNNAME )
-	Local $HFILEOPEN = FileOpen ( $FILETOPARSE , $FO_READ + $FO_BINARY )
-	Local $SFILEREAD = FileRead ( $HFILEOPEN )
-	Local $ISEARCHPATTERN = $PATTERNTOSEARCH
-	Local $IREPLACEPATTERN = $PATTERNTOREPLACE
-	Local $INEWREPLACECONSTRUCT = ""
-	Local $AINHEXARRAY = StringRegExp ( $SFILEREAD , $ISEARCHPATTERN , $STR_REGEXPARRAYFULLMATCH , 1 )
+; Matches search pattern in files, generates regex with replacement pattern stored in $aOutHexGlobalArrayAcroDist
+Func MyRegexPGlobalPatternSearchAcroDist ( $fileToParse , $patternToSearch , $patternToReplace , $patternName )
+	Local $hFileOpen = FileOpen ( $fileToParse , $FO_READ + $FO_BINARY )
+	Local $sFileRead = FileRead ( $hFileOpen )
+	Local $iSearchPattern = $patternToSearch
+	Local $iReplacePattern = $patternToReplace
+	Local $iNewReplaceConstruct = ""
+	Local $aInHexArray = StringRegExp ( $sFileRead , $iSearchPattern , $STR_REGEXPARRAYFULLMATCH , 1 )
 
 	If @error = 0 Then
-		If UBound ( $AINHEXARRAY ) > 1 Then
-			For $I = 1 To UBound ( $AINHEXARRAY ) - 1
-				$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ $I - 1 ] & $AINHEXARRAY [ $I ]
+		If UBound ( $aInHexArray ) > 1 Then
+			For $I = 1 To UBound ( $aInHexArray ) - 1
+				$iNewReplaceConstruct &= $iReplacePattern [ $I - 1 ] & $aInHexArray [ $I ]
 			Next
-			$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ UBound ( $IREPLACEPATTERN ) - 1 ]
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYACRODIST , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYACRODIST , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct &= $iReplacePattern [ UBound ( $iReplacePattern ) - 1 ]
+			_ArrayAdd ( $aOutHexGlobalArrayAcroDist , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArrayAcroDist , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
 		Else
-			$INEWREPLACECONSTRUCT = _ARRAYTOSTRING ( $PATTERNTOREPLACE , - 1 , 0 , 0 , 0 , 0 )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYACRODIST , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYACRODIST , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct = _ArrayToString ( $patternToReplace , - 1 , 0 , 0 , 0 , 0 )
+			_ArrayAdd ( $aOutHexGlobalArrayAcroDist , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArrayAcroDist , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
+			$myRegexPGlobalPatternSearchCount += 1
 		EndIf
 	Else
-		ConsoleWrite ( $PATTERNNAME & "---" & @TAB & "No" & "	" & @CRLF )
-		MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "No" )
-		$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
+		ConsoleWrite ( $patternName & "---" & @TAB & "No" & "	" & @CRLF )
+		MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "No" )
+		$myRegexPGlobalPatternSearchCount += 1
 	EndIf
-	PROGRESSWRITE ( Round ( $MYREGEXPGLOBALPATTERNSEARCHCOUNT / 1 * 100 ) )
+	ProgressWrite ( Round ( $myRegexPGlobalPatternSearchCount / 1 * 100 ) )
 	Sleep ( 100 )
-	FileClose ( $HFILEOPEN )
-	$SFILEREAD = ""
+	FileClose ( $hFileOpen )
+	$sFileRead = ""
 EndFunc
-; Matches search pattern in files, generates regex with replacement pattern stored in $AOUTHEXGLOBALARRAYACROTRAY
-Func MYREGEXPGLOBALPATTERNSEARCHACROTRAY ( $FILETOPARSE , $PATTERNTOSEARCH , $PATTERNTOREPLACE , $PATTERNNAME )
-	Local $HFILEOPEN = FileOpen ( $FILETOPARSE , $FO_READ + $FO_BINARY )
-	Local $SFILEREAD = FileRead ( $HFILEOPEN )
-	Local $ISEARCHPATTERN = $PATTERNTOSEARCH
-	Local $IREPLACEPATTERN = $PATTERNTOREPLACE
-	Local $INEWREPLACECONSTRUCT = ""
-	Local $AINHEXARRAY = StringRegExp ( $SFILEREAD , $ISEARCHPATTERN , $STR_REGEXPARRAYFULLMATCH , 1 )
+; Matches search pattern in files, generates regex with replacement pattern stored in $aOutHexGlobalArrayAcroTray
+Func MyRegexPGlobalPatternSearchAcroTray ( $fileToParse , $patternToSearch , $patternToReplace , $patternName )
+	Local $hFileOpen = FileOpen ( $fileToParse , $FO_READ + $FO_BINARY )
+	Local $sFileRead = FileRead ( $hFileOpen )
+	Local $iSearchPattern = $patternToSearch
+	Local $iReplacePattern = $patternToReplace
+	Local $iNewReplaceConstruct = ""
+	Local $aInHexArray = StringRegExp ( $sFileRead , $iSearchPattern , $STR_REGEXPARRAYFULLMATCH , 1 )
 	If @error = 0 Then
-		If UBound ( $AINHEXARRAY ) > 1 Then
-			For $I = 1 To UBound ( $AINHEXARRAY ) - 1
-				$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ $I - 1 ] & $AINHEXARRAY [ $I ]
+		If UBound ( $aInHexArray ) > 1 Then
+			For $I = 1 To UBound ( $aInHexArray ) - 1
+				$iNewReplaceConstruct &= $iReplacePattern [ $I - 1 ] & $aInHexArray [ $I ]
 			Next
-			$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ UBound ( $IREPLACEPATTERN ) - 1 ]
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYACROTRAY , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYACROTRAY , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct &= $iReplacePattern [ UBound ( $iReplacePattern ) - 1 ]
+			_ArrayAdd ( $aOutHexGlobalArrayAcroTray , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArrayAcroTray , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
 		Else
-			$INEWREPLACECONSTRUCT = _ARRAYTOSTRING ( $PATTERNTOREPLACE , - 1 , 0 , 0 , 0 , 0 )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYACROTRAY , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYACROTRAY , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct = _ArrayToString ( $patternToReplace , - 1 , 0 , 0 , 0 , 0 )
+			_ArrayAdd ( $aOutHexGlobalArrayAcroTray , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArrayAcroTray , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
+			$myRegexPGlobalPatternSearchCount += 1
 		EndIf
 	Else
-		ConsoleWrite ( $PATTERNNAME & "---" & @TAB & "No" & "	" & @CRLF )
-		MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "No" )
-		$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1 ; Is this a mistake from copy and paste coding?
+		ConsoleWrite ( $patternName & "---" & @TAB & "No" & "	" & @CRLF )
+		MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "No" )
+		$myRegexPGlobalPatternSearchCount += 1 ; Is this a mistake from copy and paste coding?
 	EndIf
-	PROGRESSWRITE ( Round ( $MYREGEXPGLOBALPATTERNSEARCHCOUNT / 1 * 100 ) )
+	ProgressWrite ( Round ( $myRegexPGlobalPatternSearchCount / 1 * 100 ) )
 	Sleep ( 100 )
-	FileClose ( $HFILEOPEN )
-	$SFILEREAD = ""
+	FileClose ( $hFileOpen )
+	$sFileRead = ""
 EndFunc
-; Matches search pattern in files, generates regex with replacement pattern stored in $AOUTHEXGLOBALARRAYSWEATPEA
-Func MYREGEXPGLOBALPATTERNSEARCHSWEATPEA ( $FILETOPARSE , $PATTERNTOSEARCH , $PATTERNTOREPLACE , $PATTERNNAME )
-	Local $HFILEOPEN = FileOpen ( $FILETOPARSE , $FO_READ + $FO_BINARY )
-	Local $SFILEREAD = FileRead ( $HFILEOPEN )
-	Local $ISEARCHPATTERN = $PATTERNTOSEARCH
-	Local $IREPLACEPATTERN = $PATTERNTOREPLACE
-	Local $INEWREPLACECONSTRUCT = ""
-	Local $AINHEXARRAY = StringRegExp ( $SFILEREAD , $ISEARCHPATTERN , $STR_REGEXPARRAYFULLMATCH , 1 )
+; Matches search pattern in files, generates regex with replacement pattern stored in $aOutHexGlobalArraySweetPea
+Func MyRegexPGlobalPatternSearchSweetPea ( $fileToParse , $patternToSearch , $patternToReplace , $patternName )
+	Local $hFileOpen = FileOpen ( $fileToParse , $FO_READ + $FO_BINARY )
+	Local $sFileRead = FileRead ( $hFileOpen )
+	Local $iSearchPattern = $patternToSearch
+	Local $iReplacePattern = $patternToReplace
+	Local $iNewReplaceConstruct = ""
+	Local $aInHexArray = StringRegExp ( $sFileRead , $iSearchPattern , $STR_REGEXPARRAYFULLMATCH , 1 )
 	If @error = 0 Then
-		If UBound ( $AINHEXARRAY ) > 1 Then
-			For $I = 1 To UBound ( $AINHEXARRAY ) - 1
-				$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ $I - 1 ] & $AINHEXARRAY [ $I ]
+		If UBound ( $aInHexArray ) > 1 Then
+			For $I = 1 To UBound ( $aInHexArray ) - 1
+				$iNewReplaceConstruct &= $iReplacePattern [ $I - 1 ] & $aInHexArray [ $I ]
 			Next
-			$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ UBound ( $IREPLACEPATTERN ) - 1 ]
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYSWEATPEA , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYSWEATPEA , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct &= $iReplacePattern [ UBound ( $iReplacePattern ) - 1 ]
+			_ArrayAdd ( $aOutHexGlobalArraySweetPea , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArraySweetPea , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
 		Else
-			$INEWREPLACECONSTRUCT = _ARRAYTOSTRING ( $PATTERNTOREPLACE , - 1 , 0 , 0 , 0 , 0 )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYSWEATPEA , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYSWEATPEA , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct = _ArrayToString ( $patternToReplace , - 1 , 0 , 0 , 0 , 0 )
+			_ArrayAdd ( $aOutHexGlobalArraySweetPea , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArraySweetPea , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
+			$myRegexPGlobalPatternSearchCount += 1
 		EndIf
 	Else
-		ConsoleWrite ( $PATTERNNAME & "---" & @TAB & "No" & "	" & @CRLF )
-		MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "No" )
-		$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
+		ConsoleWrite ( $patternName & "---" & @TAB & "No" & "	" & @CRLF )
+		MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "No" )
+		$myRegexPGlobalPatternSearchCount += 1
 	EndIf
-	PROGRESSWRITE ( Round ( $MYREGEXPGLOBALPATTERNSEARCHCOUNT / 1 * 100 ) )
+	ProgressWrite ( Round ( $myRegexPGlobalPatternSearchCount / 1 * 100 ) )
 	Sleep ( 100 )
-	FileClose ( $HFILEOPEN )
-	$SFILEREAD = ""
+	FileClose ( $hFileOpen )
+	$sFileRead = ""
 EndFunc
-; Matches search pattern in files, generates regex with replacement pattern stored in $AOUTHEXGLOBALARRAYEACLIENT
-Func MYREGEXPGLOBALPATTERNSEARCHEACLIENT ( $FILETOPARSE , $PATTERNTOSEARCH , $PATTERNTOREPLACE , $PATTERNNAME )
-	Local $HFILEOPEN = FileOpen ( $FILETOPARSE , $FO_READ + $FO_BINARY )
-	Local $SFILEREAD = FileRead ( $HFILEOPEN )
-	Local $ISEARCHPATTERN = $PATTERNTOSEARCH
-	Local $IREPLACEPATTERN = $PATTERNTOREPLACE
-	Local $INEWREPLACECONSTRUCT = ""
-	Local $AINHEXARRAY = StringRegExp ( $SFILEREAD , $ISEARCHPATTERN , $STR_REGEXPARRAYFULLMATCH , 1 )
+; Matches search pattern in files, generates regex with replacement pattern stored in $aOutHexGlobalArrayEAClient
+Func MyRegexPGlobalPatternSearchEAClient ( $fileToParse , $patternToSearch , $patternToReplace , $patternName )
+	Local $hFileOpen = FileOpen ( $fileToParse , $FO_READ + $FO_BINARY )
+	Local $sFileRead = FileRead ( $hFileOpen )
+	Local $iSearchPattern = $patternToSearch
+	Local $iReplacePattern = $patternToReplace
+	Local $iNewReplaceConstruct = ""
+	Local $aInHexArray = StringRegExp ( $sFileRead , $iSearchPattern , $STR_REGEXPARRAYFULLMATCH , 1 )
 	If @error = 0 Then
-		If UBound ( $AINHEXARRAY ) > 1 Then
-			For $I = 1 To UBound ( $AINHEXARRAY ) - 1
-				$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ $I - 1 ] & $AINHEXARRAY [ $I ]
+		If UBound ( $aInHexArray ) > 1 Then
+			For $I = 1 To UBound ( $aInHexArray ) - 1
+				$iNewReplaceConstruct &= $iReplacePattern [ $I - 1 ] & $aInHexArray [ $I ]
 			Next
-			$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ UBound ( $IREPLACEPATTERN ) - 1 ]
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYEACLIENT , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYEACLIENT , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct &= $iReplacePattern [ UBound ( $iReplacePattern ) - 1 ]
+			_ArrayAdd ( $aOutHexGlobalArrayEAClient , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArrayEAClient , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
 		Else
-			$INEWREPLACECONSTRUCT = _ARRAYTOSTRING ( $PATTERNTOREPLACE , - 1 , 0 , 0 , 0 , 0 )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYEACLIENT , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYEACLIENT , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct = _ArrayToString ( $patternToReplace , - 1 , 0 , 0 , 0 , 0 )
+			_ArrayAdd ( $aOutHexGlobalArrayEAClient , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArrayEAClient , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
+			$myRegexPGlobalPatternSearchCount += 1
 		EndIf
 	Else
-		ConsoleWrite ( $PATTERNNAME & "---" & @TAB & "No" & "	" & @CRLF )
-		MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "No" )
-		$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
+		ConsoleWrite ( $patternName & "---" & @TAB & "No" & "	" & @CRLF )
+		MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "No" )
+		$myRegexPGlobalPatternSearchCount += 1
 	EndIf
-	PROGRESSWRITE ( Round ( $MYREGEXPGLOBALPATTERNSEARCHCOUNT / 1 * 100 ) )
+	ProgressWrite ( Round ( $myRegexPGlobalPatternSearchCount / 1 * 100 ) )
 	Sleep ( 100 )
-	FileClose ( $HFILEOPEN )
-	$SFILEREAD = ""
+	FileClose ( $hFileOpen )
+	$sFileRead = ""
 EndFunc
-; Matches search pattern in files, generates regex with replacement pattern stored in $AOUTHEXGLOBALARRAYPREMIEREHSR
-Func MYREGEXPGLOBALPATTERNSEARCHPREMIEREHSR ( $FILETOPARSE , $PATTERNTOSEARCH , $PATTERNTOREPLACE , $PATTERNNAME )
-	Local $HFILEOPEN = FileOpen ( $FILETOPARSE , $FO_READ + $FO_BINARY )
-	Local $SFILEREAD = FileRead ( $HFILEOPEN )
-	Local $ISEARCHPATTERN = $PATTERNTOSEARCH
-	Local $IREPLACEPATTERN = $PATTERNTOREPLACE
-	Local $INEWREPLACECONSTRUCT = ""
-	Local $AINHEXARRAY = StringRegExp ( $SFILEREAD , $ISEARCHPATTERN , $STR_REGEXPARRAYFULLMATCH , 1 )
+; Matches search pattern in files, generates regex with replacement pattern stored in $aOutHexGlobalArrayPremiereHSR
+Func MyRegexPGlobalPatternSearchPremiereHSR ( $fileToParse , $patternToSearch , $patternToReplace , $patternName )
+	Local $hFileOpen = FileOpen ( $fileToParse , $FO_READ + $FO_BINARY )
+	Local $sFileRead = FileRead ( $hFileOpen )
+	Local $iSearchPattern = $patternToSearch
+	Local $iReplacePattern = $patternToReplace
+	Local $iNewReplaceConstruct = ""
+	Local $aInHexArray = StringRegExp ( $sFileRead , $iSearchPattern , $STR_REGEXPARRAYFULLMATCH , 1 )
 	If @error = 0 Then
-		If UBound ( $AINHEXARRAY ) > 1 Then
-			For $I = 1 To UBound ( $AINHEXARRAY ) - 1
-				$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ $I - 1 ] & $AINHEXARRAY [ $I ]
+		If UBound ( $aInHexArray ) > 1 Then
+			For $I = 1 To UBound ( $aInHexArray ) - 1
+				$iNewReplaceConstruct &= $iReplacePattern [ $I - 1 ] & $aInHexArray [ $I ]
 			Next
-			$INEWREPLACECONSTRUCT &= $IREPLACEPATTERN [ UBound ( $IREPLACEPATTERN ) - 1 ]
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYPREMIEREHSR , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYPREMIEREHSR , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct &= $iReplacePattern [ UBound ( $iReplacePattern ) - 1 ]
+			_ArrayAdd ( $aOutHexGlobalArrayPremiereHSR , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArrayPremiereHSR , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
 		Else
-			$INEWREPLACECONSTRUCT = _ARRAYTOSTRING ( $PATTERNTOREPLACE , - 1 , 0 , 0 , 0 , 0 )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYPREMIEREHSR , $AINHEXARRAY [ 0 ] )
-			_ARRAYADD ( $AOUTHEXGLOBALARRAYPREMIEREHSR , $INEWREPLACECONSTRUCT )
+			$iNewReplaceConstruct = _ArrayToString ( $patternToReplace , - 1 , 0 , 0 , 0 , 0 )
+			_ArrayAdd ( $aOutHexGlobalArrayPremiereHSR , $aInHexArray [ 0 ] )
+			_ArrayAdd ( $aOutHexGlobalArrayPremiereHSR , $iNewReplaceConstruct )
 
-			ConsoleWrite ( $PATTERNNAME & "---" & @TAB & $AINHEXARRAY [ 0 ] & "	" & @CRLF )
-			ConsoleWrite ( $PATTERNNAME & "R" & "--" & @TAB & $INEWREPLACECONSTRUCT & "	" & @CRLF )
-			MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "Ok" )
-			$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
+			ConsoleWrite ( $patternName & "---" & @TAB & $aInHexArray [ 0 ] & "	" & @CRLF )
+			ConsoleWrite ( $patternName & "R" & "--" & @TAB & $iNewReplaceConstruct & "	" & @CRLF )
+			MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "Ok" )
+			$myRegexPGlobalPatternSearchCount += 1
 		EndIf
 	Else
-		ConsoleWrite ( $PATTERNNAME & "---" & @TAB & "No" & "	" & @CRLF )
-		MEMOWRITE1 ( $FILETOPARSE & @CRLF & "---" & @CRLF & $PATTERNNAME & "---" & "No" )
-		$MYREGEXPGLOBALPATTERNSEARCHCOUNT += 1
+		ConsoleWrite ( $patternName & "---" & @TAB & "No" & "	" & @CRLF )
+		MemoWrite1 ( $fileToParse & @CRLF & "---" & @CRLF & $patternName & "---" & "No" )
+		$myRegexPGlobalPatternSearchCount += 1
 	EndIf
-	PROGRESSWRITE ( Round ( $MYREGEXPGLOBALPATTERNSEARCHCOUNT / 25 * 100 ) )
+	ProgressWrite ( Round ( $myRegexPGlobalPatternSearchCount / 25 * 100 ) )
 	Sleep ( 100 )
-	FileClose ( $HFILEOPEN )
-	$SFILEREAD = ""
+	FileClose ( $hFileOpen )
+	$sFileRead = ""
 EndFunc
 
 ; Patches file by replacing substring at even indices i with the value at i + 1
 ; Old file stored in file.bak
-; $MYFILETOPATCH : One of :
-;     $MYFILETOPARSE
-;     $MYFILETOPARSSWEATPEA
-;     $MYFILETOPARSEEACLIENT
-;     $MYFILETOPARSEFRONTEND
-; $MYARRAYTOPATCH : One of :
-;     $AOUTHEXGLOBALARRAY
-;     $AOUTHEXGLOBALARRAYACRODIST
-;     $AOUTHEXGLOBALARRAYACROTRAY
-;     $AOUTHEXGLOBALARRAYSWEATPEA
-;     $AOUTHEXGLOBALARRAYEACLIENT
-;     $AOUTHEXGLOBALARRAYPREMIEREHSR
-Func MYGLOBALPATTERNPATCH ( $MYFILETOPATCH , $MYARRAYTOPATCH )
-	PROGRESSWRITE ( 0 )
-	Local $IPATH = $MYFILETOPATCH
-	Local $SDRIVE = "" , $SDIR = "" , $SFILENAME = "" , $SEXTENSION = ""
-	Local $APATHSPLIT = _PATHSPLIT ( $IPATH , $SDRIVE , $SDIR , $SFILENAME , $SEXTENSION )
+; $myFileToPatch : One of :
+;     $myFileToParse
+;     $myFileToParseSweetPea
+;     $myFileToParseEAClient
+;     $myFileToParseFrontend
+; $myArrayToPatch : One of :
+;     $aOutHexGlobalArray
+;     $aOutHexGlobalArrayAcroDist
+;     $aOutHexGlobalArrayAcroTray
+;     $aOutHexGlobalArraySweetPea
+;     $aOutHexGlobalArrayEAClient
+;     $aOutHexGlobalArrayPremiereHSR
+Func MyGlobalPatternPatch ( $myFileToPatch , $myArrayToPatch )
+	ProgressWrite ( 0 )
+	Local $iPath = $myFileToPatch
+	Local $sDrive = "" , $sDir = "" , $sFilename = "" , $sExtension = ""
+	Local $aPathSplit = _PathSplit ( $iPath , $sDrive , $sDir , $sFilename , $sExtension )
 
-	Local $IROWS1 = 0
-	$IROWS1 = UBound ( $MYARRAYTOPATCH )
-	If $IROWS1 > 0 Then
-		Local $HFILEOPEN = FileOpen ( $IPATH , $FO_READ + $FO_BINARY )
-		Local $SFILEREAD = FileRead ( $HFILEOPEN )
+	Local $iRows1 = 0
+	$iRows1 = UBound ( $myArrayToPatch )
+	If $iRows1 > 0 Then
+		Local $hFileOpen = FileOpen ( $iPath , $FO_READ + $FO_BINARY )
+		Local $sFileRead = FileRead ( $hFileOpen )
 
 		; Array is of the format
 		;     0 : Full matching text 1
@@ -1490,23 +1490,23 @@ Func MYGLOBALPATTERNPATCH ( $MYFILETOPATCH , $MYARRAYTOPATCH )
 		;     3 : Replacement 2
 		;     ...
 		; Replaces pattern in file (at even indices) with replacement (at odd indices)
-		For $I = 0 To $IROWS1 - 1 Step 2
-			Local $SSTRINGOUT = StringReplace ( $SFILEREAD , $MYARRAYTOPATCH [ $I ] , $MYARRAYTOPATCH [ $I + 1 ] , 0 , 1 )
-			$SFILEREAD = $SSTRINGOUT
-			$SSTRINGOUT = $SFILEREAD
-			PROGRESSWRITE ( Round ( $I / $IROWS1 * 100 ) )
+		For $I = 0 To $iRows1 - 1 Step 2
+			Local $sStringOut = StringReplace ( $sFileRead , $myArrayToPatch [ $I ] , $myArrayToPatch [ $I + 1 ] , 0 , 1 )
+			$sFileRead = $sStringOut
+			$sStringOut = $sFileRead
+			ProgressWrite ( Round ( $I / $iRows1 * 100 ) )
 		Next
-		FileClose ( $HFILEOPEN )
+		FileClose ( $hFileOpen )
 
 		; Move the original file to <name>.bak
-		FileMove ( $IPATH , $IPATH & ".bak" , 1 )
+		FileMove ( $iPath , $iPath & ".bak" , 1 )
 
 		; Write the new patched file
-		Local $HFILEOPEN1 = FileOpen ( $IPATH , $FO_OVERWRITE + $FO_BINARY )
-		FileWrite ( $HFILEOPEN1 , Binary ( $SSTRINGOUT ) )
-		FileClose ( $HFILEOPEN1 )
+		Local $hFileOpen1 = FileOpen ( $iPath , $FO_OVERWRITE + $FO_BINARY )
+		FileWrite ( $hFileOpen1 , Binary ( $sStringOut ) )
+		FileClose ( $hFileOpen1 )
 
-		PROGRESSWRITE ( 0 )
+		ProgressWrite ( 0 )
 		Sleep ( 100 )
 	Else
 	EndIf
